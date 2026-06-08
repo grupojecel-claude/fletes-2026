@@ -1,535 +1,255 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resumen Envios Nacionales 2026</title>
-  <style>:root{color-scheme:dark;}</style>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
-  <style>
-    :root{
-      --bg:       #0d1117;
-      --bg-card:  #161b22;
-      --bg-card2: #1c2433;
-      --border:   #21262d;
-      --border2:  #30363d;
-      --text:     #e6edf3;
-      --text2:    #8b949e;
-      --text3:    #6e7681;
-      --lib:      #3b82f6;
-      --lib-glow: rgba(59,130,246,.18);
-      --zoom:     #f97316;
-      --zoom-glow:rgba(249,115,22,.18);
-      --green:    #22c55e;
-      --red:      #ef4444;
-      --purple:   #a855f7;
-      --amber:    #eab308;
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{font-size:14px;}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
-
-    /* LOADING */
-    #overlay{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:999;}
-    .spinner{width:44px;height:44px;border:3px solid var(--border2);border-top-color:var(--lib);border-radius:50%;animation:spin .75s linear infinite;margin-bottom:18px;}
-    @keyframes spin{to{transform:rotate(360deg);}}
-    #overlay p{color:var(--text2);font-size:13px;margin-top:6px;}
-
-    /* HEADER */
-    .header{background:var(--bg-card);border-bottom:1px solid var(--border);padding:14px 28px;display:flex;justify-content:space-between;align-items:center;}
-    .header h1{font-size:17px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px;}
-    .header h1 span.dot{width:8px;height:8px;border-radius:50%;background:var(--lib);display:inline-block;}
-    .header p{font-size:11px;color:var(--text2);margin-top:3px;}
-    .header-right{text-align:right;font-size:11px;color:var(--text3);line-height:1.7;}
-    .header-right strong{color:var(--text2);}
-
-    /* TABS */
-    .tabs-bar{background:var(--bg-card);border-bottom:1px solid var(--border);display:flex;padding:0 24px;gap:2px;}
-    .tab-btn{padding:11px 18px;font-size:13px;font-weight:500;color:var(--text2);border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s;white-space:nowrap;}
-    .tab-btn:hover{color:var(--text);}
-    .tab-btn.active{color:var(--lib);border-bottom-color:var(--lib);font-weight:600;}
-    .op-pill{display:inline-block;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:600;margin-left:6px;vertical-align:middle;}
-    .pill-lib{background:rgba(59,130,246,.15);color:var(--lib);}
-    .pill-zoom{background:rgba(249,115,22,.15);color:var(--zoom);}
-
-    /* MAIN */
-    .main{padding:20px 24px;max-width:1400px;margin:0 auto;}
-    .tab-panel{display:none;}
-    .tab-panel.active{display:block;}
-
-    /* KPI STRIP */
-    .kpi-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:18px;}
-    .kpi{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 14px 12px;position:relative;overflow:hidden;}
-    .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:10px 10px 0 0;}
-    .kpi.c-lib::before{background:var(--lib);}
-    .kpi.c-zoom::before{background:var(--zoom);}
-    .kpi.c-green::before{background:var(--green);}
-    .kpi.c-red::before{background:var(--red);}
-    .kpi.c-purple::before{background:var(--purple);}
-    .kpi.c-amber::before{background:var(--amber);}
-    .kpi-lbl{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--text2);margin-bottom:8px;}
-    .kpi-val{font-size:22px;font-weight:700;line-height:1;letter-spacing:-.5px;}
-    .kpi-val.cv-lib{color:var(--lib);}
-    .kpi-val.cv-zoom{color:var(--zoom);}
-    .kpi-val.cv-green{color:var(--green);}
-    .kpi-val.cv-red{color:var(--red);}
-    .kpi-val.cv-purple{color:var(--purple);}
-    .kpi-val.cv-amber{color:var(--amber);}
-    .kpi-sub{font-size:10px;color:var(--text3);margin-top:5px;}
-
-    /* CARD */
-    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:18px 18px 14px;margin-bottom:16px;}
-    .card-hd{font-size:13px;font-weight:600;color:var(--text);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;}
-    .card-hd .hd-dot{width:3px;height:14px;border-radius:2px;flex-shrink:0;}
-    .hd-dot.dl{background:var(--lib);}
-    .hd-dot.dz{background:var(--zoom);}
-    .hd-dot.dr{background:var(--red);}
-    .hd-dot.dg{background:var(--green);}
-    .card-sub{font-size:11px;color:var(--text3);margin-bottom:14px;margin-top:-8px;}
-
-    /* LAYOUTS */
-    .g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
-    .g31{display:grid;grid-template-columns:2fr 1.2fr;gap:16px;margin-bottom:16px;}
-
-    /* ALERT SECTION */
-    .alert-box{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.25);border-radius:10px;padding:16px;margin-bottom:16px;}
-    .alert-box.zoom{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.25);}
-    .alert-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--red);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
-    .alert-box.zoom .alert-title{color:var(--zoom);}
-    .alert-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-    .alert-sub{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text2);margin-bottom:8px;}
-
-    /* NOTE */
-    .note{background:rgba(234,179,8,.07);border:1px solid rgba(234,179,8,.25);border-radius:8px;padding:9px 14px;font-size:11.5px;color:#ca8a04;margin-bottom:14px;line-height:1.5;}
-    .note code{background:rgba(234,179,8,.12);padding:1px 5px;border-radius:3px;font-family:monospace;}
-
-    /* TABLES */
-    .tbl-wrap{overflow-x:auto;}
-    table{width:100%;border-collapse:collapse;font-size:12px;}
-    th{background:rgba(255,255,255,.03);color:var(--text3);font-size:10px;text-transform:uppercase;letter-spacing:.4px;padding:8px 10px;text-align:left;border-bottom:1px solid var(--border);white-space:nowrap;}
-    td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle;}
-    tr:last-child td{border-bottom:none;}
-    tr:hover td{background:rgba(255,255,255,.03);}
-    td.num{text-align:right;font-variant-numeric:tabular-nums;font-family:monospace;}
-
-    /* RISK PILL */
-    .rpill{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:700;min-width:52px;text-align:center;}
-    .rpill.r0{background:rgba(34,197,94,.15);color:var(--green);}
-    .rpill.r1{background:rgba(234,179,8,.15);color:var(--amber);}
-    .rpill.r2{background:rgba(239,68,68,.15);color:var(--red);}
-    .rpill.r3{background:rgba(239,68,68,.3);color:#fca5a5;font-weight:900;}
-
-    /* BAR */
-    .bar-wrap{display:flex;align-items:center;gap:8px;}
-    .bar-bg{flex:1;height:5px;background:var(--border2);border-radius:3px;overflow:hidden;min-width:40px;}
-    .bar-fg{height:100%;border-radius:3px;}
-
-    /* BADGE */
-    .badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:10.5px;font-weight:600;}
-    .badge.ok{background:rgba(34,197,94,.15);color:var(--green);}
-    .badge.exc{background:rgba(239,68,68,.15);color:var(--red);}
-
-    /* LEGEND PILL */
-    .legend{display:flex;align-items:center;gap:16px;margin-bottom:10px;}
-    .legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text2);}
-    .legend-dot{width:12px;height:12px;border-radius:3px;}
-
-    @media(max-width:1100px){.kpi-strip{grid-template-columns:repeat(3,1fr);}}
-    @media(max-width:768px){.g2,.g31,.alert-grid{grid-template-columns:1fr;}.kpi-strip{grid-template-columns:repeat(2,1fr);}.main{padding:12px;}.tabs-bar{padding:0 8px;}.tab-btn{padding:9px 10px;font-size:12px;}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard Fletes 2026 – Grupo Jecel C.A.</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<style>
+  :root {--bg:#0f172a;--card:#1e293b;--border:#334155;--text:#e2e8f0;--muted:#94a3b8;--lib:#38bdf8;--zo:#a78bfa;--acc:#34d399;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh}
+  header{background:var(--card);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+  header h1{font-size:1.2rem;font-weight:700}
+  .badge{background:#0f172a;border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-size:.75rem;color:var(--muted)}
+  .tabs{display:flex;gap:4px;padding:16px 24px 0;background:var(--card);border-bottom:1px solid var(--border)}
+  .tab{padding:8px 20px;border-radius:8px 8px 0 0;cursor:pointer;font-size:.85rem;font-weight:600;color:var(--muted);border:none;background:transparent;transition:.2s}
+  .tab.active{background:var(--bg);color:var(--text);border:1px solid var(--border);border-bottom:1px solid var(--bg)}
+  .tab:hover:not(.active){color:var(--text)}
+  .section{display:none;padding:24px}
+  .section.active{display:block}
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:24px}
+  .kpi{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+  .kpi .label{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+  .kpi .val{font-size:1.6rem;font-weight:700}
+  .kpi .sub{font-size:.72rem;color:var(--muted);margin-top:4px}
+  .charts-row{display:grid;grid-template-columns:2fr 1fr;gap:16px;margin-bottom:16px}
+  .charts-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+  .chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+  .chart-card h3{font-size:.8rem;color:var(--muted);text-transform:uppercase;margin-bottom:12px;letter-spacing:.05em}
+  canvas{max-height:220px}
+  .cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+  .cmp-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+  .cmp-title{font-size:.9rem;font-weight:700;margin-bottom:12px}
+  .cmp-title.lib{color:var(--lib)} .cmp-title.zo{color:var(--zo)}
+  @media(max-width:700px){.charts-row,.charts-row-3,.cmp-grid,.kpi-grid{grid-template-columns:1fr}}
+  .footer{text-align:center;padding:20px;font-size:.72rem;color:var(--muted);border-top:1px solid var(--border)}
+</style>
 </head>
 <body>
+<header>
+  <h1>📦 Dashboard Fletes 2026 – Grupo Jecel C.A.</h1>
+  <span class="badge">Actualizado: 2026-06-08</span>
+</header>
 
-<div id="overlay">
-  <div class="spinner"></div>
-  <div style="font-size:14px;font-weight:600;">Cargando datos desde Google Drive…</div>
-  <p>Leyendo LIB2026 y ZO2026</p>
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('cmp',this)">Comparativa</button>
+  <button class="tab" onclick="switchTab('lib',this)">Liberty</button>
+  <button class="tab" onclick="switchTab('zoom',this)">Zoom</button>
 </div>
 
-<div class="header">
-  <div>
-    <h1><span class="dot"></span> Resumen Envios Nacionales 2026</h1>
-    <p>Grupo Jecel C.A. · Control de Fletes · LIBERTY (LIB2026) + ZOOM (ZO2026)</p>
+<!-- ===== COMPARATIVA ===== -->
+<div id="cmp" class="section active">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">Total Guías</div><div class="val" style="color:var(--acc)">270</div><div class="sub">Liberty 124 · Zoom 146</div></div>
+    <div class="kpi"><div class="label">Total USD</div><div class="val" style="color:var(--acc)">$3,877.79</div><div class="sub">Liberty $2,135.32 · Zoom $1,742.47</div></div>
+    <div class="kpi"><div class="label">Peso Total (kg)</div><div class="val">2,700.4</div><div class="sub">Liberty 1,504.0 · Zoom 1,196.4</div></div>
+    <div class="kpi"><div class="label">Costo/Guía Promedio</div><div class="val">$14.36</div><div class="sub">USD por guía total</div></div>
   </div>
-  <div class="header-right">
-    <div id="ts-label">—</div>
-    <div>Fuente: <strong>Google Drive</strong> · en vivo</div>
+  <div class="charts-row">
+    <div class="chart-card"><h3>Guías Mensuales por Transportista</h3><canvas id="cmpGuias"></canvas></div>
+    <div class="chart-card"><h3>Distribución de Guías</h3><canvas id="cmpPie"></canvas></div>
+  </div>
+  <div class="charts-row">
+    <div class="chart-card"><h3>Costo USD Mensual por Transportista</h3><canvas id="cmpUsd"></canvas></div>
+    <div class="chart-card"><h3>Costo USD Total</h3><canvas id="cmpUsdPie"></canvas></div>
   </div>
 </div>
 
-<div class="tabs-bar">
-  <button class="tab-btn active" onclick="showTab('cmp',this)">📊 Comparativa</button>
-  <button class="tab-btn" onclick="showTab('lib',this)">LIBERTY <span class="op-pill pill-lib">2026</span></button>
-  <button class="tab-btn" onclick="showTab('zoom',this)">ZOOM <span class="op-pill pill-zoom">2026</span></button>
+<!-- ===== LIBERTY ===== -->
+<div id="lib" class="section">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">Guías 2026</div><div class="val" style="color:var(--lib)">124</div></div>
+    <div class="kpi"><div class="label">Total USD</div><div class="val" style="color:var(--lib)">$2,135.32</div></div>
+    <div class="kpi"><div class="label">Peso Total</div><div class="val">1,504.0 kg</div></div>
+    <div class="kpi"><div class="label">Costo/Guía</div><div class="val">$17.22</div><div class="sub">promedio USD</div></div>
+    <div class="kpi"><div class="label">Crédito</div><div class="val">109</div><div class="sub">guías</div></div>
+    <div class="kpi"><div class="label">Colectar</div><div class="val">15</div><div class="sub">guías</div></div>
+  </div>
+  <div class="charts-row">
+    <div class="chart-card"><h3>Guías por Mes – Liberty</h3><canvas id="libGuias"></canvas></div>
+    <div class="chart-card"><h3>Tipo de Servicio</h3><canvas id="libServ"></canvas></div>
+  </div>
+  <div class="charts-row">
+    <div class="chart-card"><h3>Costo USD por Mes – Liberty</h3><canvas id="libUsd"></canvas></div>
+    <div class="chart-card"><h3>Top 10 Destinos (guías)</h3><canvas id="libDest"></canvas></div>
+  </div>
 </div>
 
-<div class="main" id="content" style="display:none">
-
-  <!-- ══ TAB COMPARATIVA ══════════════════════════ -->
-  <div id="tab-cmp" class="tab-panel active">
-
-    <!-- KPI ROW -->
-    <div class="kpi-strip" style="margin-top:16px">
-      <div class="kpi c-purple">
-        <div class="kpi-lbl">Total Kilos Despachados</div>
-        <div class="kpi-val cv-purple" id="kT-kg">—</div>
-        <div class="kpi-sub" id="kT-g">—</div>
-      </div>
-      <div class="kpi c-lib">
-        <div class="kpi-lbl">Kilos LIBERTY</div>
-        <div class="kpi-val cv-lib" id="kL-kg">—</div>
-        <div class="kpi-sub" id="kL-g">—</div>
-      </div>
-      <div class="kpi c-zoom">
-        <div class="kpi-lbl">Kilos ZOOM</div>
-        <div class="kpi-val cv-zoom" id="kZ-kg">—</div>
-        <div class="kpi-sub" id="kZ-g">—</div>
-      </div>
-      <div class="kpi c-green">
-        <div class="kpi-lbl">Envíos Dentro del Límite</div>
-        <div class="kpi-val cv-green" id="kT-ok">—</div>
-        <div class="kpi-sub" id="kT-okp">—</div>
-      </div>
-      <div class="kpi c-red">
-        <div class="kpi-lbl">Envíos Excedidos &gt;2%</div>
-        <div class="kpi-val cv-red" id="kT-exc">—</div>
-        <div class="kpi-sub" id="kT-excp">—</div>
-      </div>
-      <div class="kpi c-amber">
-        <div class="kpi-lbl">Flete Total Pagado</div>
-        <div class="kpi-val cv-amber" id="kT-flete">—</div>
-        <div class="kpi-sub" id="kT-venta">—</div>
-      </div>
-    </div>
-
-    <!-- GRÁFICO COMBINADO LIBERTY vs ZOOM -->
-    <div class="card">
-      <div class="card-hd"><span class="hd-dot dl"></span>Kilos por Mes · LIBERTY vs ZOOM</div>
-      <div class="card-sub">Evolución mensual del volumen despachado por operador logístico</div>
-      <div class="legend">
-        <div class="legend-item"><div class="legend-dot" style="background:var(--lib)"></div>LIBERTY</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--zoom)"></div>ZOOM</div>
-      </div>
-      <canvas id="ch-combined" height="120"></canvas>
-    </div>
-
-    <!-- ALERTAS COMPARATIVA -->
-    <div class="g2">
-      <div class="alert-box">
-        <div class="alert-title">🚨 Zonas LIBERTY con excedidos &gt;2%</div>
-        <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>Envíos</th><th>Excedidos</th><th>Nivel</th></tr></thead><tbody id="tb-cmp-lib-z"></tbody></table></div>
-      </div>
-      <div class="alert-box zoom">
-        <div class="alert-title">🚨 Destinos ZOOM con excedidos &gt;2%</div>
-        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>Envíos</th><th>Excedidos</th><th>Nivel</th></tr></thead><tbody id="tb-cmp-zoom-z"></tbody></table></div>
-      </div>
-    </div>
-
-    <!-- RESUMEN % FLETE -->
-    <div class="g2">
-      <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dl"></span>LIBERTY 2026 — Resumen Financiero</div>
-        <table><tbody>
-          <tr><td style="color:var(--text2)">Ventas facturadas</td><td class="num" id="rL-v">—</td></tr>
-          <tr><td style="color:var(--text2)">Flete pagado</td><td class="num" id="rL-f">—</td></tr>
-          <tr><td style="color:var(--text2)">% Flete global</td><td class="num" id="rL-p" style="font-weight:700">—</td></tr>
-          <tr><td style="color:var(--text2)">Guías correctas</td><td class="num" id="rL-ok">—</td></tr>
-          <tr><td style="color:var(--text2)">Guías excedidas</td><td class="num cv-red" id="rL-exc" style="font-weight:700">—</td></tr>
-        </tbody></table>
-      </div>
-      <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dz"></span>ZOOM 2026 — Resumen Financiero</div>
-        <table><tbody>
-          <tr><td style="color:var(--text2)">Ventas facturadas</td><td class="num" id="rZ-v">—</td></tr>
-          <tr><td style="color:var(--text2)">Flete pagado</td><td class="num" id="rZ-f">—</td></tr>
-          <tr><td style="color:var(--text2)">% Flete global</td><td class="num" id="rZ-p" style="font-weight:700">—</td></tr>
-          <tr><td style="color:var(--text2)">Guías correctas</td><td class="num" id="rZ-ok">—</td></tr>
-          <tr><td style="color:var(--text2)">Guías excedidas</td><td class="num cv-red" id="rZ-exc" style="font-weight:700">—</td></tr>
-        </tbody></table>
-      </div>
-    </div>
-
+<!-- ===== ZOOM ===== -->
+<div id="zoom" class="section">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">Guías 2026</div><div class="val" style="color:var(--zo)">146</div></div>
+    <div class="kpi"><div class="label">Total USD</div><div class="val" style="color:var(--zo)">$1,742.47</div></div>
+    <div class="kpi"><div class="label">Peso Total</div><div class="val">1,196.4 kg</div></div>
+    <div class="kpi"><div class="label">Costo/Guía</div><div class="val">$11.93</div><div class="sub">promedio USD</div></div>
   </div>
-
-  <!-- ══ TAB LIBERTY ══════════════════════════════ -->
-  <div id="tab-lib" class="tab-panel">
-    <div class="kpi-strip" style="margin-top:16px">
-      <div class="kpi c-lib"><div class="kpi-lbl">Total Kilos</div><div class="kpi-val cv-lib" id="lL-kg">—</div><div class="kpi-sub">LIBERTY 2026</div></div>
-      <div class="kpi c-purple"><div class="kpi-lbl">Guías</div><div class="kpi-val cv-purple" id="lL-g">—</div><div class="kpi-sub">envíos procesados</div></div>
-      <div class="kpi c-green"><div class="kpi-lbl">Flete Pagado</div><div class="kpi-val cv-green" id="lL-f">—</div><div class="kpi-sub">USD total</div></div>
-      <div class="kpi c-amber"><div class="kpi-lbl">Ventas</div><div class="kpi-val cv-amber" id="lL-v">—</div><div class="kpi-sub">USD facturado</div></div>
-      <div class="kpi c-lib" id="lL-pk"><div class="kpi-lbl">% Flete Global</div><div class="kpi-val cv-lib" id="lL-p">—</div><div class="kpi-sub">sobre ventas</div></div>
-      <div class="kpi c-red"><div class="kpi-lbl">Excedidos &gt;2%</div><div class="kpi-val cv-red" id="lL-e">—</div><div class="kpi-sub" id="lL-es">—</div></div>
-    </div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dl"></span>Kilos por Mes — LIBERTY 2026</div><canvas id="ch-lib-mes" height="90"></canvas></div>
-    <div class="alert-box">
-      <div class="alert-title">🚨 Control de Fletes LIBERTY — Excedidos del Parámetro (&gt;2%)</div>
-      <div class="alert-grid">
-        <div><div class="alert-sub">📍 Zonas con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-z-exc"></tbody></table></div></div>
-        <div><div class="alert-sub">👤 Clientes con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Cliente</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-c-exc"></tbody></table></div></div>
-      </div>
-    </div>
-    <div class="g31">
-      <div class="card" style="margin-bottom:0"><div class="card-hd"><span class="hd-dot dl"></span>Top Zonas por Kilos <span style="font-size:10px;color:var(--text3);font-weight:400">(rojo = con excedidos)</span></div><canvas id="ch-lib-zonas" height="200"></canvas></div>
-      <div class="card" style="margin-bottom:0"><div class="card-hd"><span class="hd-dot dr"></span>Cumplimiento por Zona</div><div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>Env.</th><th>% Exc.</th><th>Estado</th></tr></thead><tbody id="tb-lib-z-all"></tbody></table></div></div>
-    </div>
-    <div style="height:16px"></div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dl"></span>Top 15 Clientes por Kilos</div><canvas id="ch-lib-cli" height="80"></canvas></div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dr"></span>Detalle Guías Excedidas — LIBERTY 2026</div><div class="tbl-wrap"><table><thead><tr><th>Fecha</th><th>Cliente</th><th>Zona</th><th class="num">Flete $</th><th class="num">Venta $</th><th class="num">% Flete</th></tr></thead><tbody id="tb-lib-exc"></tbody></table></div></div>
+  <div class="charts-row">
+    <div class="chart-card"><h3>Guías por Mes – Zoom</h3><canvas id="zoGuias"></canvas></div>
+    <div class="chart-card"><h3>Tipo de Servicio</h3><canvas id="zoServ"></canvas></div>
   </div>
-
-  <!-- ══ TAB ZOOM ════════════════════════════════ -->
-  <div id="tab-zoom" class="tab-panel">
-    <div class="kpi-strip" style="margin-top:16px">
-      <div class="kpi c-zoom"><div class="kpi-lbl">Total Kilos</div><div class="kpi-val cv-zoom" id="lZ-kg">—</div><div class="kpi-sub">ZOOM 2026</div></div>
-      <div class="kpi c-purple"><div class="kpi-lbl">Guías</div><div class="kpi-val cv-purple" id="lZ-g">—</div><div class="kpi-sub">envíos procesados</div></div>
-      <div class="kpi c-green"><div class="kpi-lbl">Flete Pagado</div><div class="kpi-val cv-green" id="lZ-f">—</div><div class="kpi-sub">USD total</div></div>
-      <div class="kpi c-amber"><div class="kpi-lbl">Ventas</div><div class="kpi-val cv-amber" id="lZ-v">—</div><div class="kpi-sub">USD facturado</div></div>
-      <div class="kpi c-zoom" id="lZ-pk"><div class="kpi-lbl">% Flete Global</div><div class="kpi-val cv-zoom" id="lZ-p">—</div><div class="kpi-sub">sobre ventas</div></div>
-      <div class="kpi c-red"><div class="kpi-lbl">Excedidos &gt;2%</div><div class="kpi-val cv-red" id="lZ-e">—</div><div class="kpi-sub" id="lZ-es">—</div></div>
-    </div>
-    <div class="note">⚠️ <strong>ZOOM 2026:</strong> <code>TOTAL $ GUIA</code> tiene <code>#REF!</code> en varios registros. Flete calculado como <strong>BS GUIA ÷ TASA DÍA</strong>.</div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dz"></span>Kilos por Mes — ZOOM 2026</div><canvas id="ch-zoom-mes" height="90"></canvas></div>
-    <div class="alert-box zoom">
-      <div class="alert-title">🚨 Control de Fletes ZOOM — Excedidos del Parámetro (&gt;2%)</div>
-      <div class="alert-grid">
-        <div><div class="alert-sub">📍 Destinos con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-z-exc"></tbody></table></div></div>
-        <div><div class="alert-sub">👤 Clientes con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Cliente</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-c-exc"></tbody></table></div></div>
-      </div>
-    </div>
-    <div class="g31">
-      <div class="card" style="margin-bottom:0"><div class="card-hd"><span class="hd-dot dz"></span>Top Destinos por Kilos <span style="font-size:10px;color:var(--text3);font-weight:400">(rojo = con excedidos)</span></div><canvas id="ch-zoom-dest" height="200"></canvas></div>
-      <div class="card" style="margin-bottom:0"><div class="card-hd"><span class="hd-dot dr"></span>Cumplimiento por Destino</div><div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>Env.</th><th>% Exc.</th><th>Estado</th></tr></thead><tbody id="tb-zoom-z-all"></tbody></table></div></div>
-    </div>
-    <div style="height:16px"></div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dz"></span>Top 15 Clientes por Kilos</div><canvas id="ch-zoom-cli" height="80"></canvas></div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dr"></span>Detalle Guías Excedidas — ZOOM 2026</div><div class="tbl-wrap"><table><thead><tr><th>Fecha</th><th>Cliente</th><th>Destino</th><th class="num">Flete $</th><th class="num">Venta $</th><th class="num">% Flete</th></tr></thead><tbody id="tb-zoom-exc"></tbody></table></div></div>
+  <div class="charts-row">
+    <div class="chart-card"><h3>Costo USD por Mes – Zoom</h3><canvas id="zoUsd"></canvas></div>
+    <div class="chart-card"><h3>Top 10 Destinos (guías)</h3><canvas id="zoDest"></canvas></div>
   </div>
-
 </div>
+
+<div class="footer">Grupo Jecel C.A. · Dashboard Fletes 2026 · Datos al 2026-06-08</div>
 
 <script>
-// ── TABS ──────────────────────────────────────────────────────
-function showTab(id,btn){
-  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('tab-'+id).classList.add('active');
+function switchTab(id,btn){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
   btn.classList.add('active');
-  setTimeout(()=>Object.values(_ch).forEach(c=>c&&c.resize()),60);
 }
 
-// ── UTILS ─────────────────────────────────────────────────────
-const fmt=(v,d=2)=>isNaN(v)||v==null?'—':new Intl.NumberFormat('es-VE',{minimumFractionDigits:d,maximumFractionDigits:d}).format(v);
-const fmtK=v=>v>=1000000?fmt(v/1000000,1)+'M':v>=1000?fmt(v/1000,1)+'k':fmt(v,0);
-const MN=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-const LIB='#3b82f6', ZOOM='#f97316', GREEN='#22c55e', RED='#ef4444', PURPLE='#a855f7', AMBER='#eab308';
-const GRID='rgba(255,255,255,.06)', TICK={color:'#6e7681',font:{size:10}};
-
-function parseNum(s){
-  if(!s||typeof s!=='string')return 0;
-  s=s.trim().replace(/\s+/g,'').replace(/[$]/g,'');
-  if(!s||['#REF!','#VALUE!','N/A','-','#N/A','#¡REF!','#¡VALOR!'].includes(s))return 0;
-  if(s.includes('.')&&s.includes(','))return parseFloat(s.replace(/\./g,'').replace(',','.'))||0;
-  if(s.includes(',')&&!s.includes('.')){const p=s.split(',');if(p.length===2&&p[1].length<=2)return parseFloat(s.replace(',','.'))||0;return parseFloat(s.replace(/,/g,''))||0;}
-  return parseFloat(s)||0;
+function getFbLib(){
+  return {
+    meses: ["Ene", "Feb", "Mar", "Abr", "May", "Jun"],
+    guias: [23, 23, 36, 15, 25, 2],
+    usd: [451.06, 515.39, 535.3, 242.79, 335.18, 55.59],
+    peso: [235.9, 332.4, 387.3, 214.3, 282.4, 51.7],
+    total_guias: 124,
+    total_usd: 2135.32,
+    total_kg: 1504.0,
+    serv: {"Cr\u00e9dito": 109, "Colectar": 15},
+    dest: {"RBN": 34, "VLV": 21, "RVA": 19, "SVZ": 11, "SCB": 10, "PZO": 7, "CBD": 4, "CZE": 3, "RCA": 3, "RSV": 2}
+  };
 }
 
-function riskPill(pct){
-  if(pct===0)return '<span class="rpill r0">✓ OK</span>';
-  if(pct<25) return `<span class="rpill r1">⚠ ${fmt(pct,0)}%</span>`;
-  if(pct<60) return `<span class="rpill r2">🔴 ${fmt(pct,0)}%</span>`;
-  return `<span class="rpill r3">🚨 ${fmt(pct,0)}%</span>`;
+function getFbZoom(){
+  return {
+    meses: ["Ene", "Feb", "Mar", "Abr", "May", "Jun"],
+    guias: [26, 19, 28, 34, 35, 4],
+    usd: [119.07, 180.13, 244.5, 520.9, 677.86, 0.0],
+    peso: [141.8, 85.2, 207.2, 392.7, 314.6, 54.8],
+    total_guias: 146,
+    total_usd: 1742.47,
+    total_kg: 1196.4,
+    serv: {"ENVIO NAC CARGA": 57, "COD NACIONAL": 38, "CASILLERO CORP": 26, "ENVIO NAC 0.250": 25},
+    dest: {"SAN CRISTOBAL": 47, "BARINAS": 16, "CARACAS": 12, "CABIMAS": 8, "EL VIGIA": 8, "PUERTO ORDAZ": 7, "PORLAMAR": 7, "TOVAR": 5, "MERIDA": 5, "VALERA": 4}
+  };
 }
 
-function setEl(id,v){const e=document.getElementById(id);if(e)e.innerHTML=v;}
+const LIB = getFbLib();
+const ZO  = getFbZoom();
+const MESES = LIB.meses;
+const C_LIB = 'rgba(56,189,248,0.85)';
+const C_LIB_B = 'rgba(56,189,248,0.2)';
+const C_ZO  = 'rgba(167,139,250,0.85)';
+const C_ZO_B = 'rgba(167,139,250,0.2)';
+const gridColor = 'rgba(51,65,85,0.6)';
 
-// ── CSV ───────────────────────────────────────────────────────
-function parseCSV(text){
-  const rows=[];let i=0,L=text.length;
-  while(i<L){
-    const row=[];
-    while(i<L&&text[i]!=='\n'){
-      if(text[i]==='"'){let cell='',j=i+1;while(j<L){if(text[j]==='"'&&text[j+1]==='"'){cell+='"';j+=2;}else if(text[j]==='"'){j++;break;}else cell+=text[j++];}row.push(cell);i=j;if(i<L&&text[i]===',')i++;}
-      else{let j=i;while(j<L&&text[j]!==','&&text[j]!=='\n')j++;row.push(text.slice(i,j));i=j;if(i<L&&text[i]===',')i++;}
-    }
-    if(i<L&&text[i]==='\n')i++;
-    if(row.some(c=>c.trim()))rows.push(row);
+const defOpts = {
+  responsive:true,
+  plugins:{legend:{labels:{color:'#94a3b8',font:{size:11}}}},
+  scales:{
+    x:{ticks:{color:'#94a3b8',font:{size:11}},grid:{color:gridColor}},
+    y:{ticks:{color:'#94a3b8',font:{size:11}},grid:{color:gridColor}}
   }
-  return rows;
-}
+};
+const noScales = {responsive:true,plugins:{legend:{labels:{color:'#94a3b8',font:{size:11}}}}};
 
-function findSheet(rows,name){const nu=name.toUpperCase();for(let i=0;i<rows.length;i++){const f=(rows[i][0]||'').trim().toUpperCase();if(f===nu||f.includes(nu))return i;}return -1;}
+// Comparativa Guías
+new Chart(document.getElementById('cmpGuias'),{
+  type:'bar',
+  data:{labels:MESES,datasets:[
+    {label:'Liberty',data:LIB.guias,backgroundColor:C_LIB,borderRadius:4},
+    {label:'Zoom',data:ZO.guias,backgroundColor:C_ZO,borderRadius:4}
+  ]},
+  options:{...defOpts,plugins:{...defOpts.plugins}}
+});
 
-function getSheet(rows,start){
-  let hdr=-1;
-  for(let i=start+1;i<Math.min(start+12,rows.length);i++){const j=rows[i].join('|').toUpperCase();if(j.includes('FECHA')||j.includes('CLIENTE')||j.includes('GUIA')){hdr=i;break;}}
-  if(hdr===-1)return null;
-  const headers=rows[hdr].map(h=>h.trim().toUpperCase());
-  let end=rows.length;
-  for(let i=hdr+2;i<rows.length;i++){const f=(rows[i][0]||'').trim().toUpperCase();const pop=rows[i].filter(c=>c.trim()).length;if(pop<=5&&(f.startsWith('ZO')||f.startsWith('LIB')||f.startsWith('ZOOM')||f.startsWith('LIBERTY'))&&i>hdr+10){end=i;break;}}
-  return{headers,data:rows.slice(hdr+1,end)};
-}
+// Pie distribución
+new Chart(document.getElementById('cmpPie'),{
+  type:'doughnut',
+  data:{labels:['Liberty','Zoom'],datasets:[{data:[LIB.total_guias,ZO.total_guias],backgroundColor:[C_LIB,C_ZO],borderWidth:0}]},
+  options:noScales
+});
 
-function cI(h,...keys){for(const k of keys){const i=h.findIndex(x=>x.includes(k.toUpperCase()));if(i>=0)return i;}return -1;}
+// Comparativa USD
+new Chart(document.getElementById('cmpUsd'),{
+  type:'line',
+  data:{labels:MESES,datasets:[
+    {label:'Liberty USD',data:LIB.usd,borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.1)',tension:.3,fill:true},
+    {label:'Zoom USD',data:ZO.usd,borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,0.1)',tension:.3,fill:true}
+  ]},
+  options:defOpts
+});
 
-// ── PARSERS ───────────────────────────────────────────────────
-function parseLiberty(sheet){
-  const h=sheet.headers;
-  const cF=cI(h,'FECHA'),cD=cI(h,'DESTINATARIO','RECEPTOR','CLIENTE'),cZ=cI(h,'ZONA'),cP=cI(h,'PESO LIBERTY','PESO');
-  const cG=cI(h,'TOTAL $ GUIA','TOTAL $GUIA'),cV=cI(h,'TOTAL FACT $ VENTA','TOTAL FACT');
-  const g=(row,i)=>i>=0&&i<row.length?row[i]:'';
-  const recs=[];
-  for(const row of sheet.data){
-    if(!row||row.length<3)continue;
-    const fecha=g(row,cF).trim();
-    const m=fecha.match(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/)||fecha.match(/(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})/);
-    if(!m)continue;
-    const mes=parseInt(m[2]);
-    const kilos=parseNum(g(row,cP)),flete=parseNum(g(row,cG)),venta=parseNum(g(row,cV));
-    const pct=venta>0?(flete/venta)*100:0;
-    recs.push({fecha,mes,cliente:g(row,cD).trim(),zona:g(row,cZ).trim(),kilos,flete,venta,pct,exc:pct>2&&venta>0});
-  }
-  return recs;
-}
+// Pie USD
+new Chart(document.getElementById('cmpUsdPie'),{
+  type:'doughnut',
+  data:{labels:['Liberty','Zoom'],datasets:[{data:[LIB.total_usd,ZO.total_usd],backgroundColor:[C_LIB,C_ZO],borderWidth:0}]},
+  options:noScales
+});
 
-function parseZoom(sheet){
-  const h=sheet.headers;
-  const cF=cI(h,'FECHA'),cCli=cI(h,'CLIENTE'),cDest=cI(h,'DESTINO');
-  const cPJ=cI(h,'PESO JECEL'),cPZ=cI(h,'PESO ZOOM');
-  const cFBs=cI(h,'TOTAL BS GUIA ZOOM','TOTAL BS GUIA'),cFUsd=cI(h,'TOTAL $ GUIA'),cV=cI(h,'TOTAL FACT $ VENTA'),cTasa=cI(h,'TASA DIA');
-  const g=(row,i)=>i>=0&&i<row.length?row[i]:'';
-  const recs=[];
-  for(const row of sheet.data){
-    if(!row||row.length<3)continue;
-    const fecha=g(row,cF).trim();
-    if(!fecha.match(/\d{2}\/\d{2}\/\d{4}/))continue;
-    const mes=parseInt(fecha.split('/')[1]);
-    const kilos=parseNum(g(row,cPJ))||parseNum(g(row,cPZ));
-    let flete=parseNum(g(row,cFUsd));
-    if(flete===0){const bs=parseNum(g(row,cFBs)),t=parseNum(g(row,cTasa));if(bs>0&&t>0)flete=bs/t;}
-    const venta=parseNum(g(row,cV));
-    const pct=venta>0&&flete>0?(flete/venta)*100:0;
-    recs.push({fecha,mes,cliente:g(row,cCli).trim(),zona:g(row,cDest).trim(),kilos,flete,venta,pct,exc:pct>2&&venta>0});
-  }
-  return recs;
-}
+// Liberty Guías
+new Chart(document.getElementById('libGuias'),{
+  type:'bar',
+  data:{labels:MESES,datasets:[{label:'Guías',data:LIB.guias,backgroundColor:C_LIB,borderRadius:4}]},
+  options:defOpts
+});
 
-// ── COMPUTE ───────────────────────────────────────────────────
-function compute(recs,yearLabel){
-  const totalKilos=recs.reduce((s,r)=>s+r.kilos,0);
-  const totalGuias=recs.length;
-  const totalFlete=recs.reduce((s,r)=>s+r.flete,0);
-  const totalVenta=recs.reduce((s,r)=>s+r.venta,0);
-  const pctGlobal=totalVenta>0?(totalFlete/totalVenta)*100:0;
-  const excRecs=recs.filter(r=>r.exc).sort((a,b)=>b.pct-a.pct);
+// Liberty Servicio
+new Chart(document.getElementById('libServ'),{
+  type:'doughnut',
+  data:{labels:Object.keys(LIB.serv),datasets:[{data:Object.values(LIB.serv),backgroundColor:['#38bdf8','#34d399'],borderWidth:0}]},
+  options:noScales
+});
 
-  const byM={};for(let m=1;m<=12;m++)byM[m]={m,nombre:MN[m-1],kilos:0,flete:0,venta:0,envios:0};
-  for(const r of recs)if(r.mes>=1&&r.mes<=12){byM[r.mes].kilos+=r.kilos;byM[r.mes].flete+=r.flete;byM[r.mes].venta+=r.venta;byM[r.mes].envios++;}
-  const meses=Object.values(byM).filter(x=>x.envios>0);
+// Liberty USD
+new Chart(document.getElementById('libUsd'),{
+  type:'line',
+  data:{labels:MESES,datasets:[{label:'USD',data:LIB.usd,borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.1)',tension:.3,fill:true}]},
+  options:defOpts
+});
 
-  const Z={};
-  for(const r of recs){const z=r.zona||'Sin zona';if(!Z[z])Z[z]={zona:z,kilos:0,envios:0,exc:0,flete:0,venta:0};Z[z].kilos+=r.kilos;Z[z].envios++;Z[z].flete+=r.flete;Z[z].venta+=r.venta;if(r.exc)Z[z].exc++;}
-  const topZonas=Object.values(Z).sort((a,b)=>b.kilos-a.kilos).slice(0,15).map(z=>({...z,pctExc:z.envios>0?z.exc/z.envios*100:0}));
-  const zonasExc=Object.values(Z).filter(z=>z.exc>0).sort((a,b)=>b.exc/b.envios-a.exc/a.envios).map(z=>({...z,pctExc:z.envios>0?z.exc/z.envios*100:0}));
-  const allZonas=Object.values(Z).sort((a,b)=>b.envios-a.envios).map(z=>({...z,pctExc:z.envios>0?z.exc/z.envios*100:0}));
+// Liberty Destinos
+new Chart(document.getElementById('libDest'),{
+  type:'bar',
+  data:{labels:Object.keys(LIB.dest),datasets:[{label:'Guías',data:Object.values(LIB.dest),backgroundColor:'#38bdf8',borderRadius:4}]},
+  options:{...defOpts,indexAxis:'y',scales:{x:{ticks:{color:'#94a3b8',font:{size:10}},grid:{color:gridColor}},y:{ticks:{color:'#94a3b8',font:{size:10}},grid:{color:gridColor}}}}
+});
 
-  const C={};
-  for(const r of recs){const c=r.cliente||'Sin cliente';if(!C[c])C[c]={cliente:c,kilos:0,envios:0,exc:0,flete:0,venta:0};C[c].kilos+=r.kilos;C[c].envios++;C[c].flete+=r.flete;C[c].venta+=r.venta;if(r.exc)C[c].exc++;}
-  const topCli=Object.values(C).sort((a,b)=>b.kilos-a.kilos).slice(0,15);
-  const cliExc=Object.values(C).filter(c=>c.exc>0).sort((a,b)=>b.exc/b.envios-a.exc/a.envios).map(c=>({...c,pctExc:c.envios>0?c.exc/c.envios*100:0}));
+// Zoom Guías
+new Chart(document.getElementById('zoGuias'),{
+  type:'bar',
+  data:{labels:MESES,datasets:[{label:'Guías',data:ZO.guias,backgroundColor:C_ZO,borderRadius:4}]},
+  options:defOpts
+});
 
-  return{totalKilos,totalGuias,totalFlete,totalVenta,pctGlobal,excRecs,meses,topZonas,zonasExc,allZonas,topCli,cliExc};
-}
+// Zoom Servicio
+new Chart(document.getElementById('zoServ'),{
+  type:'doughnut',
+  data:{labels:Object.keys(ZO.serv),datasets:[{data:Object.values(ZO.serv),backgroundColor:['#a78bfa','#f472b6','#34d399','#fb923c'],borderWidth:0}]},
+  options:noScales
+});
 
-// ── CHARTS ────────────────────────────────────────────────────
-let _ch={};
-function killC(id){if(_ch[id]){_ch[id].destroy();delete _ch[id];}}
+// Zoom USD
+new Chart(document.getElementById('zoUsd'),{
+  type:'line',
+  data:{labels:MESES,datasets:[{label:'USD',data:ZO.usd,borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,0.1)',tension:.3,fill:true}]},
+  options:defOpts
+});
 
-Chart.defaults.color=TICK.color;
-
-function combinedChart(L,Z){
-  killC('combined');
-  // Build unified month labels (union of both operators)
-  const allMeses=new Set();
-  L.meses.forEach(m=>allMeses.add(m.m));
-  Z.meses.forEach(m=>allMeses.add(m.m));
-  const sortedM=[...allMeses].sort((a,b)=>a-b);
-  const labels=sortedM.map(m=>MN[m-1]+' 26');
-  const libMap={};L.meses.forEach(m=>libMap[m.m]=m.kilos);
-  const zooMap={};Z.meses.forEach(m=>zooMap[m.m]=m.kilos);
-  const libData=sortedM.map(m=>libMap[m]||0);
-  const zooData=sortedM.map(m=>zooMap[m]||0);
-
-  _ch['combined']=new Chart(document.getElementById('ch-combined'),{
-    type:'bar',
-    data:{labels,datasets:[
-      {label:'LIBERTY',data:libData,backgroundColor:LIB+'cc',borderColor:LIB,borderWidth:1,borderRadius:4,barPercentage:.8,categoryPercentage:.7},
-      {label:'ZOOM',data:zooData,backgroundColor:ZOOM+'cc',borderColor:ZOOM,borderWidth:1,borderRadius:4,barPercentage:.8,categoryPercentage:.7}
-    ]},
-    options:{responsive:true,interaction:{mode:'index',intersect:false},
-      plugins:{legend:{display:false},tooltip:{backgroundColor:'#1c2433',borderColor:'#30363d',borderWidth:1,titleColor:'#e6edf3',bodyColor:'#8b949e',callbacks:{
-        label:ctx=>`${ctx.dataset.label}: ${fmt(ctx.raw,2)} kg`
-      }}},
-      scales:{
-        x:{grid:{color:GRID},ticks:TICK},
-        y:{grid:{color:GRID},ticks:{...TICK,callback:v=>v>=1000?fmt(v/1000,1)+'k':v+' kg'}}
-      }
-    }
-  });
-}
-
-function mesChart(id,meses,color){
-  killC(id);
-  _ch[id]=new Chart(document.getElementById(id),{
-    type:'bar',
-    data:{labels:meses.map(m=>m.nombre),datasets:[
-      {label:'Kilos',data:meses.map(m=>m.kilos),backgroundColor:color+'bb',borderColor:color,borderWidth:1,borderRadius:4,yAxisID:'y'},
-      {label:'Envíos',data:meses.map(m=>m.envios),type:'line',borderColor:PURPLE,backgroundColor:PURPLE+'22',pointBackgroundColor:PURPLE,tension:.4,fill:true,yAxisID:'y2'},
-      {label:'Flete $',data:meses.map(m=>m.flete),type:'line',borderColor:AMBER,backgroundColor:'transparent',pointBackgroundColor:AMBER,tension:.4,borderDash:[4,3],yAxisID:'y3'}
-    ]},
-    options:{responsive:true,interaction:{mode:'index',intersect:false},
-      plugins:{legend:{position:'top',labels:{color:TICK.color,font:{size:11},padding:14,boxWidth:12}},
-        tooltip:{backgroundColor:'#1c2433',borderColor:'#30363d',borderWidth:1,titleColor:'#e6edf3',bodyColor:'#8b949e',
-          callbacks:{label:ctx=>{if(ctx.datasetIndex===0)return 'Kilos: '+fmt(ctx.raw,2)+' kg';if(ctx.datasetIndex===1)return 'Envíos: '+ctx.raw;return 'Flete: $ '+fmt(ctx.raw,2);}}}},
-      scales:{
-        y:{grid:{color:GRID},ticks:TICK},
-        y2:{position:'right',grid:{display:false},ticks:TICK},
-        y3:{display:false}
-      }
-    }
-  });
-}
-
-function barHChart(id,items,kf,vf,color){
-  killC(id);
-  _ch[id]=new Chart(document.getElementById(id),{
-    type:'bar',
-    data:{labels:items.map(x=>kf(x)),datasets:[{label:'Kilos',data:items.map(x=>vf(x)),
-      backgroundColor:items.map(x=>x.exc>0?RED+'bb':color+'99'),
-      borderColor:items.map(x=>x.exc>0?RED:color),
-      borderWidth:1,borderRadius:3}]},
-    options:{responsive:true,indexAxis:'y',
-      plugins:{legend:{display:false},tooltip:{backgroundColor:'#1c2433',borderColor:'#30363d',borderWidth:1,titleColor:'#e6edf3',bodyColor:'#8b949e',
-        callbacks:{label:ctx=>{const z=items[ctx.dataIndex];return[fmt(z.kilos,2)+' kg','Envíos: '+z.envios,'Excedidos: '+z.exc];}}}},
-      scales:{x:{grid:{color:GRID},ticks:TICK},y:{ticks:{...TICK,font:{size:10}}}}
-    }
-  });
-}
-
-function cliChart(id,topCli,color){
-  killC(id);
-  _ch[id]=new Chart(document.getElementById(id),{
-    type:'bar',
-    data:{labels:topCli.map(c=>c.cliente.length>22?c.cliente.slice(0,22)+'…':c.cliente),
-      datasets:[{label:'Kilos',data:topCli.map(c=>c.kilos),backgroundColor:color+'99',borderColor:color,borderWidth:1,borderRadius:3}]},
-    options:{responsive:true,
-      plugins:{legend:{display:false},tooltip:{backgroundColor:'#1c2433',borderColor:'#30363d',borderWidth:1,titleColor:'#e6edf3',bodyColor:'#8b949e',
-        callbacks:{title:ctx=>[topCli[ctx[0].dataIndex].cliente],label:ctx=>{const c=topCli[ctx.dataIndex];return[fmt(c.kilos,2)+' kg','Envíos: '+c.envios,'Flete: $ '+fmt(c.flete,2)];}}}},
-      scales:{y:{grid:{color:GRID},ticks:TICK},x:{ticks:{...TICK,maxRotation:35}}}
-    }
-  });
-}
-
-// ── TABLE HELPERS ─────────────────────────────────────────────
-function excZonasTable(id,zonasExc){
-  const el=document.getElementB
+// Zoom Destinos
+new Chart(document.getElementById('zoDest'),{
+  type:'bar',
+  data:{labels:Object.keys(ZO.dest),datasets:[{label:'Guías',data:Object.values(ZO.dest),backgroundColor:'#a78bfa',borderRadius:4}]},
+  options:{...defOpts,indexAxis:'y',scales:{x:{ticks:{color:'#94a3b8',font:{size:10}},grid:{color:gridColor}},y:{ticks:{color:'#94a3b8',font:{size:10}},grid:{color:gridColor}}}}
+});
+</script>
+</body>
+</html>
