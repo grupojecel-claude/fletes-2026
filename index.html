@@ -153,114 +153,114 @@
 
 <div id="overlay">
   <div class="spinner"></div>
-  <div style="font-size:14px;font-weight:600;">Cargando datos desde Google Drive…</div>
+  <div style="font-size:14px;font-weight:600;">Cargando datos desde Google Driveâ¦</div>
   <p>Leyendo LIB2026 y ZO2026</p>
 </div>
 
 <div class="header">
   <div>
     <h1><span class="dot"></span> Resumen Envios Nacionales 2026</h1>
-    <p>Grupo Jecel C.A. · Control de Fletes · LIBERTY (LIB2026) + ZOOM (ZO2026)</p>
+    <p>Grupo Jecel C.A. Â· Control de Fletes Â· LIBERTY (LIB2026) + ZOOM (ZO2026)</p>
   </div>
   <div class="header-right">
-    <div id="ts-label">—</div>
-    <div>Fuente: <strong>Google Drive</strong> · en vivo</div>
+    <div id="ts-label">â</div>
+    <div>Fuente: <strong>Google Drive</strong> Â· en vivo</div>
   </div>
 </div>
 
 <div class="tabs-bar">
-  <button class="tab-btn active" onclick="showTab('cmp',this)">📊 Comparativa</button>
+  <button class="tab-btn active" onclick="showTab('cmp',this)">ð Comparativa</button>
   <button class="tab-btn" onclick="showTab('lib',this)">LIBERTY <span class="op-pill pill-lib">2026</span></button>
   <button class="tab-btn" onclick="showTab('zoom',this)">ZOOM <span class="op-pill pill-zoom">2026</span></button>
 </div>
 
 <div class="main" id="content" style="display:none">
 
-  <!-- ══ TAB COMPARATIVA ══════════════════════════ -->
+  <!-- ââ TAB COMPARATIVA ââââââââââââââââââââââââââ -->
   <div id="tab-cmp" class="tab-panel active">
 
     <!-- KPI ROW -->
     <div class="kpi-strip" style="margin-top:16px">
       <div class="kpi c-purple">
         <div class="kpi-lbl">Total Kilos Despachados</div>
-        <div class="kpi-val cv-purple" id="kT-kg">—</div>
-        <div class="kpi-sub" id="kT-g">—</div>
+        <div class="kpi-val cv-purple" id="kT-kg">â</div>
+        <div class="kpi-sub" id="kT-g">â</div>
       </div>
       <div class="kpi c-lib">
         <div class="kpi-lbl">Kilos LIBERTY</div>
-        <div class="kpi-val cv-lib" id="kL-kg">—</div>
-        <div class="kpi-sub" id="kL-g">—</div>
+        <div class="kpi-val cv-lib" id="kL-kg">â</div>
+        <div class="kpi-sub" id="kL-g">â</div>
       </div>
       <div class="kpi c-zoom">
         <div class="kpi-lbl">Kilos ZOOM</div>
-        <div class="kpi-val cv-zoom" id="kZ-kg">—</div>
-        <div class="kpi-sub" id="kZ-g">—</div>
+        <div class="kpi-val cv-zoom" id="kZ-kg">â</div>
+        <div class="kpi-sub" id="kZ-g">â</div>
       </div>
       <div class="kpi c-green">
-        <div class="kpi-lbl">Envíos Dentro del Límite</div>
-        <div class="kpi-val cv-green" id="kT-ok">—</div>
-        <div class="kpi-sub" id="kT-okp">—</div>
+        <div class="kpi-lbl">EnvÃ­os Dentro del LÃ­mite</div>
+        <div class="kpi-val cv-green" id="kT-ok">â</div>
+        <div class="kpi-sub" id="kT-okp">â</div>
       </div>
       <div class="kpi c-red">
-        <div class="kpi-lbl">Envíos Excedidos &gt;2%</div>
-        <div class="kpi-val cv-red" id="kT-exc">—</div>
-        <div class="kpi-sub" id="kT-excp">—</div>
+        <div class="kpi-lbl">EnvÃ­os Excedidos &gt;2%</div>
+        <div class="kpi-val cv-red" id="kT-exc">â</div>
+        <div class="kpi-sub" id="kT-excp">â</div>
       </div>
       <div class="kpi c-amber">
         <div class="kpi-lbl">Flete Total Pagado</div>
-        <div class="kpi-val cv-amber" id="kT-flete">—</div>
-        <div class="kpi-sub" id="kT-venta">—</div>
+        <div class="kpi-val cv-amber" id="kT-flete">â</div>
+        <div class="kpi-sub" id="kT-venta">â</div>
       </div>
     </div>
 
     <!-- COMPLIANCE OVERVIEW -->
     <div class="g2" style="margin-bottom:16px">
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dl"></span>LIBERTY — Cumplimiento Regla del 2%</div>
+        <div class="card-hd"><span class="hd-dot dl"></span>LIBERTY â Cumplimiento Regla del 2%</div>
         <div class="comply-wrap">
           <canvas class="comply-canvas" id="ch-cmp-lib-pie"></canvas>
           <div class="comply-stats">
             <div class="cs-row">
               <span class="cs-dot" style="background:var(--green)"></span>
-              <span class="cs-label">Dentro del límite ≤2%</span>
-              <span class="cs-pct" id="cL-ok-pct" style="color:var(--green)">—</span>
-              <span class="cs-cnt" id="cL-ok-cnt">—</span>
+              <span class="cs-label">Dentro del lÃ­mite â¤2%</span>
+              <span class="cs-pct" id="cL-ok-pct" style="color:var(--green)">â</span>
+              <span class="cs-cnt" id="cL-ok-cnt">â</span>
             </div>
             <div class="cs-row">
               <span class="cs-dot" style="background:var(--red)"></span>
               <span class="cs-label">Excedidos &gt;2%</span>
-              <span class="cs-pct" id="cL-exc-pct" style="color:var(--red)">—</span>
-              <span class="cs-cnt" id="cL-exc-cnt">—</span>
+              <span class="cs-pct" id="cL-exc-pct" style="color:var(--red)">â</span>
+              <span class="cs-cnt" id="cL-exc-cnt">â</span>
             </div>
           </div>
         </div>
       </div>
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dz"></span>ZOOM — Cumplimiento Regla del 2%</div>
+        <div class="card-hd"><span class="hd-dot dz"></span>ZOOM â Cumplimiento Regla del 2%</div>
         <div class="comply-wrap">
           <canvas class="comply-canvas" id="ch-cmp-zoom-pie"></canvas>
           <div class="comply-stats">
             <div class="cs-row">
               <span class="cs-dot" style="background:var(--green)"></span>
-              <span class="cs-label">Dentro del límite ≤2%</span>
-              <span class="cs-pct" id="cZ-ok-pct" style="color:var(--green)">—</span>
-              <span class="cs-cnt" id="cZ-ok-cnt">—</span>
+              <span class="cs-label">Dentro del lÃ­mite â¤2%</span>
+              <span class="cs-pct" id="cZ-ok-pct" style="color:var(--green)">â</span>
+              <span class="cs-cnt" id="cZ-ok-cnt">â</span>
             </div>
             <div class="cs-row">
               <span class="cs-dot" style="background:var(--red)"></span>
               <span class="cs-label">Excedidos &gt;2%</span>
-              <span class="cs-pct" id="cZ-exc-pct" style="color:var(--red)">—</span>
-              <span class="cs-cnt" id="cZ-exc-cnt">—</span>
+              <span class="cs-pct" id="cZ-exc-pct" style="color:var(--red)">â</span>
+              <span class="cs-cnt" id="cZ-exc-cnt">â</span>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- GRÁFICO COMBINADO LIBERTY vs ZOOM -->
+    <!-- GRÃFICO COMBINADO LIBERTY vs ZOOM -->
     <div class="card">
-      <div class="card-hd"><span class="hd-dot dl"></span>Kilos por Mes · LIBERTY vs ZOOM</div>
-      <div class="card-sub">Evolución mensual del volumen despachado por operador logístico</div>
+      <div class="card-hd"><span class="hd-dot dl"></span>Kilos por Mes Â· LIBERTY vs ZOOM</div>
+      <div class="card-sub">EvoluciÃ³n mensual del volumen despachado por operador logÃ­stico</div>
       <div class="legend">
         <div class="legend-item"><div class="legend-dot" style="background:var(--lib)"></div>LIBERTY</div>
         <div class="legend-item"><div class="legend-dot" style="background:var(--zoom)"></div>ZOOM</div>
@@ -271,156 +271,156 @@
     <!-- ALERTAS COMPARATIVA -->
     <div class="g2">
       <div class="alert-box">
-        <div class="alert-title">🚨 Zonas LIBERTY con excedidos &gt;2%</div>
-        <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>Envíos</th><th>Excedidos</th><th>Nivel</th></tr></thead><tbody id="tb-cmp-lib-z"></tbody></table></div>
+        <div class="alert-title">ð¨ Zonas LIBERTY con excedidos &gt;2%</div>
+        <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>EnvÃ­os</th><th>Excedidos</th><th>Nivel</th></tr></thead><tbody id="tb-cmp-lib-z"></tbody></table></div>
       </div>
       <div class="alert-box zoom">
-        <div class="alert-title">🚨 Destinos ZOOM con excedidos &gt;2%</div>
-        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>Envíos</th><th>Excedidos</th><th>Nivel</th></tr></thead><tbody id="tb-cmp-zoom-z"></tbody></table></div>
+        <div class="alert-title">ð¨ Destinos ZOOM con excedidos &gt;2%</div>
+        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>EnvÃ­os</th><th>Excedidos</th><th>Nivel</th></tr></thead><tbody id="tb-cmp-zoom-z"></tbody></table></div>
       </div>
     </div>
 
     <!-- RESUMEN % FLETE -->
     <div class="g2">
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dl"></span>LIBERTY 2026 — Resumen Financiero</div>
+        <div class="card-hd"><span class="hd-dot dl"></span>LIBERTY 2026 â Resumen Financiero</div>
         <table><tbody>
-          <tr><td style="color:var(--text2)">Ventas facturadas</td><td class="num" id="rL-v">—</td></tr>
-          <tr><td style="color:var(--text2)">Flete pagado</td><td class="num" id="rL-f">—</td></tr>
-          <tr><td style="color:var(--text2)">% Flete global</td><td class="num" id="rL-p" style="font-weight:700">—</td></tr>
-          <tr><td style="color:var(--text2)">Guías correctas</td><td class="num" id="rL-ok">—</td></tr>
-          <tr><td style="color:var(--text2)">Guías excedidas</td><td class="num cv-red" id="rL-exc" style="font-weight:700">—</td></tr>
+          <tr><td style="color:var(--text2)">Ventas facturadas</td><td class="num" id="rL-v">â</td></tr>
+          <tr><td style="color:var(--text2)">Flete pagado</td><td class="num" id="rL-f">â</td></tr>
+          <tr><td style="color:var(--text2)">% Flete global</td><td class="num" id="rL-p" style="font-weight:700">â</td></tr>
+          <tr><td style="color:var(--text2)">GuÃ­as correctas</td><td class="num" id="rL-ok">â</td></tr>
+          <tr><td style="color:var(--text2)">GuÃ­as excedidas</td><td class="num cv-red" id="rL-exc" style="font-weight:700">â</td></tr>
         </tbody></table>
       </div>
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dz"></span>ZOOM 2026 — Resumen Financiero</div>
+        <div class="card-hd"><span class="hd-dot dz"></span>ZOOM 2026 â Resumen Financiero</div>
         <table><tbody>
-          <tr><td style="color:var(--text2)">Ventas facturadas</td><td class="num" id="rZ-v">—</td></tr>
-          <tr><td style="color:var(--text2)">Flete pagado</td><td class="num" id="rZ-f">—</td></tr>
-          <tr><td style="color:var(--text2)">% Flete global</td><td class="num" id="rZ-p" style="font-weight:700">—</td></tr>
-          <tr><td style="color:var(--text2)">Guías correctas</td><td class="num" id="rZ-ok">—</td></tr>
-          <tr><td style="color:var(--text2)">Guías excedidas</td><td class="num cv-red" id="rZ-exc" style="font-weight:700">—</td></tr>
+          <tr><td style="color:var(--text2)">Ventas facturadas</td><td class="num" id="rZ-v">â</td></tr>
+          <tr><td style="color:var(--text2)">Flete pagado</td><td class="num" id="rZ-f">â</td></tr>
+          <tr><td style="color:var(--text2)">% Flete global</td><td class="num" id="rZ-p" style="font-weight:700">â</td></tr>
+          <tr><td style="color:var(--text2)">GuÃ­as correctas</td><td class="num" id="rZ-ok">â</td></tr>
+          <tr><td style="color:var(--text2)">GuÃ­as excedidas</td><td class="num cv-red" id="rZ-exc" style="font-weight:700">â</td></tr>
         </tbody></table>
       </div>
     </div>
 
   </div>
 
-  <!-- ══ TAB LIBERTY ══════════════════════════════ -->
+  <!-- ââ TAB LIBERTY ââââââââââââââââââââââââââââââ -->
   <div id="tab-lib" class="tab-panel">
     <div class="kpi-strip" style="margin-top:16px">
-      <div class="kpi c-lib"><div class="kpi-lbl">Total Kilos</div><div class="kpi-val cv-lib" id="lL-kg">—</div><div class="kpi-sub">LIBERTY 2026</div></div>
-      <div class="kpi c-purple"><div class="kpi-lbl">Guías</div><div class="kpi-val cv-purple" id="lL-g">—</div><div class="kpi-sub">envíos procesados</div></div>
-      <div class="kpi c-green"><div class="kpi-lbl">Flete Pagado</div><div class="kpi-val cv-green" id="lL-f">—</div><div class="kpi-sub">USD total</div></div>
-      <div class="kpi c-amber"><div class="kpi-lbl">Ventas</div><div class="kpi-val cv-amber" id="lL-v">—</div><div class="kpi-sub">USD facturado</div></div>
-      <div class="kpi c-lib" id="lL-pk"><div class="kpi-lbl">% Flete Global</div><div class="kpi-val cv-lib" id="lL-p">—</div><div class="kpi-sub">sobre ventas</div></div>
-      <div class="kpi c-red"><div class="kpi-lbl">Excedidos &gt;2%</div><div class="kpi-val cv-red" id="lL-e">—</div><div class="kpi-sub" id="lL-es">—</div></div>
+      <div class="kpi c-lib"><div class="kpi-lbl">Total Kilos</div><div class="kpi-val cv-lib" id="lL-kg">â</div><div class="kpi-sub">LIBERTY 2026</div></div>
+      <div class="kpi c-purple"><div class="kpi-lbl">GuÃ­as</div><div class="kpi-val cv-purple" id="lL-g">â</div><div class="kpi-sub">envÃ­os procesados</div></div>
+      <div class="kpi c-green"><div class="kpi-lbl">Flete Pagado</div><div class="kpi-val cv-green" id="lL-f">â</div><div class="kpi-sub">USD total</div></div>
+      <div class="kpi c-amber"><div class="kpi-lbl">Ventas</div><div class="kpi-val cv-amber" id="lL-v">â</div><div class="kpi-sub">USD facturado</div></div>
+      <div class="kpi c-lib" id="lL-pk"><div class="kpi-lbl">% Flete Global</div><div class="kpi-val cv-lib" id="lL-p">â</div><div class="kpi-sub">sobre ventas</div></div>
+      <div class="kpi c-red"><div class="kpi-lbl">Excedidos &gt;2%</div><div class="kpi-val cv-red" id="lL-e">â</div><div class="kpi-sub" id="lL-es">â</div></div>
     </div>
     <!-- COMPLIANCE LIBERTY -->
     <div class="card" style="margin-bottom:16px">
-      <div class="card-hd"><span class="hd-dot dg"></span>Cumplimiento Regla del 2% — LIBERTY 2026</div>
+      <div class="card-hd"><span class="hd-dot dg"></span>Cumplimiento Regla del 2% â LIBERTY 2026</div>
       <div class="comply-wrap">
         <canvas class="comply-canvas" id="ch-lib-pie"></canvas>
         <div class="comply-stats">
           <div class="cs-row">
             <span class="cs-dot" style="background:var(--green)"></span>
-            <span class="cs-label">Envíos dentro del límite ≤2%</span>
-            <span class="cs-pct" id="lL-ok-pct" style="color:var(--green)">—</span>
-            <span class="cs-cnt" id="lL-ok-cnt">—</span>
+            <span class="cs-label">EnvÃ­os dentro del lÃ­mite â¤2%</span>
+            <span class="cs-pct" id="lL-ok-pct" style="color:var(--green)">â</span>
+            <span class="cs-cnt" id="lL-ok-cnt">â</span>
           </div>
           <div class="cs-row">
             <span class="cs-dot" style="background:var(--red)"></span>
-            <span class="cs-label">Envíos excedidos &gt;2%</span>
-            <span class="cs-pct" id="lL-exc-pct" style="color:var(--red)">—</span>
-            <span class="cs-cnt" id="lL-exc-cnt">—</span>
+            <span class="cs-label">EnvÃ­os excedidos &gt;2%</span>
+            <span class="cs-pct" id="lL-exc-pct" style="color:var(--red)">â</span>
+            <span class="cs-cnt" id="lL-exc-cnt">â</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dl"></span>Kilos por Mes — LIBERTY 2026</div><canvas id="ch-lib-mes" height="90"></canvas></div>
+    <div class="card"><div class="card-hd"><span class="hd-dot dl"></span>Kilos por Mes â LIBERTY 2026</div><canvas id="ch-lib-mes" height="90"></canvas></div>
     <div class="alert-box">
-      <div class="alert-title">🚨 Control de Fletes LIBERTY — Excedidos del Parámetro (&gt;2%)</div>
+      <div class="alert-title">ð¨ Control de Fletes LIBERTY â Excedidos del ParÃ¡metro (&gt;2%)</div>
       <div class="alert-grid">
-        <div><div class="alert-sub">📍 Zonas con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-z-exc"></tbody></table></div></div>
-        <div><div class="alert-sub">👤 Clientes con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Cliente</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-c-exc"></tbody></table></div></div>
+        <div><div class="alert-sub">ð Zonas con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-z-exc"></tbody></table></div></div>
+        <div><div class="alert-sub">ð¤ Clientes con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Cliente</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-c-exc"></tbody></table></div></div>
       </div>
     </div>
     <div class="card" style="margin-bottom:16px"><div class="card-hd"><span class="hd-dot dl"></span>Zonas por Kilos <span style="font-size:10px;color:var(--text3);font-weight:400">(rojo = con excedidos)</span></div><canvas id="ch-lib-zonas" height="200"></canvas></div>
     <!-- SPLIT ZONAS -->
     <div class="g2" style="margin-bottom:16px">
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dr"></span>🔴 Zonas con Excedidos &gt;2% <span id="lL-z-exc-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
-        <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>Envíos</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-z-exc-split"></tbody></table></div>
+        <div class="card-hd"><span class="hd-dot dr"></span>ð´ Zonas con Excedidos &gt;2% <span id="lL-z-exc-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
+        <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>EnvÃ­os</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-z-exc-split"></tbody></table></div>
       </div>
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dg"></span>✅ Zonas Dentro del Límite ≤2% <span id="lL-z-ok-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
-        <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>Envíos</th><th>Kilos</th><th>Estado</th></tr></thead><tbody id="tb-lib-z-ok-split"></tbody></table></div>
+        <div class="card-hd"><span class="hd-dot dg"></span>â Zonas Dentro del LÃ­mite â¤2% <span id="lL-z-ok-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
+        <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>EnvÃ­os</th><th>Kilos</th><th>Estado</th></tr></thead><tbody id="tb-lib-z-ok-split"></tbody></table></div>
       </div>
     </div>
     <div class="card"><div class="card-hd"><span class="hd-dot dl"></span>Top 15 Clientes por Kilos</div><canvas id="ch-lib-cli" height="80"></canvas></div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dr"></span>Detalle Guías Excedidas — LIBERTY 2026</div><div class="tbl-wrap"><table><thead><tr><th>Fecha</th><th>Cliente</th><th>Zona</th><th class="num">Flete $</th><th class="num">Venta $</th><th class="num">% Flete</th></tr></thead><tbody id="tb-lib-exc"></tbody></table></div></div>
+    <div class="card"><div class="card-hd"><span class="hd-dot dr"></span>Detalle GuÃ­as Excedidas â LIBERTY 2026</div><div class="tbl-wrap"><table><thead><tr><th>Fecha</th><th>Cliente</th><th>Zona</th><th class="num">Flete $</th><th class="num">Venta $</th><th class="num">% Flete</th></tr></thead><tbody id="tb-lib-exc"></tbody></table></div></div>
   </div>
 
-  <!-- ══ TAB ZOOM ════════════════════════════════ -->
+  <!-- ââ TAB ZOOM ââââââââââââââââââââââââââââââââ -->
   <div id="tab-zoom" class="tab-panel">
     <div class="kpi-strip" style="margin-top:16px">
-      <div class="kpi c-zoom"><div class="kpi-lbl">Total Kilos</div><div class="kpi-val cv-zoom" id="lZ-kg">—</div><div class="kpi-sub">ZOOM 2026</div></div>
-      <div class="kpi c-purple"><div class="kpi-lbl">Guías</div><div class="kpi-val cv-purple" id="lZ-g">—</div><div class="kpi-sub">envíos procesados</div></div>
-      <div class="kpi c-green"><div class="kpi-lbl">Flete Pagado</div><div class="kpi-val cv-green" id="lZ-f">—</div><div class="kpi-sub">USD total</div></div>
-      <div class="kpi c-amber"><div class="kpi-lbl">Ventas</div><div class="kpi-val cv-amber" id="lZ-v">—</div><div class="kpi-sub">USD facturado</div></div>
-      <div class="kpi c-zoom" id="lZ-pk"><div class="kpi-lbl">% Flete Global</div><div class="kpi-val cv-zoom" id="lZ-p">—</div><div class="kpi-sub">sobre ventas</div></div>
-      <div class="kpi c-red"><div class="kpi-lbl">Excedidos &gt;2%</div><div class="kpi-val cv-red" id="lZ-e">—</div><div class="kpi-sub" id="lZ-es">—</div></div>
+      <div class="kpi c-zoom"><div class="kpi-lbl">Total Kilos</div><div class="kpi-val cv-zoom" id="lZ-kg">â</div><div class="kpi-sub">ZOOM 2026</div></div>
+      <div class="kpi c-purple"><div class="kpi-lbl">GuÃ­as</div><div class="kpi-val cv-purple" id="lZ-g">â</div><div class="kpi-sub">envÃ­os procesados</div></div>
+      <div class="kpi c-green"><div class="kpi-lbl">Flete Pagado</div><div class="kpi-val cv-green" id="lZ-f">â</div><div class="kpi-sub">USD total</div></div>
+      <div class="kpi c-amber"><div class="kpi-lbl">Ventas</div><div class="kpi-val cv-amber" id="lZ-v">â</div><div class="kpi-sub">USD facturado</div></div>
+      <div class="kpi c-zoom" id="lZ-pk"><div class="kpi-lbl">% Flete Global</div><div class="kpi-val cv-zoom" id="lZ-p">â</div><div class="kpi-sub">sobre ventas</div></div>
+      <div class="kpi c-red"><div class="kpi-lbl">Excedidos &gt;2%</div><div class="kpi-val cv-red" id="lZ-e">â</div><div class="kpi-sub" id="lZ-es">â</div></div>
     </div>
     <!-- COMPLIANCE ZOOM -->
     <div class="card" style="margin-bottom:16px">
-      <div class="card-hd"><span class="hd-dot dg"></span>Cumplimiento Regla del 2% — ZOOM 2026</div>
+      <div class="card-hd"><span class="hd-dot dg"></span>Cumplimiento Regla del 2% â ZOOM 2026</div>
       <div class="comply-wrap">
         <canvas class="comply-canvas" id="ch-zoom-pie"></canvas>
         <div class="comply-stats">
           <div class="cs-row">
             <span class="cs-dot" style="background:var(--green)"></span>
-            <span class="cs-label">Envíos dentro del límite ≤2%</span>
-            <span class="cs-pct" id="lZ-ok-pct" style="color:var(--green)">—</span>
-            <span class="cs-cnt" id="lZ-ok-cnt">—</span>
+            <span class="cs-label">EnvÃ­os dentro del lÃ­mite â¤2%</span>
+            <span class="cs-pct" id="lZ-ok-pct" style="color:var(--green)">â</span>
+            <span class="cs-cnt" id="lZ-ok-cnt">â</span>
           </div>
           <div class="cs-row">
             <span class="cs-dot" style="background:var(--red)"></span>
-            <span class="cs-label">Envíos excedidos &gt;2%</span>
-            <span class="cs-pct" id="lZ-exc-pct" style="color:var(--red)">—</span>
-            <span class="cs-cnt" id="lZ-exc-cnt">—</span>
+            <span class="cs-label">EnvÃ­os excedidos &gt;2%</span>
+            <span class="cs-pct" id="lZ-exc-pct" style="color:var(--red)">â</span>
+            <span class="cs-cnt" id="lZ-exc-cnt">â</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="note">⚠️ <strong>ZOOM 2026:</strong> <code>TOTAL $ GUIA</code> tiene <code>#REF!</code> en varios registros. Flete calculado como <strong>BS GUIA ÷ TASA DÍA</strong>.</div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dz"></span>Kilos por Mes — ZOOM 2026</div><canvas id="ch-zoom-mes" height="90"></canvas></div>
+    <div class="note">â ï¸ <strong>ZOOM 2026:</strong> <code>TOTAL $ GUIA</code> tiene <code>#REF!</code> en varios registros. Flete calculado como <strong>BS GUIA Ã· TASA DÃA</strong>.</div>
+    <div class="card"><div class="card-hd"><span class="hd-dot dz"></span>Kilos por Mes â ZOOM 2026</div><canvas id="ch-zoom-mes" height="90"></canvas></div>
     <div class="alert-box zoom">
-      <div class="alert-title">🚨 Control de Fletes ZOOM — Excedidos del Parámetro (&gt;2%)</div>
+      <div class="alert-title">ð¨ Control de Fletes ZOOM â Excedidos del ParÃ¡metro (&gt;2%)</div>
       <div class="alert-grid">
-        <div><div class="alert-sub">📍 Destinos con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-z-exc"></tbody></table></div></div>
-        <div><div class="alert-sub">👤 Clientes con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Cliente</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-c-exc"></tbody></table></div></div>
+        <div><div class="alert-sub">ð Destinos con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-z-exc"></tbody></table></div></div>
+        <div><div class="alert-sub">ð¤ Clientes con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Cliente</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-c-exc"></tbody></table></div></div>
       </div>
     </div>
     <div class="card" style="margin-bottom:16px"><div class="card-hd"><span class="hd-dot dz"></span>Destinos por Kilos <span style="font-size:10px;color:var(--text3);font-weight:400">(rojo = con excedidos)</span></div><canvas id="ch-zoom-dest" height="200"></canvas></div>
     <!-- SPLIT DESTINOS -->
     <div class="g2" style="margin-bottom:16px">
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dr"></span>🔴 Destinos con Excedidos &gt;2% <span id="lZ-z-exc-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
-        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>Envíos</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-z-exc-split"></tbody></table></div>
+        <div class="card-hd"><span class="hd-dot dr"></span>ð´ Destinos con Excedidos &gt;2% <span id="lZ-z-exc-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
+        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>EnvÃ­os</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-z-exc-split"></tbody></table></div>
       </div>
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dg"></span>✅ Destinos Dentro del Límite ≤2% <span id="lZ-z-ok-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
-        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>Envíos</th><th>Kilos</th><th>Estado</th></tr></thead><tbody id="tb-zoom-z-ok-split"></tbody></table></div>
+        <div class="card-hd"><span class="hd-dot dg"></span>â Destinos Dentro del LÃ­mite â¤2% <span id="lZ-z-ok-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
+        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>EnvÃ­os</th><th>Kilos</th><th>Estado</th></tr></thead><tbody id="tb-zoom-z-ok-split"></tbody></table></div>
       </div>
     </div>
     <div class="card"><div class="card-hd"><span class="hd-dot dz"></span>Top 15 Clientes por Kilos</div><canvas id="ch-zoom-cli" height="80"></canvas></div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dr"></span>Detalle Guías Excedidas — ZOOM 2026</div><div class="tbl-wrap"><table><thead><tr><th>Fecha</th><th>Cliente</th><th>Destino</th><th class="num">Flete $</th><th class="num">Venta $</th><th class="num">% Flete</th></tr></thead><tbody id="tb-zoom-exc"></tbody></table></div></div>
+    <div class="card"><div class="card-hd"><span class="hd-dot dr"></span>Detalle GuÃ­as Excedidas â ZOOM 2026</div><div class="tbl-wrap"><table><thead><tr><th>Fecha</th><th>Cliente</th><th>Destino</th><th class="num">Flete $</th><th class="num">Venta $</th><th class="num">% Flete</th></tr></thead><tbody id="tb-zoom-exc"></tbody></table></div></div>
   </div>
 
 </div>
 
 <script>
-// ── TABS ──────────────────────────────────────────────────────
+// ââ TABS ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function showTab(id,btn){
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
@@ -429,8 +429,8 @@ function showTab(id,btn){
   setTimeout(()=>Object.values(_ch).forEach(c=>c&&c.resize()),60);
 }
 
-// ── UTILS ─────────────────────────────────────────────────────
-const fmt=(v,d=2)=>isNaN(v)||v==null?'—':new Intl.NumberFormat('es-VE',{minimumFractionDigits:d,maximumFractionDigits:d}).format(v);
+// ââ UTILS âââââââââââââââââââââââââââââââââââââââââââââââââââââ
+const fmt=(v,d=2)=>isNaN(v)||v==null?'â':new Intl.NumberFormat('es-VE',{minimumFractionDigits:d,maximumFractionDigits:d}).format(v);
 const fmtK=v=>v>=1000000?fmt(v/1000000,1)+'M':v>=1000?fmt(v/1000,1)+'k':fmt(v,0);
 const MN=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
 const LIB='#3b82f6', ZOOM='#f97316', GREEN='#22c55e', RED='#ef4444', PURPLE='#a855f7', AMBER='#eab308';
@@ -439,22 +439,22 @@ const GRID='rgba(255,255,255,.06)', TICK={color:'#6e7681',font:{size:10}};
 function parseNum(s){
   if(!s||typeof s!=='string')return 0;
   s=s.trim().replace(/\s+/g,'').replace(/[$]/g,'');
-  if(!s||['#REF!','#VALUE!','N/A','-','#N/A','#¡REF!','#¡VALOR!'].includes(s))return 0;
+  if(!s||['#REF!','#VALUE!','N/A','-','#N/A','#Â¡REF!','#Â¡VALOR!'].includes(s))return 0;
   if(s.includes('.')&&s.includes(','))return parseFloat(s.replace(/\./g,'').replace(',','.'))||0;
   if(s.includes(',')&&!s.includes('.')){const p=s.split(',');if(p.length===2&&p[1].length<=2)return parseFloat(s.replace(',','.'))||0;return parseFloat(s.replace(/,/g,''))||0;}
   return parseFloat(s)||0;
 }
 
 function riskPill(pct){
-  if(pct===0)return '<span class="rpill r0">✓ OK</span>';
-  if(pct<25) return `<span class="rpill r1">⚠ ${fmt(pct,0)}%</span>`;
-  if(pct<60) return `<span class="rpill r2">🔴 ${fmt(pct,0)}%</span>`;
-  return `<span class="rpill r3">🚨 ${fmt(pct,0)}%</span>`;
+  if(pct===0)return '<span class="rpill r0">â OK</span>';
+  if(pct<25) return `<span class="rpill r1">â  ${fmt(pct,0)}%</span>`;
+  if(pct<60) return `<span class="rpill r2">ð´ ${fmt(pct,0)}%</span>`;
+  return `<span class="rpill r3">ð¨ ${fmt(pct,0)}%</span>`;
 }
 
 function setEl(id,v){const e=document.getElementById(id);if(e)e.innerHTML=v;}
 
-// ── CSV ───────────────────────────────────────────────────────
+// ââ CSV âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function parseCSV(text){
   const rows=[];let i=0,L=text.length;
   while(i<L){
@@ -483,7 +483,7 @@ function getSheet(rows,start){
 
 function cI(h,...keys){for(const k of keys){const i=h.findIndex(x=>x.includes(k.toUpperCase()));if(i>=0)return i;}return -1;}
 
-// ── PARSERS ───────────────────────────────────────────────────
+// ââ PARSERS âââââââââââââââââââââââââââââââââââââââââââââââââââ
 function parseLiberty(sheet){
   const h=sheet.headers;
   const cF=cI(h,'FECHA'),cD=cI(h,'DESTINATARIO','RECEPTOR','CLIENTE'),cZ=cI(h,'ZONA'),cP=cI(h,'PESO LIBERTY','PESO');
@@ -525,7 +525,7 @@ function parseZoom(sheet){
   return recs;
 }
 
-// ── COMPUTE ───────────────────────────────────────────────────
+// ââ COMPUTE âââââââââââââââââââââââââââââââââââââââââââââââââââ
 function compute(recs,yearLabel){
   const totalKilos=recs.reduce((s,r)=>s+r.kilos,0);
   const totalGuias=recs.length;
@@ -566,7 +566,7 @@ function compute(recs,yearLabel){
   return{totalKilos,totalGuias,totalFlete,totalVenta,pctGlobal,excRecs,meses,topZonas,zonasExc,allZonas,topCli,cliExc};
 }
 
-// ── CHARTS ────────────────────────────────────────────────────
+// ââ CHARTS ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 const _ch={};
 function killC(id){if(_ch[id]){_ch[id].destroy();_ch[id]=null;}}
 
@@ -614,7 +614,7 @@ function donutChart(id,okCount,excCount){
   const total=okCount+excCount;if(!total)return;
   _ch[id]=new Chart(el,{
     type:'doughnut',
-    data:{labels:['Dentro ≤2%','Excedidos >2%'],
+    data:{labels:['Dentro â¤2%','Excedidos >2%'],
       datasets:[{data:[okCount,excCount],backgroundColor:[GREEN+'cc',RED+'cc'],
         borderColor:[GREEN,RED],borderWidth:2,hoverOffset:6}]},
     options:{responsive:false,cutout:'68%',
@@ -625,10 +625,10 @@ function donutChart(id,okCount,excCount){
   });
 }
 
-// ── TABLE HELPERS ─────────────────────────────────────────────
+// ââ TABLE HELPERS âââââââââââââââââââââââââââââââââââââââââââââ
 function excZonasTable(id,data){
   const el=document.getElementById(id);if(!el)return;
-  if(!data.length){el.innerHTML='<tr><td colspan="4" style="color:var(--text3);text-align:center;padding:12px">— Sin excedidos —</td></tr>';return;}
+  if(!data.length){el.innerHTML='<tr><td colspan="4" style="color:var(--text3);text-align:center;padding:12px">â Sin excedidos â</td></tr>';return;}
   el.innerHTML=data.slice(0,8).map(z=>`<tr><td><strong>${z.zona}</strong></td><td class="num">${z.envios}</td><td class="num" style="color:var(--red)">${z.exc}</td><td>${riskPill(z.pctExc)}</td></tr>`).join('');
 }
 
@@ -640,14 +640,14 @@ function splitZonasTable(idExc,idOk,allZonas,cntExcEl,cntOkEl){
   if(ce)ce.textContent=`(${excZ.length})`;
   if(co)co.textContent=`(${okZ.length})`;
   eE.innerHTML=!excZ.length
-    ?'<tr><td colspan="4" style="text-align:center;color:var(--text3);padding:12px">✅ Sin destinos excedidos</td></tr>'
+    ?'<tr><td colspan="4" style="text-align:center;color:var(--text3);padding:12px">â Sin destinos excedidos</td></tr>'
     :excZ.map(z=>`<tr><td><strong>${z.zona}</strong></td><td class="num">${z.envios}</td><td class="num" style="color:var(--red);font-weight:700">${z.exc}</td><td>${riskPill(z.pctExc)}</td></tr>`).join('');
   eO.innerHTML=!okZ.length
-    ?'<tr><td colspan="4" style="text-align:center;color:var(--text3);padding:12px">—</td></tr>'
-    :okZ.map(z=>`<tr><td><strong>${z.zona}</strong></td><td class="num">${z.envios}</td><td class="num">${fmt(z.kilos,1)} kg</td><td><span class="badge ok">✅ OK</span></td></tr>`).join('');
+    ?'<tr><td colspan="4" style="text-align:center;color:var(--text3);padding:12px">â</td></tr>'
+    :okZ.map(z=>`<tr><td><strong>${z.zona}</strong></td><td class="num">${z.envios}</td><td class="num">${fmt(z.kilos,1)} kg</td><td><span class="badge ok">â OK</span></td></tr>`).join('');
 }
 
-// ── RENDER ────────────────────────────────────────────────────
+// ââ RENDER ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function render(L,Z){
   const ts=new Date();
   setEl('ts-label',`Actualizado ${ts.toLocaleDateString('es-VE')} ${ts.toLocaleTimeString('es-VE',{hour:'2-digit',minute:'2-digit'})}`);
@@ -756,16 +756,16 @@ function render(L,Z){
   document.getElementById('overlay').style.display='none';
 }
 
-// ── FETCH & INIT ──────────────────────────────────────────────
+// ââ FETCH & INIT ââââââââââââââââââââââââââââââââââââââââââââââ
 const SHEET_ID='1TWWUYom3G7eB3tjaS_5d1stTvPICPujz';
 const LIB_URL=`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=LIB2026`;
 const ZOOM_URL=`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=ZO2026`;
 
-async function getFbLib(){
-  return {"totalKilos":1376.11,"totalGuias":128,"totalFlete":2167.75,"totalVenta":159458.88,"pctGlobal":1.3594,"excRecs":[{"fecha":"2026-02-03","mes":2,"cliente":"ELECTRONICA VINVECA","zona":"","kilos":0,"flete":27.588,"venta":238,"pct":11.5916,"exc":true},{"fecha":"2026-02-03","mes":2,"cliente":"ELECTRONICA VINVECA","zona":"","kilos":0,"flete":27.588,"venta":238,"pct":11.5916,"exc":true},{"fecha":"2026-03-17","mes":3,"cliente":"FRANCISCO ZAMBRANO","zona":"","kilos":0.25,"flete":1.0879,"venta":15.9,"pct":6.8422,"exc":true},{"fecha":"2026-02-23","mes":2,"cliente":"MIGUEL TOUMA","zona":"","kilos":0,"flete":12.8096,"venta":261.6,"pct":4.8966,"exc":true},{"fecha":"2026-03-19","mes":3,"cliente":"DANIEL CASAS","zona":"","kilos":0,"flete":15.0891,"venta":339.5,"pct":4.4445,"exc":true},{"fecha":"2026-01-14","mes":1,"cliente":"Electrónica Vinveca","zona":"","kilos":0,"flete":16.6297,"venta":418.7,"pct":3.9717,"exc":true},{"fecha":"2026-03-24","mes":3,"cliente":"KALOO ELECTRONICS","zona":"","kilos":0,"flete":13.3674,"venta":364.1,"pct":3.6714,"exc":true},{"fecha":"2026-02-18","mes":2,"cliente":"DANIEL CASAS","zona":"","kilos":0,"flete":28.2352,"venta":794,"pct":3.5561,"exc":true},{"fecha":"2026-01-27","mes":1,"cliente":"FRANCISCO ZAMBRANO","zona":"","kilos":4.7,"flete":5.8056,"venta":175,"pct":3.3175,"exc":true},{"fecha":"2026-01-30","mes":1,"cliente":"ROGELIO RODRIGUEZ","zona":"","kilos":0,"flete":19.9873,"venta":622.5,"pct":3.2108,"exc":true},{"fecha":"2026-03-24","mes":3,"cliente":"JORGE MONSALVES","zona":"","kilos":0,"flete":37.1848,"venta":1194,"pct":3.1143,"exc":true},{"fecha":"2026-03-24","mes":3,"cliente":"LUIS GABRIEL SALCEDO QUINTERO","zona":"","kilos":0,"flete":37.1848,"venta":1194,"pct":3.1143,"exc":true},{"fecha":"2026-01-30","mes":1,"cliente":"DANIEL CASAS","zona":"","kilos":0,"flete":27.9608,"venta":1036,"pct":2.6989,"exc":true},{"fecha":"2026-01-30","mes":1,"cliente":"ROGELIO RODRIGUEZ","zona":"","kilos":0,"flete":27.9608,"venta":1036,"pct":2.6989,"exc":true},{"fecha":"2026-04-20","mes":4,"cliente":"DANIEL CASAS","zona":"","kilos":0,"flete":15.9065,"venta":639.5,"pct":2.4873,"exc":true},{"fecha":"2026-01-30","mes":1,"cliente":"ROGELIO RODRIGUEZ","zona":"","kilos":0,"flete":39.1318,"venta":1618.5,"pct":2.4178,"exc":true},{"fecha":"2026-03-06","mes":3,"cliente":"DARWIN PACHANO","zona":"","kilos":21.8,"flete":25.3256,"venta":1115.9,"pct":2.2695,"exc":true},{"fecha":"2026-01-30","mes":1,"cliente":"JOSE ORTEGA","zona":"","kilos":0,"flete":44.2022,"venta":2158,"pct":2.0483,"exc":true}],"meses":[{"m":1,"nombre":"Ene","kilos":235.84,"flete":451.06,"venta":28944.76,"envios":23},{"m":2,"nombre":"Feb","kilos":333.96,"flete":545.62,"venta":31969.62,"envios":25},{"m":3,"nombre":"Mar","kilos":387.3,"flete":535.29,"venta":36213.52,"envios":36},{"m":4,"nombre":"Abr","kilos":214.21,"flete":242.79,"venta":25803.27,"envios":15},{"m":5,"nombre":"May","kilos":204.8,"flete":335.18,"venta":30349.16,"envios":25},{"m":6,"nombre":"Jun","kilos":0,"flete":57.79,"venta":6178.55,"envios":4}],"topZonas":[{"zona":"Sin zona","kilos":1376.11,"envios":128,"exc":18,"flete":2167.75,"venta":159458.88,"pctExc":14.1}],"zonasExc":[{"zona":"Sin zona","kilos":1376.11,"envios":128,"exc":18,"flete":2167.75,"venta":159458.88,"pctExc":14.1}],"allZonas":[{"zona":"Sin zona","kilos":1376.11,"envios":128,"exc":18,"flete":2167.75,"venta":159458.88,"pctExc":14.1}],"topCli":[{"cliente":"JORGE CORONADO ACUNA","kilos":630.85,"envios":32,"exc":0,"flete":765.77,"venta":79292.35},{"cliente":"MIGUEL TOUMA","kilos":240.7,"envios":11,"exc":1,"flete":289.97,"venta":22399.26,"pctExc":9.1},{"cliente":"FRANCISCO ZAMBRANO","kilos":65.45,"envios":5,"exc":2,"flete":75.44,"venta":4890.9,"pctExc":40},{"cliente":"DARWIN PACHANO","kilos":48,"envios":3,"exc":1,"flete":57.68,"venta":3159.73,"pctExc":33.3},{"cliente":"LUIS GABRIEL SALCEDO QUINTERO","kilos":45.5,"envios":4,"exc":1,"flete":85.78,"venta":5645.68,"pctExc":25},{"cliente":"CARLOS MONTAGUT","kilos":43.5,"envios":2,"exc":0,"flete":52.26,"venta":3031},{"cliente":"LUIS GABRIEL SALCEDO","kilos":31.4,"envios":1,"exc":0,"flete":36.73,"venta":2091},{"cliente":"UELECTRONICA","kilos":30.45,"envios":1,"exc":0,"flete":30.66,"venta":2050},{"cliente":"ESTEFANY MORILLO","kilos":30.15,"envios":1,"exc":0,"flete":34.02,"venta":2350},{"cliente":"STEFANY MORILLO","kilos":28.75,"envios":3,"exc":0,"flete":58.9,"venta":4664.48},{"cliente":"ROSMEL PEREZ","kilos":27.9,"envios":4,"exc":0,"flete":45.26,"venta":3000},{"cliente":"José Vicente Rivera Lozano","kilos":26.6,"envios":3,"exc":0,"flete":31.68,"venta":2526.78},{"cliente":"GRUPO JECEL C.A","kilos":25.39,"envios":12,"exc":0,"flete":41.89,"venta":0},{"cliente":"VALENTINO VEJAR","kilos":15.15,"envios":1,"exc":0,"flete":19.23,"venta":1325},{"cliente":"Electrónica Vinveca","kilos":15.1,"envios":2,"exc":1,"flete":35.74,"venta":1593.7,"pctExc":50}],"cliExc":[{"cliente":"DANIEL CASAS","kilos":0,"envios":4,"exc":4,"flete":87.19,"venta":2809,"pctExc":100},{"cliente":"JOSE ORTEGA","kilos":0,"envios":1,"exc":1,"flete":44.2,"venta":2158,"pctExc":100},{"cliente":"ROGELIO RODRIGUEZ","kilos":0,"envios":3,"exc":3,"flete":87.08,"venta":3277,"pctExc":100},{"cliente":"ELECTRONICA VINVECA","kilos":0,"envios":2,"exc":2,"flete":55.18,"venta":476,"pctExc":100},{"cliente":"KALOO ELECTRONICS","kilos":0,"envios":1,"exc":1,"flete":13.37,"venta":364.1,"pctExc":100},{"cliente":"Electrónica Vinveca","kilos":15.1,"envios":2,"exc":1,"flete":35.74,"venta":1593.7,"pctExc":50},{"cliente":"JORGE MONSALVES","kilos":0.65,"envios":2,"exc":1,"flete":38.26,"venta":1254,"pctExc":50},{"cliente":"FRANCISCO ZAMBRANO","kilos":65.45,"envios":5,"exc":2,"flete":75.44,"venta":4890.9,"pctExc":40},{"cliente":"DARWIN PACHANO","kilos":48,"envios":3,"exc":1,"flete":57.68,"venta":3159.73,"pctExc":33.3},{"cliente":"LUIS GABRIEL SALCEDO QUINTERO","kilos":45.5,"envios":4,"exc":1,"flete":85.78,"venta":5645.68,"pctExc":25},{"cliente":"MIGUEL TOUMA","kilos":240.7,"envios":11,"exc":1,"flete":289.97,"venta":22399.26,"pctExc":9.1}]};
+function getFbLib(){
+  return {"totalKilos":1376.11,"totalGuias":128,"totalFlete":2167.75,"totalVenta":159458.88,"pctGlobal":1.3594,"excRecs":[{"fecha":"2026-02-03","mes":2,"cliente":"ELECTRONICA VINVECA","zona":"","kilos":0,"flete":27.588,"venta":238,"pct":11.5916,"exc":true},{"fecha":"2026-02-03","mes":2,"cliente":"ELECTRONICA VINVECA","zona":"","kilos":0,"flete":27.588,"venta":238,"pct":11.5916,"exc":true},{"fecha":"2026-03-17","mes":3,"cliente":"FRANCISCO ZAMBRANO","zona":"","kilos":0.25,"flete":1.0879,"venta":15.9,"pct":6.8422,"exc":true},{"fecha":"2026-02-23","mes":2,"cliente":"MIGUEL TOUMA","zona":"","kilos":0,"flete":12.8096,"venta":261.6,"pct":4.8966,"exc":true},{"fecha":"2026-03-19","mes":3,"cliente":"DANIEL CASAS","zona":"","kilos":0,"flete":15.0891,"venta":339.5,"pct":4.4445,"exc":true},{"fecha":"2026-01-14","mes":1,"cliente":"ElectrÃ³nica Vinveca","zona":"","kilos":0,"flete":16.6297,"venta":418.7,"pct":3.9717,"exc":true},{"fecha":"2026-03-24","mes":3,"cliente":"KALOO ELECTRONICS","zona":"","kilos":0,"flete":13.3674,"venta":364.1,"pct":3.6714,"exc":true},{"fecha":"2026-02-18","mes":2,"cliente":"DANIEL CASAS","zona":"","kilos":0,"flete":28.2352,"venta":794,"pct":3.5561,"exc":true},{"fecha":"2026-01-27","mes":1,"cliente":"FRANCISCO ZAMBRANO","zona":"","kilos":4.7,"flete":5.8056,"venta":175,"pct":3.3175,"exc":true},{"fecha":"2026-01-30","mes":1,"cliente":"ROGELIO RODRIGUEZ","zona":"","kilos":0,"flete":19.9873,"venta":622.5,"pct":3.2108,"exc":true},{"fecha":"2026-03-24","mes":3,"cliente":"JORGE MONSALVES","zona":"","kilos":0,"flete":37.1848,"venta":1194,"pct":3.1143,"exc":true},{"fecha":"2026-03-24","mes":3,"cliente":"LUIS GABRIEL SALCEDO QUINTERO","zona":"","kilos":0,"flete":37.1848,"venta":1194,"pct":3.1143,"exc":true},{"fecha":"2026-01-30","mes":1,"cliente":"DANIEL CASAS","zona":"","kilos":0,"flete":27.9608,"venta":1036,"pct":2.6989,"exc":true},{"fecha":"2026-01-30","mes":1,"cliente":"ROGELIO RODRIGUEZ","zona":"","kilos":0,"flete":27.9608,"venta":1036,"pct":2.6989,"exc":true},{"fecha":"2026-04-20","mes":4,"cliente":"DANIEL CASAS","zona":"","kilos":0,"flete":15.9065,"venta":639.5,"pct":2.4873,"exc":true},{"fecha":"2026-01-30","mes":1,"cliente":"ROGELIO RODRIGUEZ","zona":"","kilos":0,"flete":39.1318,"venta":1618.5,"pct":2.4178,"exc":true},{"fecha":"2026-03-06","mes":3,"cliente":"DARWIN PACHANO","zona":"","kilos":21.8,"flete":25.3256,"venta":1115.9,"pct":2.2695,"exc":true},{"fecha":"2026-01-30","mes":1,"cliente":"JOSE ORTEGA","zona":"","kilos":0,"flete":44.2022,"venta":2158,"pct":2.0483,"exc":true}],"meses":[{"m":1,"nombre":"Ene","kilos":235.84,"flete":451.06,"venta":28944.76,"envios":23},{"m":2,"nombre":"Feb","kilos":333.96,"flete":545.62,"venta":31969.62,"envios":25},{"m":3,"nombre":"Mar","kilos":387.3,"flete":535.29,"venta":36213.52,"envios":36},{"m":4,"nombre":"Abr","kilos":214.21,"flete":242.79,"venta":25803.27,"envios":15},{"m":5,"nombre":"May","kilos":204.8,"flete":335.18,"venta":30349.16,"envios":25},{"m":6,"nombre":"Jun","kilos":0,"flete":57.79,"venta":6178.55,"envios":4}],"topZonas":[{"zona":"Sin zona","kilos":1376.11,"envios":128,"exc":18,"flete":2167.75,"venta":159458.88,"pctExc":14.1}],"zonasExc":[{"zona":"Sin zona","kilos":1376.11,"envios":128,"exc":18,"flete":2167.75,"venta":159458.88,"pctExc":14.1}],"allZonas":[{"zona":"Sin zona","kilos":1376.11,"envios":128,"exc":18,"flete":2167.75,"venta":159458.88,"pctExc":14.1}],"topCli":[{"cliente":"JORGE CORONADO ACUNA","kilos":630.85,"envios":32,"exc":0,"flete":765.77,"venta":79292.35},{"cliente":"MIGUEL TOUMA","kilos":240.7,"envios":11,"exc":1,"flete":289.97,"venta":22399.26,"pctExc":9.1},{"cliente":"FRANCISCO ZAMBRANO","kilos":65.45,"envios":5,"exc":2,"flete":75.44,"venta":4890.9,"pctExc":40},{"cliente":"DARWIN PACHANO","kilos":48,"envios":3,"exc":1,"flete":57.68,"venta":3159.73,"pctExc":33.3},{"cliente":"LUIS GABRIEL SALCEDO QUINTERO","kilos":45.5,"envios":4,"exc":1,"flete":85.78,"venta":5645.68,"pctExc":25},{"cliente":"CARLOS MONTAGUT","kilos":43.5,"envios":2,"exc":0,"flete":52.26,"venta":3031},{"cliente":"LUIS GABRIEL SALCEDO","kilos":31.4,"envios":1,"exc":0,"flete":36.73,"venta":2091},{"cliente":"UELECTRONICA","kilos":30.45,"envios":1,"exc":0,"flete":30.66,"venta":2050},{"cliente":"ESTEFANY MORILLO","kilos":30.15,"envios":1,"exc":0,"flete":34.02,"venta":2350},{"cliente":"STEFANY MORILLO","kilos":28.75,"envios":3,"exc":0,"flete":58.9,"venta":4664.48},{"cliente":"ROSMEL PEREZ","kilos":27.9,"envios":4,"exc":0,"flete":45.26,"venta":3000},{"cliente":"JosÃ© Vicente Rivera Lozano","kilos":26.6,"envios":3,"exc":0,"flete":31.68,"venta":2526.78},{"cliente":"GRUPO JECEL C.A","kilos":25.39,"envios":12,"exc":0,"flete":41.89,"venta":0},{"cliente":"VALENTINO VEJAR","kilos":15.15,"envios":1,"exc":0,"flete":19.23,"venta":1325},{"cliente":"ElectrÃ³nica Vinveca","kilos":15.1,"envios":2,"exc":1,"flete":35.74,"venta":1593.7,"pctExc":50}],"cliExc":[{"cliente":"DANIEL CASAS","kilos":0,"envios":4,"exc":4,"flete":87.19,"venta":2809,"pctExc":100},{"cliente":"JOSE ORTEGA","kilos":0,"envios":1,"exc":1,"flete":44.2,"venta":2158,"pctExc":100},{"cliente":"ROGELIO RODRIGUEZ","kilos":0,"envios":3,"exc":3,"flete":87.08,"venta":3277,"pctExc":100},{"cliente":"ELECTRONICA VINVECA","kilos":0,"envios":2,"exc":2,"flete":55.18,"venta":476,"pctExc":100},{"cliente":"KALOO ELECTRONICS","kilos":0,"envios":1,"exc":1,"flete":13.37,"venta":364.1,"pctExc":100},{"cliente":"ElectrÃ³nica Vinveca","kilos":15.1,"envios":2,"exc":1,"flete":35.74,"venta":1593.7,"pctExc":50},{"cliente":"JORGE MONSALVES","kilos":0.65,"envios":2,"exc":1,"flete":38.26,"venta":1254,"pctExc":50},{"cliente":"FRANCISCO ZAMBRANO","kilos":65.45,"envios":5,"exc":2,"flete":75.44,"venta":4890.9,"pctExc":40},{"cliente":"DARWIN PACHANO","kilos":48,"envios":3,"exc":1,"flete":57.68,"venta":3159.73,"pctExc":33.3},{"cliente":"LUIS GABRIEL SALCEDO QUINTERO","kilos":45.5,"envios":4,"exc":1,"flete":85.78,"venta":5645.68,"pctExc":25},{"cliente":"MIGUEL TOUMA","kilos":240.7,"envios":11,"exc":1,"flete":289.97,"venta":22399.26,"pctExc":9.1}]};
 }
 function getFbZoom(){
-  return {"totalKilos":1260.6,"totalGuias":152,"totalFlete":1847.47,"totalVenta":175558.67,"pctGlobal":1.0523,"excRecs":[{"fecha":"12/01/2026","mes":1,"cliente":"GUILLERMINA DELGADO","zona":"SAN CRISTOBAL","kilos":0.8,"flete":6.5496,"venta":47,"pct":13.9353,"exc":true},{"fecha":"11/05/2026","mes":5,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":3,"flete":10.9443,"venta":81.4,"pct":13.4451,"exc":true},{"fecha":"07/05/2026","mes":5,"cliente":"REBECA HERNANDEZ","zona":"CARACAS","kilos":1.8,"flete":6.488,"venta":51,"pct":12.7215,"exc":true},{"fecha":"25/05/2026","mes":5,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":0.2,"flete":1.8644,"venta":24.38,"pct":7.6472,"exc":true},{"fecha":"22/05/2026","mes":5,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":0.2,"flete":1.8531,"venta":24.38,"pct":7.6009,"exc":true},{"fecha":"08/04/2026","mes":4,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":3.2,"flete":10.8178,"venta":145.86,"pct":7.4166,"exc":true},{"fecha":"07/05/2026","mes":5,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":2,"flete":4.9549,"venta":79.8,"pct":6.2091,"exc":true},{"fecha":"23/03/2026","mes":3,"cliente":"GUILLERMINA DELGADO","zona":"SAN CRISTOBAL","kilos":1.1,"flete":6.3909,"venta":111.2,"pct":5.7472,"exc":true},{"fecha":"24/02/2026","mes":2,"cliente":"GUILLERMINA DELGADO","zona":"SAN CRISTOBAL","kilos":11,"flete":31.9116,"venta":569.67,"pct":5.6018,"exc":true},{"fecha":"10/03/2026","mes":3,"cliente":"JOSE VICENTE RIVERA","zona":"SAN CRISTOBAL","kilos":9,"flete":28.8343,"venta":518.18,"pct":5.5645,"exc":true},{"fecha":"09/03/2026","mes":3,"cliente":"JOSE RAFAEL ARIAS","zona":"VALLE DE LA PASCUA","kilos":0.7,"flete":5.5476,"venta":100,"pct":5.5476,"exc":true},{"fecha":"13/02/2026","mes":2,"cliente":"CHRISTIAN EUGENIO MORALES BONILLA","zona":"SAN CRISTOBAL","kilos":2.7,"flete":12.6576,"venta":239.72,"pct":5.2801,"exc":true},{"fecha":"20/01/2026","mes":1,"cliente":"GUILLERMINA DELGADO","zona":"SAN CRISTOBAL","kilos":0.6,"flete":6.4349,"venta":134.9,"pct":4.7701,"exc":true},{"fecha":"28/05/2026","mes":5,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":12.8,"flete":40.0026,"venta":967.98,"pct":4.1326,"exc":true},{"fecha":"28/04/2026","mes":4,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":3.1,"flete":10.9398,"venta":265,"pct":4.1282,"exc":true},{"fecha":"20/02/2026","mes":2,"cliente":"MIREYA BENCOMO","zona":"CABIMAS","kilos":6,"flete":19.9122,"venta":515.12,"pct":3.8655,"exc":true},{"fecha":"28/04/2026","mes":4,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":4.7,"flete":13.9653,"venta":397.5,"pct":3.5133,"exc":true},{"fecha":"13/05/2026","mes":5,"cliente":"DEVION MOBILE","zona":"CIUDAD BOLIVAR","kilos":15,"flete":45.5864,"venta":1325,"pct":3.4405,"exc":true},{"fecha":"03/06/2026","mes":6,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":0.6,"flete":3.3667,"venta":99.45,"pct":3.3854,"exc":true},{"fecha":"29/04/2026","mes":4,"cliente":"KALOO ELECTRONICS","zona":"VALERA","kilos":0.6,"flete":3.376,"venta":100,"pct":3.376,"exc":true},{"fecha":"29/05/2026","mes":5,"cliente":"YANETZI FERNANDEZ","zona":"CIUDAD BOLIVAR","kilos":4,"flete":15.453,"venta":458,"pct":3.374,"exc":true},{"fecha":"14/04/2026","mes":4,"cliente":"WILLIANNYS CANCINO. KOCUS","zona":"PUERTO ORDAZ","kilos":28,"flete":83.1002,"venta":2552.35,"pct":3.2558,"exc":true},{"fecha":"19/05/2026","mes":5,"cliente":"CHRISTIAN EUGENIO MORALES BONILLA","zona":"SAN CRISTOBAL","kilos":1.4,"flete":4.8683,"venta":150.45,"pct":3.2358,"exc":true},{"fecha":"29/04/2026","mes":4,"cliente":"DARWIN PACHANO","zona":"CORO","kilos":14.5,"flete":44.2172,"venta":1381.08,"pct":3.2016,"exc":true},{"fecha":"06/02/2026","mes":2,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":2.5,"flete":11.4923,"venta":362.56,"pct":3.1698,"exc":true},{"fecha":"22/04/2026","mes":4,"cliente":"LUIS ZAMBRANO","zona":"SANTA BARBARA DEL ZULIA","kilos":6,"flete":22.9256,"venta":751.74,"pct":3.0497,"exc":true},{"fecha":"02/06/2026","mes":6,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":13.4,"flete":42.5336,"venta":1401.48,"pct":3.0349,"exc":true},{"fecha":"21/05/2026","mes":5,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":27.9,"flete":86.3177,"venta":2864.16,"pct":3.0137,"exc":true},{"fecha":"16/01/2026","mes":1,"cliente":"MIREYA BENCOMO","zona":"CABIMAS","kilos":6.2,"flete":23.1932,"venta":776.5,"pct":2.9869,"exc":true},{"fecha":"07/05/2026","mes":5,"cliente":"PLUS ELECTRONICS, C.A","zona":"PORLAMAR","kilos":9.1,"flete":23.3514,"venta":795,"pct":2.9373,"exc":true},{"fecha":"20/04/2026","mes":4,"cliente":"KREYSS ADMERK  MONTAÑEZ MONRROY","zona":"SAN CRISTOBAL","kilos":3.3,"flete":10.8516,"venta":379.44,"pct":2.8599,"exc":true},{"fecha":"25/02/2026","mes":2,"cliente":"JESUS JAVIER TOVAR","zona":"EL SOMBRERO","kilos":2.6,"flete":13.8788,"venta":486.8,"pct":2.851,"exc":true},{"fecha":"24/03/2026","mes":3,"cliente":"MIREYA BENCOMO","zona":"CABIMAS","kilos":8,"flete":27.5339,"venta":995.91,"pct":2.7647,"exc":true},{"fecha":"09/03/2026","mes":3,"cliente":"RAFAEL  OCHOA DEPABLOS","zona":"SAN CRISTOBAL","kilos":3.7,"flete":13.8715,"venta":502.78,"pct":2.759,"exc":true},{"fecha":"21/04/2026","mes":4,"cliente":"CELULAR MANIA  COMPUTACION","zona":"CABIMAS","kilos":6.5,"flete":19.8725,"venta":743.58,"pct":2.6725,"exc":true},{"fecha":"26/03/2026","mes":3,"cliente":"LEONOR CHIQUINQUIRA GARRIDO QUINTERO","zona":"SAN CRISTOBAL","kilos":1.9,"flete":6.4924,"venta":244.44,"pct":2.656,"exc":true},{"fecha":"21/01/2026","mes":1,"cliente":"TIENDAS CIRO","zona":"SAN CRISTOBAL","kilos":14,"flete":39.2734,"venta":1483.06,"pct":2.6481,"exc":true},{"fecha":"19/05/2026","mes":5,"cliente":"COMPUCENTER 1ST","zona":"SANTA BARBARA DEL ZULIA","kilos":6.8,"flete":21.4353,"venta":833.34,"pct":2.5722,"exc":true},{"fecha":"16/03/2026","mes":3,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":4.8,"flete":17.4332,"venta":682.4,"pct":2.5547,"exc":true},{"fecha":"20/05/2026","mes":5,"cliente":"GUILLERMINA DELGADO","zona":"SAN CRISTOBAL","kilos":1.1,"flete":4.8853,"venta":192.78,"pct":2.5341,"exc":true},{"fecha":"17/04/2026","mes":4,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":13,"flete":42.7131,"venta":1689.12,"pct":2.5287,"exc":true},{"fecha":"25/02/2026","mes":2,"cliente":"KREYSS ADMERK  MONTAÑEZ MONRROY","zona":"SAN CRISTOBAL","kilos":2.4,"flete":12.6509,"venta":508.18,"pct":2.4895,"exc":true},{"fecha":"11/05/2026","mes":5,"cliente":"SATELICEL. CA","zona":"MERIDA","kilos":6.9,"flete":21.5383,"venta":938.4,"pct":2.2952,"exc":true},{"fecha":"15/05/2026","mes":5,"cliente":"RAFAEL  OCHOA DEPABLOS","zona":"SAN CRISTOBAL","kilos":2.4,"flete":7.9937,"venta":355.98,"pct":2.2456,"exc":true},{"fecha":"21/05/2026","mes":5,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":31,"flete":91.1216,"venta":4062.66,"pct":2.2429,"exc":true},{"fecha":"06/05/2026","mes":5,"cliente":"JESUS NORIEGA","zona":"CARACAS","kilos":0.3,"flete":1.8759,"venta":85,"pct":2.207,"exc":true},{"fecha":"06/05/2026","mes":5,"cliente":"RUBEN BRICEÑO","zona":"CHARALLAVE","kilos":4.7,"flete":15.5769,"venta":706.25,"pct":2.2056,"exc":true},{"fecha":"18/02/2026","mes":2,"cliente":"RUBEN DARIO GARCIA","zona":"MERIDA","kilos":6,"flete":20.0136,"venta":909.86,"pct":2.1996,"exc":true},{"fecha":"05/05/2026","mes":5,"cliente":"KREYSS ADMERK  MONTAÑEZ MONRROY","zona":"SAN CRISTOBAL","kilos":3.6,"flete":12.4471,"venta":573.3,"pct":2.1711,"exc":true},{"fecha":"16/04/2026","mes":4,"cliente":"SATELICEL. CA","zona":"MERIDA","kilos":4,"flete":12.4406,"venta":589.46,"pct":2.1105,"exc":true},{"fecha":"06/03/2026","mes":3,"cliente":"ADELVIS RAMON NARVAEZ","zona":"PORLAMAR","kilos":2,"flete":8.2449,"venta":395.16,"pct":2.0865,"exc":true},{"fecha":"07/05/2026","mes":5,"cliente":"JONATHAN YAJURIS","zona":"CARACAS","kilos":22.5,"flete":70.8784,"venta":3500,"pct":2.0251,"exc":true}],"meses":[{"m":1,"nombre":"Ene","kilos":141.85,"flete":119.07,"venta":21023.9,"envios":26},{"m":2,"nombre":"Feb","kilos":85.2,"flete":180.13,"venta":16765.88,"envios":19},{"m":3,"nombre":"Mar","kilos":207.2,"flete":244.5,"venta":28570.4,"envios":28},{"m":4,"nombre":"Abr","kilos":392.7,"flete":520.9,"venta":49890.69,"envios":34},{"m":5,"nombre":"May","kilos":314.6,"flete":677.86,"venta":40913.32,"envios":35},{"m":6,"nombre":"Jun","kilos":119.05,"flete":105,"venta":18394.48,"envios":10}],"topZonas":[{"zona":"SAN CRISTOBAL","kilos":403.4,"envios":49,"exc":22,"flete":373.72,"venta":49127.33,"pctExc":44.9},{"zona":"BARINAS","kilos":186.2,"envios":16,"exc":8,"flete":394.74,"venta":23143.57,"pctExc":50},{"zona":"PUERTO ORDAZ","kilos":135,"envios":7,"exc":1,"flete":252.66,"venta":20968.11,"pctExc":14.3},{"zona":"EL VIGIA","kilos":95.6,"envios":8,"exc":0,"flete":0,"venta":11174.99,"pctExc":0},{"zona":"PORLAMAR","kilos":67.1,"envios":7,"exc":2,"flete":100.5,"venta":9853.3,"pctExc":28.6},{"zona":"TOVAR","kilos":57.75,"envios":7,"exc":0,"flete":1.5,"venta":7134.9,"pctExc":0},{"zona":"CABIMAS","kilos":53.3,"envios":8,"exc":4,"flete":175.05,"venta":8781.41,"pctExc":50},{"zona":"CARACAS","kilos":42.55,"envios":13,"exc":3,"flete":119.76,"venta":7127.33,"pctExc":23.1},{"zona":"SOCOPO","kilos":36.2,"envios":4,"exc":0,"flete":0,"venta":5425.68,"pctExc":0},{"zona":"MERIDA","kilos":23.6,"envios":5,"exc":3,"flete":78.2,"venta":3952.02,"pctExc":60},{"zona":"MARACAIBO","kilos":19,"envios":1,"exc":0,"flete":58.88,"venta":3198,"pctExc":0},{"zona":"CIUDAD BOLIVAR","kilos":19,"envios":2,"exc":2,"flete":61.04,"venta":1783,"pctExc":100},{"zona":"CORO","kilos":17.7,"envios":2,"exc":1,"flete":44.22,"venta":2355.18,"pctExc":50},{"zona":"LA FRIA","kilos":17.1,"envios":3,"exc":0,"flete":0,"venta":2384.4,"pctExc":0},{"zona":"SAN JUAN DE LOS MORROS","kilos":16.8,"envios":2,"exc":0,"flete":17.15,"venta":3087.8,"pctExc":0}],"zonasExc":[{"zona":"EL SOMBRERO","kilos":2.6,"envios":1,"exc":1,"flete":13.88,"venta":486.8,"pctExc":100},{"zona":"SANTA BARBARA DEL ZULIA","kilos":12.8,"envios":2,"exc":2,"flete":44.36,"venta":1585.08,"pctExc":100},{"zona":"CIUDAD BOLIVAR","kilos":19,"envios":2,"exc":2,"flete":61.04,"venta":1783,"pctExc":100},{"zona":"MERIDA","kilos":23.6,"envios":5,"exc":3,"flete":78.2,"venta":3952.02,"pctExc":60},{"zona":"CABIMAS","kilos":53.3,"envios":8,"exc":4,"flete":175.05,"venta":8781.41,"pctExc":50},{"zona":"CORO","kilos":17.7,"envios":2,"exc":1,"flete":44.22,"venta":2355.18,"pctExc":50},{"zona":"BARINAS","kilos":186.2,"envios":16,"exc":8,"flete":394.74,"venta":23143.57,"pctExc":50},{"zona":"VALLE DE LA PASCUA","kilos":1,"envios":2,"exc":1,"flete":11.08,"venta":100,"pctExc":50},{"zona":"SAN CRISTOBAL","kilos":403.4,"envios":49,"exc":22,"flete":373.72,"venta":49127.33,"pctExc":44.9},{"zona":"PORLAMAR","kilos":67.1,"envios":7,"exc":2,"flete":100.5,"venta":9853.3,"pctExc":28.6},{"zona":"VALERA","kilos":13.6,"envios":4,"exc":1,"flete":20.37,"venta":6333,"pctExc":25},{"zona":"CHARALLAVE","kilos":6.5,"envios":4,"exc":1,"flete":24.25,"venta":1400.95,"pctExc":25},{"zona":"CARACAS","kilos":42.55,"envios":13,"exc":3,"flete":119.76,"venta":7127.33,"pctExc":23.1},{"zona":"PUERTO ORDAZ","kilos":135,"envios":7,"exc":1,"flete":252.66,"venta":20968.11,"pctExc":14.3}],"allZonas":[{"zona":"SAN CRISTOBAL","kilos":403.4,"envios":49,"exc":22,"flete":373.72,"venta":49127.33,"pctExc":44.9},{"zona":"BARINAS","kilos":186.2,"envios":16,"exc":8,"flete":394.74,"venta":23143.57,"pctExc":50},{"zona":"CARACAS","kilos":42.55,"envios":13,"exc":3,"flete":119.76,"venta":7127.33,"pctExc":23.1},{"zona":"CABIMAS","kilos":53.3,"envios":8,"exc":4,"flete":175.05,"venta":8781.41,"pctExc":50},{"zona":"EL VIGIA","kilos":95.6,"envios":8,"exc":0,"flete":0,"venta":11174.99,"pctExc":0},{"zona":"TOVAR","kilos":57.75,"envios":7,"exc":0,"flete":1.5,"venta":7134.9,"pctExc":0},{"zona":"PUERTO ORDAZ","kilos":135,"envios":7,"exc":1,"flete":252.66,"venta":20968.11,"pctExc":14.3},{"zona":"PORLAMAR","kilos":67.1,"envios":7,"exc":2,"flete":100.5,"venta":9853.3,"pctExc":28.6},{"zona":"MERIDA","kilos":23.6,"envios":5,"exc":3,"flete":78.2,"venta":3952.02,"pctExc":60},{"zona":"SOCOPO","kilos":36.2,"envios":4,"exc":0,"flete":0,"venta":5425.68,"pctExc":0},{"zona":"VALERA","kilos":13.6,"envios":4,"exc":1,"flete":20.37,"venta":6333,"pctExc":25},{"zona":"CHARALLAVE","kilos":6.5,"envios":4,"exc":1,"flete":24.25,"venta":1400.95,"pctExc":25},{"zona":"LA FRIA","kilos":17.1,"envios":3,"exc":0,"flete":0,"venta":2384.4,"pctExc":0},{"zona":"CORO","kilos":17.7,"envios":2,"exc":1,"flete":44.22,"venta":2355.18,"pctExc":50},{"zona":"VALLE DE LA PASCUA","kilos":1,"envios":2,"exc":1,"flete":11.08,"venta":100,"pctExc":50},{"zona":"SAN JUAN DE LOS MORROS","kilos":16.8,"envios":2,"exc":0,"flete":17.15,"venta":3087.8,"pctExc":0},{"zona":"SANTA BARBARA DEL ZULIA","kilos":12.8,"envios":2,"exc":2,"flete":44.36,"venta":1585.08,"pctExc":100},{"zona":"CIUDAD BOLIVAR","kilos":19,"envios":2,"exc":2,"flete":61.04,"venta":1783,"pctExc":100},{"zona":"PAMPATAR","kilos":8.8,"envios":1,"exc":0,"flete":0,"venta":1974.5,"pctExc":0},{"zona":"EL SOMBRERO","kilos":2.6,"envios":1,"exc":1,"flete":13.88,"venta":486.8,"pctExc":100},{"zona":"EL PINAL","kilos":3.4,"envios":1,"exc":0,"flete":0,"venta":245.9,"pctExc":0},{"zona":"MARACAIBO","kilos":19,"envios":1,"exc":0,"flete":58.88,"venta":3198,"pctExc":0},{"zona":"COLON","kilos":2,"envios":1,"exc":0,"flete":0,"venta":323.6,"pctExc":0},{"zona":"CALABOZO","kilos":4,"envios":1,"exc":0,"flete":10.86,"venta":738.48,"pctExc":0},{"zona":"GUANARE","kilos":15.6,"envios":1,"exc":0,"flete":45.26,"venta":2873.34,"pctExc":0}],"topCli":[{"cliente":"TIENDAS CIRO","kilos":230,"envios":10,"exc":1,"flete":39.27,"venta":24712.06,"pctExc":10},{"cliente":"JORGE CORONADO","kilos":118.4,"envios":9,"exc":8,"flete":369.57,"venta":13911.81,"pctExc":88.9},{"cliente":"ACCESORIOS MUNDO MOVIL","kilos":66.1,"envios":3,"exc":0,"flete":0,"venta":8319},{"cliente":"H & S HOP","kilos":57,"envios":2,"exc":0,"flete":0,"venta":8054.02},{"cliente":"COMERCIALIZADORA GLOBALES DE VENEZUELA CA.","kilos":55.9,"envios":5,"exc":0,"flete":0,"venta":6793.3},{"cliente":"FUTURAMA","kilos":47.8,"envios":4,"exc":0,"flete":0,"venta":6424},{"cliente":"JOSE VICENTE RIVERA","kilos":44.4,"envios":5,"exc":1,"flete":145.55,"venta":8253.52,"pctExc":20},{"cliente":"GERCY SEGOVIA SERVO","kilos":35.3,"envios":5,"exc":0,"flete":0,"venta":5244.92},{"cliente":"CELULAR MANIA  COMPUTACION","kilos":33.1,"envios":5,"exc":1,"flete":104.41,"venta":6493.88,"pctExc":20},{"cliente":"RAFAEL  OCHOA DEPABLOS","kilos":30.9,"envios":6,"exc":2,"flete":21.87,"venta":4725.92,"pctExc":33.3},{"cliente":"WILLIANNYS CANCINO. KOCUS","kilos":28,"envios":1,"exc":1,"flete":83.1,"venta":2552.35,"pctExc":100},{"cliente":"PLUS ELECTRONICS, C.A","kilos":26.2,"envios":2,"exc":1,"flete":76.48,"venta":3924.36,"pctExc":50},{"cliente":"YESICA MANCILLA","kilos":24,"envios":2,"exc":0,"flete":0,"venta":1949.85},{"cliente":"JONATHAN YAJURIS","kilos":22.5,"envios":1,"exc":1,"flete":70.88,"venta":3500,"pctExc":100},{"cliente":"GRUPO MG 1.0","kilos":20.9,"envios":3,"exc":0,"flete":15.78,"venta":3343.78}],"cliExc":[{"cliente":"MIREYA BENCOMO","kilos":20.2,"envios":3,"exc":3,"flete":70.64,"venta":2287.53,"pctExc":100},{"cliente":"FRANCISCO ZAMBRANO","kilos":11.7,"envios":7,"exc":7,"flete":45.29,"venta":817.83,"pctExc":100},{"cliente":"KREYSS ADMERK  MONTAÑEZ MONRROY","kilos":9.3,"envios":3,"exc":3,"flete":35.95,"venta":1460.92,"pctExc":100},{"cliente":"JESUS JAVIER TOVAR","kilos":2.6,"envios":1,"exc":1,"flete":13.88,"venta":486.8,"pctExc":100},{"cliente":"ADELVIS RAMON NARVAEZ","kilos":2,"envios":1,"exc":1,"flete":8.24,"venta":395.16,"pctExc":100},{"cliente":"LEONOR CHIQUINQUIRA GARRIDO QUINTERO","kilos":1.9,"envios":1,"exc":1,"flete":6.49,"venta":244.44,"pctExc":100},{"cliente":"WILLIANNYS CANCINO. KOCUS","kilos":28,"envios":1,"exc":1,"flete":83.1,"venta":2552.35,"pctExc":100},{"cliente":"SATELICEL. CA","kilos":10.9,"envios":2,"exc":2,"flete":33.98,"venta":1527.86,"pctExc":100},{"cliente":"LUIS ZAMBRANO","kilos":6,"envios":1,"exc":1,"flete":22.93,"venta":751.74,"pctExc":100},{"cliente":"KALOO ELECTRONICS","kilos":0.6,"envios":1,"exc":1,"flete":3.38,"venta":100,"pctExc":100},{"cliente":"JESUS NORIEGA","kilos":0.3,"envios":1,"exc":1,"flete":1.88,"venta":85,"pctExc":100},{"cliente":"JONATHAN YAJURIS","kilos":22.5,"envios":1,"exc":1,"flete":70.88,"venta":3500,"pctExc":100},{"cliente":"DEVION MOBILE","kilos":15,"envios":1,"exc":1,"flete":45.59,"venta":1325,"pctExc":100},{"cliente":"COMPUCENTER 1ST","kilos":6.8,"envios":1,"exc":1,"flete":21.44,"venta":833.34,"pctExc":100},{"cliente":"YANETZI FERNANDEZ","kilos":4,"envios":1,"exc":1,"flete":15.45,"venta":458,"pctExc":100},{"cliente":"JORGE CORONADO","kilos":118.4,"envios":9,"exc":8,"flete":369.57,"venta":13911.81,"pctExc":88.9},{"cliente":"GUILLERMINA DELGADO","kilos":15.3,"envios":6,"exc":5,"flete":61.77,"venta":1441.55,"pctExc":83.3},{"cliente":"CHRISTIAN EUGENIO MORALES BONILLA","kilos":5.4,"envios":3,"exc":2,"flete":17.53,"venta":484.17,"pctExc":66.7},{"cliente":"DARWIN PACHANO","kilos":17.7,"envios":2,"exc":1,"flete":44.22,"venta":2355.18,"pctExc":50},{"cliente":"RUBEN DARIO GARCIA","kilos":8.5,"envios":2,"exc":1,"flete":29.41,"venta":1434.96,"pctExc":50},{"cliente":"JOSE RAFAEL ARIAS","kilos":1,"envios":2,"exc":1,"flete":11.08,"venta":100,"pctExc":50},{"cliente":"REBECA HERNANDEZ","kilos":2.3,"envios":2,"exc":1,"flete":8.34,"venta":51,"pctExc":50},{"cliente":"PLUS ELECTRONICS, C.A","kilos":26.2,"envios":2,"exc":1,"flete":76.48,"venta":3924.36,"pctExc":50},{"cliente":"RAFAEL  OCHOA DEPABLOS","kilos":30.9,"envios":6,"exc":2,"flete":21.87,"venta":4725.92,"pctExc":33.3},{"cliente":"RUBEN BRICEÑO","kilos":6.3,"envios":3,"exc":1,"flete":22.37,"venta":1120.95,"pctExc":33.3},{"cliente":"JOSE VICENTE RIVERA","kilos":44.4,"envios":5,"exc":1,"flete":145.55,"venta":8253.52,"pctExc":20},{"cliente":"CELULAR MANIA  COMPUTACION","kilos":33.1,"envios":5,"exc":1,"flete":104.41,"venta":6493.88,"pctExc":20},{"cliente":"TIENDAS CIRO","kilos":230,"envios":10,"exc":1,"flete":39.27,"venta":24712.06,"pctExc":10}]};
+  return {"totalKilos":1260.6,"totalGuias":152,"totalFlete":1847.47,"totalVenta":175558.67,"pctGlobal":1.0523,"excRecs":[{"fecha":"12/01/2026","mes":1,"cliente":"GUILLERMINA DELGADO","zona":"SAN CRISTOBAL","kilos":0.8,"flete":6.5496,"venta":47,"pct":13.9353,"exc":true},{"fecha":"11/05/2026","mes":5,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":3,"flete":10.9443,"venta":81.4,"pct":13.4451,"exc":true},{"fecha":"07/05/2026","mes":5,"cliente":"REBECA HERNANDEZ","zona":"CARACAS","kilos":1.8,"flete":6.488,"venta":51,"pct":12.7215,"exc":true},{"fecha":"25/05/2026","mes":5,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":0.2,"flete":1.8644,"venta":24.38,"pct":7.6472,"exc":true},{"fecha":"22/05/2026","mes":5,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":0.2,"flete":1.8531,"venta":24.38,"pct":7.6009,"exc":true},{"fecha":"08/04/2026","mes":4,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":3.2,"flete":10.8178,"venta":145.86,"pct":7.4166,"exc":true},{"fecha":"07/05/2026","mes":5,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":2,"flete":4.9549,"venta":79.8,"pct":6.2091,"exc":true},{"fecha":"23/03/2026","mes":3,"cliente":"GUILLERMINA DELGADO","zona":"SAN CRISTOBAL","kilos":1.1,"flete":6.3909,"venta":111.2,"pct":5.7472,"exc":true},{"fecha":"24/02/2026","mes":2,"cliente":"GUILLERMINA DELGADO","zona":"SAN CRISTOBAL","kilos":11,"flete":31.9116,"venta":569.67,"pct":5.6018,"exc":true},{"fecha":"10/03/2026","mes":3,"cliente":"JOSE VICENTE RIVERA","zona":"SAN CRISTOBAL","kilos":9,"flete":28.8343,"venta":518.18,"pct":5.5645,"exc":true},{"fecha":"09/03/2026","mes":3,"cliente":"JOSE RAFAEL ARIAS","zona":"VALLE DE LA PASCUA","kilos":0.7,"flete":5.5476,"venta":100,"pct":5.5476,"exc":true},{"fecha":"13/02/2026","mes":2,"cliente":"CHRISTIAN EUGENIO MORALES BONILLA","zona":"SAN CRISTOBAL","kilos":2.7,"flete":12.6576,"venta":239.72,"pct":5.2801,"exc":true},{"fecha":"20/01/2026","mes":1,"cliente":"GUILLERMINA DELGADO","zona":"SAN CRISTOBAL","kilos":0.6,"flete":6.4349,"venta":134.9,"pct":4.7701,"exc":true},{"fecha":"28/05/2026","mes":5,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":12.8,"flete":40.0026,"venta":967.98,"pct":4.1326,"exc":true},{"fecha":"28/04/2026","mes":4,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":3.1,"flete":10.9398,"venta":265,"pct":4.1282,"exc":true},{"fecha":"20/02/2026","mes":2,"cliente":"MIREYA BENCOMO","zona":"CABIMAS","kilos":6,"flete":19.9122,"venta":515.12,"pct":3.8655,"exc":true},{"fecha":"28/04/2026","mes":4,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":4.7,"flete":13.9653,"venta":397.5,"pct":3.5133,"exc":true},{"fecha":"13/05/2026","mes":5,"cliente":"DEVION MOBILE","zona":"CIUDAD BOLIVAR","kilos":15,"flete":45.5864,"venta":1325,"pct":3.4405,"exc":true},{"fecha":"03/06/2026","mes":6,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":0.6,"flete":3.3667,"venta":99.45,"pct":3.3854,"exc":true},{"fecha":"29/04/2026","mes":4,"cliente":"KALOO ELECTRONICS","zona":"VALERA","kilos":0.6,"flete":3.376,"venta":100,"pct":3.376,"exc":true},{"fecha":"29/05/2026","mes":5,"cliente":"YANETZI FERNANDEZ","zona":"CIUDAD BOLIVAR","kilos":4,"flete":15.453,"venta":458,"pct":3.374,"exc":true},{"fecha":"14/04/2026","mes":4,"cliente":"WILLIANNYS CANCINO. KOCUS","zona":"PUERTO ORDAZ","kilos":28,"flete":83.1002,"venta":2552.35,"pct":3.2558,"exc":true},{"fecha":"19/05/2026","mes":5,"cliente":"CHRISTIAN EUGENIO MORALES BONILLA","zona":"SAN CRISTOBAL","kilos":1.4,"flete":4.8683,"venta":150.45,"pct":3.2358,"exc":true},{"fecha":"29/04/2026","mes":4,"cliente":"DARWIN PACHANO","zona":"CORO","kilos":14.5,"flete":44.2172,"venta":1381.08,"pct":3.2016,"exc":true},{"fecha":"06/02/2026","mes":2,"cliente":"FRANCISCO ZAMBRANO","zona":"SAN CRISTOBAL","kilos":2.5,"flete":11.4923,"venta":362.56,"pct":3.1698,"exc":true},{"fecha":"22/04/2026","mes":4,"cliente":"LUIS ZAMBRANO","zona":"SANTA BARBARA DEL ZULIA","kilos":6,"flete":22.9256,"venta":751.74,"pct":3.0497,"exc":true},{"fecha":"02/06/2026","mes":6,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":13.4,"flete":42.5336,"venta":1401.48,"pct":3.0349,"exc":true},{"fecha":"21/05/2026","mes":5,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":27.9,"flete":86.3177,"venta":2864.16,"pct":3.0137,"exc":true},{"fecha":"16/01/2026","mes":1,"cliente":"MIREYA BENCOMO","zona":"CABIMAS","kilos":6.2,"flete":23.1932,"venta":776.5,"pct":2.9869,"exc":true},{"fecha":"07/05/2026","mes":5,"cliente":"PLUS ELECTRONICS, C.A","zona":"PORLAMAR","kilos":9.1,"flete":23.3514,"venta":795,"pct":2.9373,"exc":true},{"fecha":"20/04/2026","mes":4,"cliente":"KREYSS ADMERK  MONTAÃEZ MONRROY","zona":"SAN CRISTOBAL","kilos":3.3,"flete":10.8516,"venta":379.44,"pct":2.8599,"exc":true},{"fecha":"25/02/2026","mes":2,"cliente":"JESUS JAVIER TOVAR","zona":"EL SOMBRERO","kilos":2.6,"flete":13.8788,"venta":486.8,"pct":2.851,"exc":true},{"fecha":"24/03/2026","mes":3,"cliente":"MIREYA BENCOMO","zona":"CABIMAS","kilos":8,"flete":27.5339,"venta":995.91,"pct":2.7647,"exc":true},{"fecha":"09/03/2026","mes":3,"cliente":"RAFAEL  OCHOA DEPABLOS","zona":"SAN CRISTOBAL","kilos":3.7,"flete":13.8715,"venta":502.78,"pct":2.759,"exc":true},{"fecha":"21/04/2026","mes":4,"cliente":"CELULAR MANIA  COMPUTACION","zona":"CABIMAS","kilos":6.5,"flete":19.8725,"venta":743.58,"pct":2.6725,"exc":true},{"fecha":"26/03/2026","mes":3,"cliente":"LEONOR CHIQUINQUIRA GARRIDO QUINTERO","zona":"SAN CRISTOBAL","kilos":1.9,"flete":6.4924,"venta":244.44,"pct":2.656,"exc":true},{"fecha":"21/01/2026","mes":1,"cliente":"TIENDAS CIRO","zona":"SAN CRISTOBAL","kilos":14,"flete":39.2734,"venta":1483.06,"pct":2.6481,"exc":true},{"fecha":"19/05/2026","mes":5,"cliente":"COMPUCENTER 1ST","zona":"SANTA BARBARA DEL ZULIA","kilos":6.8,"flete":21.4353,"venta":833.34,"pct":2.5722,"exc":true},{"fecha":"16/03/2026","mes":3,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":4.8,"flete":17.4332,"venta":682.4,"pct":2.5547,"exc":true},{"fecha":"20/05/2026","mes":5,"cliente":"GUILLERMINA DELGADO","zona":"SAN CRISTOBAL","kilos":1.1,"flete":4.8853,"venta":192.78,"pct":2.5341,"exc":true},{"fecha":"17/04/2026","mes":4,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":13,"flete":42.7131,"venta":1689.12,"pct":2.5287,"exc":true},{"fecha":"25/02/2026","mes":2,"cliente":"KREYSS ADMERK  MONTAÃEZ MONRROY","zona":"SAN CRISTOBAL","kilos":2.4,"flete":12.6509,"venta":508.18,"pct":2.4895,"exc":true},{"fecha":"11/05/2026","mes":5,"cliente":"SATELICEL. CA","zona":"MERIDA","kilos":6.9,"flete":21.5383,"venta":938.4,"pct":2.2952,"exc":true},{"fecha":"15/05/2026","mes":5,"cliente":"RAFAEL  OCHOA DEPABLOS","zona":"SAN CRISTOBAL","kilos":2.4,"flete":7.9937,"venta":355.98,"pct":2.2456,"exc":true},{"fecha":"21/05/2026","mes":5,"cliente":"JORGE CORONADO","zona":"BARINAS","kilos":31,"flete":91.1216,"venta":4062.66,"pct":2.2429,"exc":true},{"fecha":"06/05/2026","mes":5,"cliente":"JESUS NORIEGA","zona":"CARACAS","kilos":0.3,"flete":1.8759,"venta":85,"pct":2.207,"exc":true},{"fecha":"06/05/2026","mes":5,"cliente":"RUBEN BRICEÃO","zona":"CHARALLAVE","kilos":4.7,"flete":15.5769,"venta":706.25,"pct":2.2056,"exc":true},{"fecha":"18/02/2026","mes":2,"cliente":"RUBEN DARIO GARCIA","zona":"MERIDA","kilos":6,"flete":20.0136,"venta":909.86,"pct":2.1996,"exc":true},{"fecha":"05/05/2026","mes":5,"cliente":"KREYSS ADMERK  MONTAÃEZ MONRROY","zona":"SAN CRISTOBAL","kilos":3.6,"flete":12.4471,"venta":573.3,"pct":2.1711,"exc":true},{"fecha":"16/04/2026","mes":4,"cliente":"SATELICEL. CA","zona":"MERIDA","kilos":4,"flete":12.4406,"venta":589.46,"pct":2.1105,"exc":true},{"fecha":"06/03/2026","mes":3,"cliente":"ADELVIS RAMON NARVAEZ","zona":"PORLAMAR","kilos":2,"flete":8.2449,"venta":395.16,"pct":2.0865,"exc":true},{"fecha":"07/05/2026","mes":5,"cliente":"JONATHAN YAJURIS","zona":"CARACAS","kilos":22.5,"flete":70.8784,"venta":3500,"pct":2.0251,"exc":true}],"meses":[{"m":1,"nombre":"Ene","kilos":141.85,"flete":119.07,"venta":21023.9,"envios":26},{"m":2,"nombre":"Feb","kilos":85.2,"flete":180.13,"venta":16765.88,"envios":19},{"m":3,"nombre":"Mar","kilos":207.2,"flete":244.5,"venta":28570.4,"envios":28},{"m":4,"nombre":"Abr","kilos":392.7,"flete":520.9,"venta":49890.69,"envios":34},{"m":5,"nombre":"May","kilos":314.6,"flete":677.86,"venta":40913.32,"envios":35},{"m":6,"nombre":"Jun","kilos":119.05,"flete":105,"venta":18394.48,"envios":10}],"topZonas":[{"zona":"SAN CRISTOBAL","kilos":403.4,"envios":49,"exc":22,"flete":373.72,"venta":49127.33,"pctExc":44.9},{"zona":"BARINAS","kilos":186.2,"envios":16,"exc":8,"flete":394.74,"venta":23143.57,"pctExc":50},{"zona":"PUERTO ORDAZ","kilos":135,"envios":7,"exc":1,"flete":252.66,"venta":20968.11,"pctExc":14.3},{"zona":"EL VIGIA","kilos":95.6,"envios":8,"exc":0,"flete":0,"venta":11174.99,"pctExc":0},{"zona":"PORLAMAR","kilos":67.1,"envios":7,"exc":2,"flete":100.5,"venta":9853.3,"pctExc":28.6},{"zona":"TOVAR","kilos":57.75,"envios":7,"exc":0,"flete":1.5,"venta":7134.9,"pctExc":0},{"zona":"CABIMAS","kilos":53.3,"envios":8,"exc":4,"flete":175.05,"venta":8781.41,"pctExc":50},{"zona":"CARACAS","kilos":42.55,"envios":13,"exc":3,"flete":119.76,"venta":7127.33,"pctExc":23.1},{"zona":"SOCOPO","kilos":36.2,"envios":4,"exc":0,"flete":0,"venta":5425.68,"pctExc":0},{"zona":"MERIDA","kilos":23.6,"envios":5,"exc":3,"flete":78.2,"venta":3952.02,"pctExc":60},{"zona":"MARACAIBO","kilos":19,"envios":1,"exc":0,"flete":58.88,"venta":3198,"pctExc":0},{"zona":"CIUDAD BOLIVAR","kilos":19,"envios":2,"exc":2,"flete":61.04,"venta":1783,"pctExc":100},{"zona":"CORO","kilos":17.7,"envios":2,"exc":1,"flete":44.22,"venta":2355.18,"pctExc":50},{"zona":"LA FRIA","kilos":17.1,"envios":3,"exc":0,"flete":0,"venta":2384.4,"pctExc":0},{"zona":"SAN JUAN DE LOS MORROS","kilos":16.8,"envios":2,"exc":0,"flete":17.15,"venta":3087.8,"pctExc":0}],"zonasExc":[{"zona":"EL SOMBRERO","kilos":2.6,"envios":1,"exc":1,"flete":13.88,"venta":486.8,"pctExc":100},{"zona":"SANTA BARBARA DEL ZULIA","kilos":12.8,"envios":2,"exc":2,"flete":44.36,"venta":1585.08,"pctExc":100},{"zona":"CIUDAD BOLIVAR","kilos":19,"envios":2,"exc":2,"flete":61.04,"venta":1783,"pctExc":100},{"zona":"MERIDA","kilos":23.6,"envios":5,"exc":3,"flete":78.2,"venta":3952.02,"pctExc":60},{"zona":"CABIMAS","kilos":53.3,"envios":8,"exc":4,"flete":175.05,"venta":8781.41,"pctExc":50},{"zona":"CORO","kilos":17.7,"envios":2,"exc":1,"flete":44.22,"venta":2355.18,"pctExc":50},{"zona":"BARINAS","kilos":186.2,"envios":16,"exc":8,"flete":394.74,"venta":23143.57,"pctExc":50},{"zona":"VALLE DE LA PASCUA","kilos":1,"envios":2,"exc":1,"flete":11.08,"venta":100,"pctExc":50},{"zona":"SAN CRISTOBAL","kilos":403.4,"envios":49,"exc":22,"flete":373.72,"venta":49127.33,"pctExc":44.9},{"zona":"PORLAMAR","kilos":67.1,"envios":7,"exc":2,"flete":100.5,"venta":9853.3,"pctExc":28.6},{"zona":"VALERA","kilos":13.6,"envios":4,"exc":1,"flete":20.37,"venta":6333,"pctExc":25},{"zona":"CHARALLAVE","kilos":6.5,"envios":4,"exc":1,"flete":24.25,"venta":1400.95,"pctExc":25},{"zona":"CARACAS","kilos":42.55,"envios":13,"exc":3,"flete":119.76,"venta":7127.33,"pctExc":23.1},{"zona":"PUERTO ORDAZ","kilos":135,"envios":7,"exc":1,"flete":252.66,"venta":20968.11,"pctExc":14.3}],"allZonas":[{"zona":"SAN CRISTOBAL","kilos":403.4,"envios":49,"exc":22,"flete":373.72,"venta":49127.33,"pctExc":44.9},{"zona":"BARINAS","kilos":186.2,"envios":16,"exc":8,"flete":394.74,"venta":23143.57,"pctExc":50},{"zona":"CARACAS","kilos":42.55,"envios":13,"exc":3,"flete":119.76,"venta":7127.33,"pctExc":23.1},{"zona":"CABIMAS","kilos":53.3,"envios":8,"exc":4,"flete":175.05,"venta":8781.41,"pctExc":50},{"zona":"EL VIGIA","kilos":95.6,"envios":8,"exc":0,"flete":0,"venta":11174.99,"pctExc":0},{"zona":"TOVAR","kilos":57.75,"envios":7,"exc":0,"flete":1.5,"venta":7134.9,"pctExc":0},{"zona":"PUERTO ORDAZ","kilos":135,"envios":7,"exc":1,"flete":252.66,"venta":20968.11,"pctExc":14.3},{"zona":"PORLAMAR","kilos":67.1,"envios":7,"exc":2,"flete":100.5,"venta":9853.3,"pctExc":28.6},{"zona":"MERIDA","kilos":23.6,"envios":5,"exc":3,"flete":78.2,"venta":3952.02,"pctExc":60},{"zona":"SOCOPO","kilos":36.2,"envios":4,"exc":0,"flete":0,"venta":5425.68,"pctExc":0},{"zona":"VALERA","kilos":13.6,"envios":4,"exc":1,"flete":20.37,"venta":6333,"pctExc":25},{"zona":"CHARALLAVE","kilos":6.5,"envios":4,"exc":1,"flete":24.25,"venta":1400.95,"pctExc":25},{"zona":"LA FRIA","kilos":17.1,"envios":3,"exc":0,"flete":0,"venta":2384.4,"pctExc":0},{"zona":"CORO","kilos":17.7,"envios":2,"exc":1,"flete":44.22,"venta":2355.18,"pctExc":50},{"zona":"VALLE DE LA PASCUA","kilos":1,"envios":2,"exc":1,"flete":11.08,"venta":100,"pctExc":50},{"zona":"SAN JUAN DE LOS MORROS","kilos":16.8,"envios":2,"exc":0,"flete":17.15,"venta":3087.8,"pctExc":0},{"zona":"SANTA BARBARA DEL ZULIA","kilos":12.8,"envios":2,"exc":2,"flete":44.36,"venta":1585.08,"pctExc":100},{"zona":"CIUDAD BOLIVAR","kilos":19,"envios":2,"exc":2,"flete":61.04,"venta":1783,"pctExc":100},{"zona":"PAMPATAR","kilos":8.8,"envios":1,"exc":0,"flete":0,"venta":1974.5,"pctExc":0},{"zona":"EL SOMBRERO","kilos":2.6,"envios":1,"exc":1,"flete":13.88,"venta":486.8,"pctExc":100},{"zona":"EL PINAL","kilos":3.4,"envios":1,"exc":0,"flete":0,"venta":245.9,"pctExc":0},{"zona":"MARACAIBO","kilos":19,"envios":1,"exc":0,"flete":58.88,"venta":3198,"pctExc":0},{"zona":"COLON","kilos":2,"envios":1,"exc":0,"flete":0,"venta":323.6,"pctExc":0},{"zona":"CALABOZO","kilos":4,"envios":1,"exc":0,"flete":10.86,"venta":738.48,"pctExc":0},{"zona":"GUANARE","kilos":15.6,"envios":1,"exc":0,"flete":45.26,"venta":2873.34,"pctExc":0}],"topCli":[{"cliente":"TIENDAS CIRO","kilos":230,"envios":10,"exc":1,"flete":39.27,"venta":24712.06,"pctExc":10},{"cliente":"JORGE CORONADO","kilos":118.4,"envios":9,"exc":8,"flete":369.57,"venta":13911.81,"pctExc":88.9},{"cliente":"ACCESORIOS MUNDO MOVIL","kilos":66.1,"envios":3,"exc":0,"flete":0,"venta":8319},{"cliente":"H & S HOP","kilos":57,"envios":2,"exc":0,"flete":0,"venta":8054.02},{"cliente":"COMERCIALIZADORA GLOBALES DE VENEZUELA CA.","kilos":55.9,"envios":5,"exc":0,"flete":0,"venta":6793.3},{"cliente":"FUTURAMA","kilos":47.8,"envios":4,"exc":0,"flete":0,"venta":6424},{"cliente":"JOSE VICENTE RIVERA","kilos":44.4,"envios":5,"exc":1,"flete":145.55,"venta":8253.52,"pctExc":20},{"cliente":"GERCY SEGOVIA SERVO","kilos":35.3,"envios":5,"exc":0,"flete":0,"venta":5244.92},{"cliente":"CELULAR MANIA  COMPUTACION","kilos":33.1,"envios":5,"exc":1,"flete":104.41,"venta":6493.88,"pctExc":20},{"cliente":"RAFAEL  OCHOA DEPABLOS","kilos":30.9,"envios":6,"exc":2,"flete":21.87,"venta":4725.92,"pctExc":33.3},{"cliente":"WILLIANNYS CANCINO. KOCUS","kilos":28,"envios":1,"exc":1,"flete":83.1,"venta":2552.35,"pctExc":100},{"cliente":"PLUS ELECTRONICS, C.A","kilos":26.2,"envios":2,"exc":1,"flete":76.48,"venta":3924.36,"pctExc":50},{"cliente":"YESICA MANCILLA","kilos":24,"envios":2,"exc":0,"flete":0,"venta":1949.85},{"cliente":"JONATHAN YAJURIS","kilos":22.5,"envios":1,"exc":1,"flete":70.88,"venta":3500,"pctExc":100},{"cliente":"GRUPO MG 1.0","kilos":20.9,"envios":3,"exc":0,"flete":15.78,"venta":3343.78}],"cliExc":[{"cliente":"MIREYA BENCOMO","kilos":20.2,"envios":3,"exc":3,"flete":70.64,"venta":2287.53,"pctExc":100},{"cliente":"FRANCISCO ZAMBRANO","kilos":11.7,"envios":7,"exc":7,"flete":45.29,"venta":817.83,"pctExc":100},{"cliente":"KREYSS ADMERK  MONTAÃEZ MONRROY","kilos":9.3,"envios":3,"exc":3,"flete":35.95,"venta":1460.92,"pctExc":100},{"cliente":"JESUS JAVIER TOVAR","kilos":2.6,"envios":1,"exc":1,"flete":13.88,"venta":486.8,"pctExc":100},{"cliente":"ADELVIS RAMON NARVAEZ","kilos":2,"envios":1,"exc":1,"flete":8.24,"venta":395.16,"pctExc":100},{"cliente":"LEONOR CHIQUINQUIRA GARRIDO QUINTERO","kilos":1.9,"envios":1,"exc":1,"flete":6.49,"venta":244.44,"pctExc":100},{"cliente":"WILLIANNYS CANCINO. KOCUS","kilos":28,"envios":1,"exc":1,"flete":83.1,"venta":2552.35,"pctExc":100},{"cliente":"SATELICEL. CA","kilos":10.9,"envios":2,"exc":2,"flete":33.98,"venta":1527.86,"pctExc":100},{"cliente":"LUIS ZAMBRANO","kilos":6,"envios":1,"exc":1,"flete":22.93,"venta":751.74,"pctExc":100},{"cliente":"KALOO ELECTRONICS","kilos":0.6,"envios":1,"exc":1,"flete":3.38,"venta":100,"pctExc":100},{"cliente":"JESUS NORIEGA","kilos":0.3,"envios":1,"exc":1,"flete":1.88,"venta":85,"pctExc":100},{"cliente":"JONATHAN YAJURIS","kilos":22.5,"envios":1,"exc":1,"flete":70.88,"venta":3500,"pctExc":100},{"cliente":"DEVION MOBILE","kilos":15,"envios":1,"exc":1,"flete":45.59,"venta":1325,"pctExc":100},{"cliente":"COMPUCENTER 1ST","kilos":6.8,"envios":1,"exc":1,"flete":21.44,"venta":833.34,"pctExc":100},{"cliente":"YANETZI FERNANDEZ","kilos":4,"envios":1,"exc":1,"flete":15.45,"venta":458,"pctExc":100},{"cliente":"JORGE CORONADO","kilos":118.4,"envios":9,"exc":8,"flete":369.57,"venta":13911.81,"pctExc":88.9},{"cliente":"GUILLERMINA DELGADO","kilos":15.3,"envios":6,"exc":5,"flete":61.77,"venta":1441.55,"pctExc":83.3},{"cliente":"CHRISTIAN EUGENIO MORALES BONILLA","kilos":5.4,"envios":3,"exc":2,"flete":17.53,"venta":484.17,"pctExc":66.7},{"cliente":"DARWIN PACHANO","kilos":17.7,"envios":2,"exc":1,"flete":44.22,"venta":2355.18,"pctExc":50},{"cliente":"RUBEN DARIO GARCIA","kilos":8.5,"envios":2,"exc":1,"flete":29.41,"venta":1434.96,"pctExc":50},{"cliente":"JOSE RAFAEL ARIAS","kilos":1,"envios":2,"exc":1,"flete":11.08,"venta":100,"pctExc":50},{"cliente":"REBECA HERNANDEZ","kilos":2.3,"envios":2,"exc":1,"flete":8.34,"venta":51,"pctExc":50},{"cliente":"PLUS ELECTRONICS, C.A","kilos":26.2,"envios":2,"exc":1,"flete":76.48,"venta":3924.36,"pctExc":50},{"cliente":"RAFAEL  OCHOA DEPABLOS","kilos":30.9,"envios":6,"exc":2,"flete":21.87,"venta":4725.92,"pctExc":33.3},{"cliente":"RUBEN BRICEÃO","kilos":6.3,"envios":3,"exc":1,"flete":22.37,"venta":1120.95,"pctExc":33.3},{"cliente":"JOSE VICENTE RIVERA","kilos":44.4,"envios":5,"exc":1,"flete":145.55,"venta":8253.52,"pctExc":20},{"cliente":"CELULAR MANIA  COMPUTACION","kilos":33.1,"envios":5,"exc":1,"flete":104.41,"venta":6493.88,"pctExc":20},{"cliente":"TIENDAS CIRO","kilos":230,"envios":10,"exc":1,"flete":39.27,"venta":24712.06,"pctExc":10}]};
 }
 function loadData(){
   try{
