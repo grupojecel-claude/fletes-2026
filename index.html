@@ -153,23 +153,23 @@
 
 <div id="overlay">
   <div class="spinner"></div>
-  <div style="font-size:14px;font-weight:600;">Cargando datos desde Google Driveâ¦</div>
+  <div style="font-size:14px;font-weight:600;">Cargando datos desde Google Drive…</div>
   <p>Leyendo LIB2026 y ZO2026</p>
 </div>
 
 <div class="header">
   <div>
     <h1><span class="dot"></span> Resumen Envios Nacionales 2026</h1>
-    <p>Grupo Jecel C.A. Â· Control de Fletes Â· LIBERTY (LIB2026) + ZOOM (ZO2026)</p>
+    <p>Grupo Jecel C.A. · Control de Fletes · LIBERTY (LIB2026) + ZOOM (ZO2026)</p>
   </div>
   <div class="header-right">
-    <div id="ts-label">â</div>
-    <div>Fuente: <strong>Google Drive</strong> Â· en vivo</div>
+    <div id="ts-label">—</div>
+    <div>Fuente: <strong>Google Drive</strong> · en vivo</div>
   </div>
 </div>
 
 <div class="tabs-bar">
-  <button class="tab-btn active" onclick="showTab('cmp',this)">ð Comparativa</button>
+  <button class="tab-btn active" onclick="showTab('cmp',this)">📋 Resumen General</button>
   <button class="tab-btn" onclick="showTab('lib',this)">LIBERTY <span class="op-pill pill-lib">2026</span></button>
   <button class="tab-btn" onclick="showTab('zoom',this)">ZOOM <span class="op-pill pill-zoom">2026</span></button>
 </div>
@@ -183,84 +183,84 @@
     <div class="kpi-strip" style="margin-top:16px">
       <div class="kpi c-purple">
         <div class="kpi-lbl">Total Kilos Despachados</div>
-        <div class="kpi-val cv-purple" id="kT-kg">â</div>
-        <div class="kpi-sub" id="kT-g">â</div>
+        <div class="kpi-val cv-purple" id="kT-kg">—</div>
+        <div class="kpi-sub" id="kT-g">—</div>
       </div>
       <div class="kpi c-lib">
         <div class="kpi-lbl">Kilos LIBERTY</div>
-        <div class="kpi-val cv-lib" id="kL-kg">â</div>
-        <div class="kpi-sub" id="kL-g">â</div>
+        <div class="kpi-val cv-lib" id="kL-kg">—</div>
+        <div class="kpi-sub" id="kL-g">—</div>
       </div>
       <div class="kpi c-zoom">
         <div class="kpi-lbl">Kilos ZOOM</div>
-        <div class="kpi-val cv-zoom" id="kZ-kg">â</div>
-        <div class="kpi-sub" id="kZ-g">â</div>
+        <div class="kpi-val cv-zoom" id="kZ-kg">—</div>
+        <div class="kpi-sub" id="kZ-g">—</div>
       </div>
       <div class="kpi c-green">
-        <div class="kpi-lbl">EnvÃ­os Dentro del LÃ­mite</div>
-        <div class="kpi-val cv-green" id="kT-ok">â</div>
-        <div class="kpi-sub" id="kT-okp">â</div>
+        <div class="kpi-lbl">Envíos Dentro del Límite</div>
+        <div class="kpi-val cv-green" id="kT-ok">—</div>
+        <div class="kpi-sub" id="kT-okp">—</div>
       </div>
       <div class="kpi c-red">
-        <div class="kpi-lbl">EnvÃ­os Excedidos &gt;2%</div>
-        <div class="kpi-val cv-red" id="kT-exc">â</div>
-        <div class="kpi-sub" id="kT-excp">â</div>
+        <div class="kpi-lbl">Envíos Excedidos &gt;2%</div>
+        <div class="kpi-val cv-red" id="kT-exc">—</div>
+        <div class="kpi-sub" id="kT-excp">—</div>
       </div>
       <div class="kpi c-amber">
         <div class="kpi-lbl">Flete Total Pagado</div>
-        <div class="kpi-val cv-amber" id="kT-flete">â</div>
-        <div class="kpi-sub" id="kT-venta">â</div>
+        <div class="kpi-val cv-amber" id="kT-flete">—</div>
+        <div class="kpi-sub" id="kT-venta">—</div>
       </div>
     </div>
 
     <!-- COMPLIANCE OVERVIEW -->
     <div class="g2" style="margin-bottom:16px">
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dl"></span>LIBERTY â Cumplimiento Regla del 2%</div>
+        <div class="card-hd"><span class="hd-dot dl"></span>LIBERTY — Cumplimiento Regla del 2%</div>
         <div class="comply-wrap">
           <canvas class="comply-canvas" id="ch-cmp-lib-pie"></canvas>
           <div class="comply-stats">
             <div class="cs-row">
               <span class="cs-dot" style="background:var(--green)"></span>
-              <span class="cs-label">Dentro del lÃ­mite â¤2%</span>
-              <span class="cs-pct" id="cL-ok-pct" style="color:var(--green)">â</span>
-              <span class="cs-cnt" id="cL-ok-cnt">â</span>
+              <span class="cs-label">Dentro del límite ≤2%</span>
+              <span class="cs-pct" id="cL-ok-pct" style="color:var(--green)">—</span>
+              <span class="cs-cnt" id="cL-ok-cnt">—</span>
             </div>
             <div class="cs-row">
               <span class="cs-dot" style="background:var(--red)"></span>
               <span class="cs-label">Excedidos &gt;2%</span>
-              <span class="cs-pct" id="cL-exc-pct" style="color:var(--red)">â</span>
-              <span class="cs-cnt" id="cL-exc-cnt">â</span>
+              <span class="cs-pct" id="cL-exc-pct" style="color:var(--red)">—</span>
+              <span class="cs-cnt" id="cL-exc-cnt">—</span>
             </div>
           </div>
         </div>
       </div>
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dz"></span>ZOOM â Cumplimiento Regla del 2%</div>
+        <div class="card-hd"><span class="hd-dot dz"></span>ZOOM — Cumplimiento Regla del 2%</div>
         <div class="comply-wrap">
           <canvas class="comply-canvas" id="ch-cmp-zoom-pie"></canvas>
           <div class="comply-stats">
             <div class="cs-row">
               <span class="cs-dot" style="background:var(--green)"></span>
-              <span class="cs-label">Dentro del lÃ­mite â¤2%</span>
-              <span class="cs-pct" id="cZ-ok-pct" style="color:var(--green)">â</span>
-              <span class="cs-cnt" id="cZ-ok-cnt">â</span>
+              <span class="cs-label">Dentro del límite ≤2%</span>
+              <span class="cs-pct" id="cZ-ok-pct" style="color:var(--green)">—</span>
+              <span class="cs-cnt" id="cZ-ok-cnt">—</span>
             </div>
             <div class="cs-row">
               <span class="cs-dot" style="background:var(--red)"></span>
               <span class="cs-label">Excedidos &gt;2%</span>
-              <span class="cs-pct" id="cZ-exc-pct" style="color:var(--red)">â</span>
-              <span class="cs-cnt" id="cZ-exc-cnt">â</span>
+              <span class="cs-pct" id="cZ-exc-pct" style="color:var(--red)">—</span>
+              <span class="cs-cnt" id="cZ-exc-cnt">—</span>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- GRÃFICO COMBINADO LIBERTY vs ZOOM -->
+    <!-- GRÁFICO COMBINADO LIBERTY vs ZOOM -->
     <div class="card">
-      <div class="card-hd"><span class="hd-dot dl"></span>Kilos por Mes Â· LIBERTY vs ZOOM</div>
-      <div class="card-sub">EvoluciÃ³n mensual del volumen despachado por operador logÃ­stico</div>
+      <div class="card-hd"><span class="hd-dot dl"></span>Kilos por Mes · LIBERTY vs ZOOM</div>
+      <div class="card-sub">Evolución mensual del volumen despachado por operador logístico</div>
       <div class="legend">
         <div class="legend-item"><div class="legend-dot" style="background:var(--lib)"></div>LIBERTY</div>
         <div class="legend-item"><div class="legend-dot" style="background:var(--zoom)"></div>ZOOM</div>
@@ -268,38 +268,38 @@
       <canvas id="ch-combined" height="120"></canvas>
     </div>
 
-    <!-- ALERTAS COMPARATIVA -->
+        <!-- ALERTAS COMPARATIVA -->
     <div class="g2">
       <div class="alert-box">
-        <div class="alert-title">ð¨ Zonas LIBERTY con excedidos &gt;2%</div>
-        <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>EnvÃ­os</th><th>Excedidos</th><th>Nivel</th></tr></thead><tbody id="tb-cmp-lib-z"></tbody></table></div>
+        <div class="alert-title">🚨 Clientes LIBERTY con excedidos &gt;2%</div>
+        <div class="tbl-wrap"><table><thead><tr><th>Cliente</th><th>Envíos</th><th>Excedidos</th><th>Nivel</th></tr></thead><tbody id="tb-cmp-lib-cli"></tbody></table></div>
       </div>
       <div class="alert-box zoom">
-        <div class="alert-title">ð¨ Destinos ZOOM con excedidos &gt;2%</div>
-        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>EnvÃ­os</th><th>Excedidos</th><th>Nivel</th></tr></thead><tbody id="tb-cmp-zoom-z"></tbody></table></div>
+        <div class="alert-title">🚨 Destinos ZOOM con excedidos &gt;2%</div>
+        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>Envíos</th><th>Excedidos</th><th>Nivel</th></tr></thead><tbody id="tb-cmp-zoom-z"></tbody></table></div>
       </div>
     </div>
 
-    <!-- RESUMEN % FLETE -->
+<!-- RESUMEN % FLETE -->
     <div class="g2">
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dl"></span>LIBERTY 2026 â Resumen Financiero</div>
+        <div class="card-hd"><span class="hd-dot dl"></span>LIBERTY 2026 — Resumen Financiero</div>
         <table><tbody>
-          <tr><td style="color:var(--text2)">Ventas facturadas</td><td class="num" id="rL-v">â</td></tr>
-          <tr><td style="color:var(--text2)">Flete pagado</td><td class="num" id="rL-f">â</td></tr>
-          <tr><td style="color:var(--text2)">% Flete global</td><td class="num" id="rL-p" style="font-weight:700">â</td></tr>
-          <tr><td style="color:var(--text2)">GuÃ­as correctas</td><td class="num" id="rL-ok">â</td></tr>
-          <tr><td style="color:var(--text2)">GuÃ­as excedidas</td><td class="num cv-red" id="rL-exc" style="font-weight:700">â</td></tr>
+          <tr><td style="color:var(--text2)">Ventas facturadas</td><td class="num" id="rL-v">—</td></tr>
+          <tr><td style="color:var(--text2)">Flete pagado</td><td class="num" id="rL-f">—</td></tr>
+          <tr><td style="color:var(--text2)">% Flete global</td><td class="num" id="rL-p" style="font-weight:700">—</td></tr>
+          <tr><td style="color:var(--text2)">Guías correctas</td><td class="num" id="rL-ok">—</td></tr>
+          <tr><td style="color:var(--text2)">Guías excedidas</td><td class="num cv-red" id="rL-exc" style="font-weight:700">—</td></tr>
         </tbody></table>
       </div>
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dz"></span>ZOOM 2026 â Resumen Financiero</div>
+        <div class="card-hd"><span class="hd-dot dz"></span>ZOOM 2026 — Resumen Financiero</div>
         <table><tbody>
-          <tr><td style="color:var(--text2)">Ventas facturadas</td><td class="num" id="rZ-v">â</td></tr>
-          <tr><td style="color:var(--text2)">Flete pagado</td><td class="num" id="rZ-f">â</td></tr>
-          <tr><td style="color:var(--text2)">% Flete global</td><td class="num" id="rZ-p" style="font-weight:700">â</td></tr>
-          <tr><td style="color:var(--text2)">GuÃ­as correctas</td><td class="num" id="rZ-ok">â</td></tr>
-          <tr><td style="color:var(--text2)">GuÃ­as excedidas</td><td class="num cv-red" id="rZ-exc" style="font-weight:700">â</td></tr>
+          <tr><td style="color:var(--text2)">Ventas facturadas</td><td class="num" id="rZ-v">—</td></tr>
+          <tr><td style="color:var(--text2)">Flete pagado</td><td class="num" id="rZ-f">—</td></tr>
+          <tr><td style="color:var(--text2)">% Flete global</td><td class="num" id="rZ-p" style="font-weight:700">—</td></tr>
+          <tr><td style="color:var(--text2)">Guías correctas</td><td class="num" id="rZ-ok">—</td></tr>
+          <tr><td style="color:var(--text2)">Guías excedidas</td><td class="num cv-red" id="rZ-exc" style="font-weight:700">—</td></tr>
         </tbody></table>
       </div>
     </div>
@@ -309,37 +309,37 @@
   <!-- ââ TAB LIBERTY ââââââââââââââââââââââââââââââ -->
   <div id="tab-lib" class="tab-panel">
     <div class="kpi-strip" style="margin-top:16px">
-      <div class="kpi c-lib"><div class="kpi-lbl">Total Kilos</div><div class="kpi-val cv-lib" id="lL-kg">â</div><div class="kpi-sub">LIBERTY 2026</div></div>
-      <div class="kpi c-purple"><div class="kpi-lbl">GuÃ­as</div><div class="kpi-val cv-purple" id="lL-g">â</div><div class="kpi-sub">envÃ­os procesados</div></div>
-      <div class="kpi c-green"><div class="kpi-lbl">Flete Pagado</div><div class="kpi-val cv-green" id="lL-f">â</div><div class="kpi-sub">USD total</div></div>
-      <div class="kpi c-amber"><div class="kpi-lbl">Ventas</div><div class="kpi-val cv-amber" id="lL-v">â</div><div class="kpi-sub">USD facturado</div></div>
-      <div class="kpi c-lib" id="lL-pk"><div class="kpi-lbl">% Flete Global</div><div class="kpi-val cv-lib" id="lL-p">â</div><div class="kpi-sub">sobre ventas</div></div>
-      <div class="kpi c-red"><div class="kpi-lbl">Excedidos &gt;2%</div><div class="kpi-val cv-red" id="lL-e">â</div><div class="kpi-sub" id="lL-es">â</div></div>
+      <div class="kpi c-lib"><div class="kpi-lbl">Total Kilos</div><div class="kpi-val cv-lib" id="lL-kg">—</div><div class="kpi-sub">LIBERTY 2026</div></div>
+      <div class="kpi c-purple"><div class="kpi-lbl">Guías</div><div class="kpi-val cv-purple" id="lL-g">—</div><div class="kpi-sub">envíos procesados</div></div>
+      <div class="kpi c-green"><div class="kpi-lbl">Flete Pagado</div><div class="kpi-val cv-green" id="lL-f">—</div><div class="kpi-sub">USD total</div></div>
+      <div class="kpi c-amber"><div class="kpi-lbl">Ventas</div><div class="kpi-val cv-amber" id="lL-v">—</div><div class="kpi-sub">USD facturado</div></div>
+      <div class="kpi c-lib" id="lL-pk"><div class="kpi-lbl">% Flete Global</div><div class="kpi-val cv-lib" id="lL-p">—</div><div class="kpi-sub">sobre ventas</div></div>
+      <div class="kpi c-red"><div class="kpi-lbl">Excedidos &gt;2%</div><div class="kpi-val cv-red" id="lL-e">—</div><div class="kpi-sub" id="lL-es">—</div></div>
     </div>
     <!-- COMPLIANCE LIBERTY -->
     <div class="card" style="margin-bottom:16px">
-      <div class="card-hd"><span class="hd-dot dg"></span>Cumplimiento Regla del 2% â LIBERTY 2026</div>
+      <div class="card-hd"><span class="hd-dot dg"></span>Cumplimiento Regla del 2% — LIBERTY 2026</div>
       <div class="comply-wrap">
         <canvas class="comply-canvas" id="ch-lib-pie"></canvas>
         <div class="comply-stats">
           <div class="cs-row">
             <span class="cs-dot" style="background:var(--green)"></span>
-            <span class="cs-label">EnvÃ­os dentro del lÃ­mite â¤2%</span>
-            <span class="cs-pct" id="lL-ok-pct" style="color:var(--green)">â</span>
-            <span class="cs-cnt" id="lL-ok-cnt">â</span>
+            <span class="cs-label">Envíos dentro del límite ≤2%</span>
+            <span class="cs-pct" id="lL-ok-pct" style="color:var(--green)">—</span>
+            <span class="cs-cnt" id="lL-ok-cnt">—</span>
           </div>
           <div class="cs-row">
             <span class="cs-dot" style="background:var(--red)"></span>
-            <span class="cs-label">EnvÃ­os excedidos &gt;2%</span>
-            <span class="cs-pct" id="lL-exc-pct" style="color:var(--red)">â</span>
-            <span class="cs-cnt" id="lL-exc-cnt">â</span>
+            <span class="cs-label">Envíos excedidos &gt;2%</span>
+            <span class="cs-pct" id="lL-exc-pct" style="color:var(--red)">—</span>
+            <span class="cs-cnt" id="lL-exc-cnt">—</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dl"></span>Kilos por Mes â LIBERTY 2026</div><canvas id="ch-lib-mes" height="90"></canvas></div>
+    <div class="card"><div class="card-hd"><span class="hd-dot dl"></span>Kilos por Mes — LIBERTY 2026</div><canvas id="ch-lib-mes" height="90"></canvas></div>
     <div class="alert-box">
-      <div class="alert-title">ð¨ Control de Fletes LIBERTY â Excedidos del ParÃ¡metro (&gt;2%)</div>
+      <div class="alert-title">ð¨ Control de Fletes LIBERTY — Excedidos del Parámetro (&gt;2%)</div>
       <div class="alert-grid">
         <div><div class="alert-sub">ð Zonas con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-z-exc"></tbody></table></div></div>
         <div><div class="alert-sub">ð¤ Clientes con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Cliente</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-c-exc"></tbody></table></div></div>
@@ -350,52 +350,51 @@
     <div class="g2" style="margin-bottom:16px">
       <div class="card" style="margin-bottom:0">
         <div class="card-hd"><span class="hd-dot dr"></span>ð´ Zonas con Excedidos &gt;2% <span id="lL-z-exc-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
-        <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>EnvÃ­os</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-z-exc-split"></tbody></table></div>
+        <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>Envíos</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-z-exc-split"></tbody></table></div>
       </div>
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dg"></span>â Zonas Dentro del LÃ­mite â¤2% <span id="lL-z-ok-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
-        <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>EnvÃ­os</th><th>Kilos</th><th>Estado</th></tr></thead><tbody id="tb-lib-z-ok-split"></tbody></table></div>
+        <div class="card-hd"><span class="hd-dot dg"></span>â Zonas Dentro del Límite ≤2% <span id="lL-z-ok-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
+        <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>Envíos</th><th>Kilos</th><th>Estado</th></tr></thead><tbody id="tb-lib-z-ok-split"></tbody></table></div>
       </div>
     </div>
     <div class="card"><div class="card-hd"><span class="hd-dot dl"></span>Top 15 Clientes por Kilos</div><canvas id="ch-lib-cli" height="80"></canvas></div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dr"></span>Detalle GuÃ­as Excedidas â LIBERTY 2026</div><div class="tbl-wrap"><table><thead><tr><th>Fecha</th><th>Cliente</th><th>Zona</th><th class="num">Flete $</th><th class="num">Venta $</th><th class="num">% Flete</th></tr></thead><tbody id="tb-lib-exc"></tbody></table></div></div>
   </div>
 
   <!-- ââ TAB ZOOM ââââââââââââââââââââââââââââââââ -->
   <div id="tab-zoom" class="tab-panel">
     <div class="kpi-strip" style="margin-top:16px">
-      <div class="kpi c-zoom"><div class="kpi-lbl">Total Kilos</div><div class="kpi-val cv-zoom" id="lZ-kg">â</div><div class="kpi-sub">ZOOM 2026</div></div>
-      <div class="kpi c-purple"><div class="kpi-lbl">GuÃ­as</div><div class="kpi-val cv-purple" id="lZ-g">â</div><div class="kpi-sub">envÃ­os procesados</div></div>
-      <div class="kpi c-green"><div class="kpi-lbl">Flete Pagado</div><div class="kpi-val cv-green" id="lZ-f">â</div><div class="kpi-sub">USD total</div></div>
-      <div class="kpi c-amber"><div class="kpi-lbl">Ventas</div><div class="kpi-val cv-amber" id="lZ-v">â</div><div class="kpi-sub">USD facturado</div></div>
-      <div class="kpi c-zoom" id="lZ-pk"><div class="kpi-lbl">% Flete Global</div><div class="kpi-val cv-zoom" id="lZ-p">â</div><div class="kpi-sub">sobre ventas</div></div>
-      <div class="kpi c-red"><div class="kpi-lbl">Excedidos &gt;2%</div><div class="kpi-val cv-red" id="lZ-e">â</div><div class="kpi-sub" id="lZ-es">â</div></div>
+      <div class="kpi c-zoom"><div class="kpi-lbl">Total Kilos</div><div class="kpi-val cv-zoom" id="lZ-kg">—</div><div class="kpi-sub">ZOOM 2026</div></div>
+      <div class="kpi c-purple"><div class="kpi-lbl">Guías</div><div class="kpi-val cv-purple" id="lZ-g">—</div><div class="kpi-sub">envíos procesados</div></div>
+      <div class="kpi c-green"><div class="kpi-lbl">Flete Pagado</div><div class="kpi-val cv-green" id="lZ-f">—</div><div class="kpi-sub">USD total</div></div>
+      <div class="kpi c-amber"><div class="kpi-lbl">Ventas</div><div class="kpi-val cv-amber" id="lZ-v">—</div><div class="kpi-sub">USD facturado</div></div>
+      <div class="kpi c-zoom" id="lZ-pk"><div class="kpi-lbl">% Flete Global</div><div class="kpi-val cv-zoom" id="lZ-p">—</div><div class="kpi-sub">sobre ventas</div></div>
+      <div class="kpi c-red"><div class="kpi-lbl">Excedidos &gt;2%</div><div class="kpi-val cv-red" id="lZ-e">—</div><div class="kpi-sub" id="lZ-es">—</div></div>
     </div>
     <!-- COMPLIANCE ZOOM -->
     <div class="card" style="margin-bottom:16px">
-      <div class="card-hd"><span class="hd-dot dg"></span>Cumplimiento Regla del 2% â ZOOM 2026</div>
+      <div class="card-hd"><span class="hd-dot dg"></span>Cumplimiento Regla del 2% — ZOOM 2026</div>
       <div class="comply-wrap">
         <canvas class="comply-canvas" id="ch-zoom-pie"></canvas>
         <div class="comply-stats">
           <div class="cs-row">
             <span class="cs-dot" style="background:var(--green)"></span>
-            <span class="cs-label">EnvÃ­os dentro del lÃ­mite â¤2%</span>
-            <span class="cs-pct" id="lZ-ok-pct" style="color:var(--green)">â</span>
-            <span class="cs-cnt" id="lZ-ok-cnt">â</span>
+            <span class="cs-label">Envíos dentro del límite ≤2%</span>
+            <span class="cs-pct" id="lZ-ok-pct" style="color:var(--green)">—</span>
+            <span class="cs-cnt" id="lZ-ok-cnt">—</span>
           </div>
           <div class="cs-row">
             <span class="cs-dot" style="background:var(--red)"></span>
-            <span class="cs-label">EnvÃ­os excedidos &gt;2%</span>
-            <span class="cs-pct" id="lZ-exc-pct" style="color:var(--red)">â</span>
-            <span class="cs-cnt" id="lZ-exc-cnt">â</span>
+            <span class="cs-label">Envíos excedidos &gt;2%</span>
+            <span class="cs-pct" id="lZ-exc-pct" style="color:var(--red)">—</span>
+            <span class="cs-cnt" id="lZ-exc-cnt">—</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="note">â ï¸ <strong>ZOOM 2026:</strong> <code>TOTAL $ GUIA</code> tiene <code>#REF!</code> en varios registros. Flete calculado como <strong>BS GUIA Ã· TASA DÃA</strong>.</div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dz"></span>Kilos por Mes â ZOOM 2026</div><canvas id="ch-zoom-mes" height="90"></canvas></div>
+    <div class="note">â ï¸ <strong>ZOOM 2026:</strong> <code>TOTAL $ GUIA</code> tiene <code>#REF!</code> en varios registros. Flete calculado como <strong>BS GUIA ÷ TASA DÍA</strong>.</div>
+    <div class="card"><div class="card-hd"><span class="hd-dot dz"></span>Kilos por Mes — ZOOM 2026</div><canvas id="ch-zoom-mes" height="90"></canvas></div>
     <div class="alert-box zoom">
-      <div class="alert-title">ð¨ Control de Fletes ZOOM â Excedidos del ParÃ¡metro (&gt;2%)</div>
+      <div class="alert-title">ð¨ Control de Fletes ZOOM — Excedidos del Parámetro (&gt;2%)</div>
       <div class="alert-grid">
         <div><div class="alert-sub">ð Destinos con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-z-exc"></tbody></table></div></div>
         <div><div class="alert-sub">ð¤ Clientes con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Cliente</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-c-exc"></tbody></table></div></div>
@@ -406,15 +405,14 @@
     <div class="g2" style="margin-bottom:16px">
       <div class="card" style="margin-bottom:0">
         <div class="card-hd"><span class="hd-dot dr"></span>ð´ Destinos con Excedidos &gt;2% <span id="lZ-z-exc-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
-        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>EnvÃ­os</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-z-exc-split"></tbody></table></div>
+        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>Envíos</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-z-exc-split"></tbody></table></div>
       </div>
       <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dg"></span>â Destinos Dentro del LÃ­mite â¤2% <span id="lZ-z-ok-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
-        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>EnvÃ­os</th><th>Kilos</th><th>Estado</th></tr></thead><tbody id="tb-zoom-z-ok-split"></tbody></table></div>
+        <div class="card-hd"><span class="hd-dot dg"></span>â Destinos Dentro del Límite ≤2% <span id="lZ-z-ok-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
+        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>Envíos</th><th>Kilos</th><th>Estado</th></tr></thead><tbody id="tb-zoom-z-ok-split"></tbody></table></div>
       </div>
     </div>
     <div class="card"><div class="card-hd"><span class="hd-dot dz"></span>Top 15 Clientes por Kilos</div><canvas id="ch-zoom-cli" height="80"></canvas></div>
-    <div class="card"><div class="card-hd"><span class="hd-dot dr"></span>Detalle GuÃ­as Excedidas â ZOOM 2026</div><div class="tbl-wrap"><table><thead><tr><th>Fecha</th><th>Cliente</th><th>Destino</th><th class="num">Flete $</th><th class="num">Venta $</th><th class="num">% Flete</th></tr></thead><tbody id="tb-zoom-exc"></tbody></table></div></div>
   </div>
 
 </div>
@@ -430,7 +428,7 @@ function showTab(id,btn){
 }
 
 // ââ UTILS âââââââââââââââââââââââââââââââââââââââââââââââââââââ
-const fmt=(v,d=2)=>isNaN(v)||v==null?'â':new Intl.NumberFormat('es-VE',{minimumFractionDigits:d,maximumFractionDigits:d}).format(v);
+const fmt=(v,d=2)=>isNaN(v)||v==null?'—':new Intl.NumberFormat('es-VE',{minimumFractionDigits:d,maximumFractionDigits:d}).format(v);
 const fmtK=v=>v>=1000000?fmt(v/1000000,1)+'M':v>=1000?fmt(v/1000,1)+'k':fmt(v,0);
 const MN=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
 const LIB='#3b82f6', ZOOM='#f97316', GREEN='#22c55e', RED='#ef4444', PURPLE='#a855f7', AMBER='#eab308';
@@ -439,7 +437,7 @@ const GRID='rgba(255,255,255,.06)', TICK={color:'#6e7681',font:{size:10}};
 function parseNum(s){
   if(!s||typeof s!=='string')return 0;
   s=s.trim().replace(/\s+/g,'').replace(/[$]/g,'');
-  if(!s||['#REF!','#VALUE!','N/A','-','#N/A','#Â¡REF!','#Â¡VALOR!'].includes(s))return 0;
+  if(!s||['#REF!','#VALUE!','N/A','-','#N/A','#¡REF!','#¡VALOR!'].includes(s))return 0;
   if(s.includes('.')&&s.includes(','))return parseFloat(s.replace(/\./g,'').replace(',','.'))||0;
   if(s.includes(',')&&!s.includes('.')){const p=s.split(',');if(p.length===2&&p[1].length<=2)return parseFloat(s.replace(',','.'))||0;return parseFloat(s.replace(/,/g,''))||0;}
   return parseFloat(s)||0;
@@ -614,7 +612,7 @@ function donutChart(id,okCount,excCount){
   const total=okCount+excCount;if(!total)return;
   _ch[id]=new Chart(el,{
     type:'doughnut',
-    data:{labels:['Dentro â¤2%','Excedidos >2%'],
+    data:{labels:['Dentro ≤2%','Excedidos >2%'],
       datasets:[{data:[okCount,excCount],backgroundColor:[GREEN+'cc',RED+'cc'],
         borderColor:[GREEN,RED],borderWidth:2,hoverOffset:6}]},
     options:{responsive:false,cutout:'68%',
@@ -626,9 +624,14 @@ function donutChart(id,okCount,excCount){
 }
 
 // ââ TABLE HELPERS âââââââââââââââââââââââââââââââââââââââââââââ
+function cliExcTable(id,data){
+  const el=document.getElementById(id);if(!el)return;
+  if(!data||!data.length){el.innerHTML='<tr><td colspan="4" style="color:var(--text3);text-align:center;padding:12px">✓ Sin excedidos</td></tr>';return;}
+  el.innerHTML=data.slice(0,8).map(c=>`<tr><td><strong>${c.cliente}</strong></td><td class="num">${c.envios}</td><td class="num" style="color:var(--red)">${c.exc}</td><td>${riskPill(c.pctExc||0)}</td></tr>`).join('');
+}
 function excZonasTable(id,data){
   const el=document.getElementById(id);if(!el)return;
-  if(!data.length){el.innerHTML='<tr><td colspan="4" style="color:var(--text3);text-align:center;padding:12px">â Sin excedidos â</td></tr>';return;}
+  if(!data.length){el.innerHTML='<tr><td colspan="4" style="color:var(--text3);text-align:center;padding:12px">— Sin excedidos —</td></tr>';return;}
   el.innerHTML=data.slice(0,8).map(z=>`<tr><td><strong>${z.zona}</strong></td><td class="num">${z.envios}</td><td class="num" style="color:var(--red)">${z.exc}</td><td>${riskPill(z.pctExc)}</td></tr>`).join('');
 }
 
@@ -643,7 +646,7 @@ function splitZonasTable(idExc,idOk,allZonas,cntExcEl,cntOkEl){
     ?'<tr><td colspan="4" style="text-align:center;color:var(--text3);padding:12px">â Sin destinos excedidos</td></tr>'
     :excZ.map(z=>`<tr><td><strong>${z.zona}</strong></td><td class="num">${z.envios}</td><td class="num" style="color:var(--red);font-weight:700">${z.exc}</td><td>${riskPill(z.pctExc)}</td></tr>`).join('');
   eO.innerHTML=!okZ.length
-    ?'<tr><td colspan="4" style="text-align:center;color:var(--text3);padding:12px">â</td></tr>'
+    ?'<tr><td colspan="4" style="text-align:center;color:var(--text3);padding:12px">—</td></tr>'
     :okZ.map(z=>`<tr><td><strong>${z.zona}</strong></td><td class="num">${z.envios}</td><td class="num">${fmt(z.kilos,1)} kg</td><td><span class="badge ok">â OK</span></td></tr>`).join('');
 }
 
@@ -697,7 +700,7 @@ function render(L,Z){
     [{label:'LIBERTY',data:L.meses.map(m=>m.kilos),borderColor:LIB,backgroundColor:LIB+'33'},
      {label:'ZOOM',data:Z.meses.map(m=>m.kilos),borderColor:ZOOM,backgroundColor:ZOOM+'33'}]);
 
-  excZonasTable('tb-cmp-lib-z',L.zonasExc);
+  cliExcTable('tb-cmp-lib-cli',L.cliExc);
   excZonasTable('tb-cmp-zoom-z',Z.zonasExc);
 
   // Financial summaries
@@ -729,8 +732,6 @@ function render(L,Z){
   barHChart('ch-lib-zonas',L.allZonas,z=>z.zona,z=>z.kilos,LIB);
   splitZonasTable('tb-lib-z-exc-split','tb-lib-z-ok-split',L.allZonas,'lL-z-exc-count','lL-z-ok-count');
   barHChart('ch-lib-cli',L.topCli,c=>c.cliente,c=>c.kilos,LIB);
-  const elLe=document.getElementById('tb-lib-exc');
-  if(elLe)elLe.innerHTML=L.excRecs.slice(0,50).map(r=>`<tr><td>${r.fecha}</td><td>${r.cliente}</td><td>${r.zona}</td><td class="num">$${fmt(r.flete)}</td><td class="num">$${fmt(r.venta)}</td><td class="num">${riskPill(r.pct)}</td></tr>`).join('');
 
   // ZOOM tab
   setEl('lZ-kg',fmtK(Z.totalKilos)+' kg');
@@ -749,8 +750,6 @@ function render(L,Z){
   barHChart('ch-zoom-dest',Z.allZonas,z=>z.zona,z=>z.kilos,ZOOM);
   splitZonasTable('tb-zoom-z-exc-split','tb-zoom-z-ok-split',Z.allZonas,'lZ-z-exc-count','lZ-z-ok-count');
   barHChart('ch-zoom-cli',Z.topCli,c=>c.cliente,c=>c.kilos,ZOOM);
-  const elZe=document.getElementById('tb-zoom-exc');
-  if(elZe)elZe.innerHTML=Z.excRecs.slice(0,50).map(r=>`<tr><td>${r.fecha}</td><td>${r.cliente}</td><td>${r.zona}</td><td class="num">$${fmt(r.flete)}</td><td class="num">$${fmt(r.venta)}</td><td class="num">${riskPill(r.pct)}</td></tr>`).join('');
 
   document.getElementById('content').style.display='block';
   document.getElementById('overlay').style.display='none';
