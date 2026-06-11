@@ -213,70 +213,24 @@
       </div>
     </div>
 
-    <!-- COMPLIANCE OVERVIEW -->
-    <div class="g2" style="margin-bottom:16px">
-      <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dl"></span>LIBERTY — Cumplimiento Regla del 2%</div>
-        <div class="comply-wrap">
-          <canvas class="comply-canvas" id="ch-cmp-lib-pie"></canvas>
-          <div class="comply-stats">
-            <div class="cs-row">
-              <span class="cs-dot" style="background:var(--green)"></span>
-              <span class="cs-label">Dentro del límite ≤2%</span>
-              <span class="cs-pct" id="cL-ok-pct" style="color:var(--green)">—</span>
-              <span class="cs-cnt" id="cL-ok-cnt">—</span>
-            </div>
-            <div class="cs-row">
-              <span class="cs-dot" style="background:var(--red)"></span>
-              <span class="cs-label">Excedidos &gt;2%</span>
-              <span class="cs-pct" id="cL-exc-pct" style="color:var(--red)">—</span>
-              <span class="cs-cnt" id="cL-exc-cnt">—</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dz"></span>ZOOM — Cumplimiento Regla del 2%</div>
-        <div class="comply-wrap">
-          <canvas class="comply-canvas" id="ch-cmp-zoom-pie"></canvas>
-          <div class="comply-stats">
-            <div class="cs-row">
-              <span class="cs-dot" style="background:var(--green)"></span>
-              <span class="cs-label">Dentro del límite ≤2%</span>
-              <span class="cs-pct" id="cZ-ok-pct" style="color:var(--green)">—</span>
-              <span class="cs-cnt" id="cZ-ok-cnt">—</span>
-            </div>
-            <div class="cs-row">
-              <span class="cs-dot" style="background:var(--red)"></span>
-              <span class="cs-label">Excedidos &gt;2%</span>
-              <span class="cs-pct" id="cZ-exc-pct" style="color:var(--red)">—</span>
-              <span class="cs-cnt" id="cZ-exc-cnt">—</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- CUMPLIMIENTO TOTAL COMBINADO -->
     <div class="card" style="margin-bottom:16px">
       <div class="card-hd"><span class="hd-dot dg"></span>⚖️ Cumplimiento Total LIBERTY + ZOOM — Regla del 2%</div>
-      <div class="comply-wrap">
-        <canvas class="comply-canvas" id="ch-cmp-total-pie"></canvas>
-        <div class="comply-stats">
-          <div class="cs-row">
-            <span class="cs-dot" style="background:var(--green)"></span>
-            <span class="cs-label">Total dentro del límite ≤2%</span>
-            <span class="cs-pct" id="cT-ok-pct" style="color:var(--green)">—</span>
-            <span class="cs-cnt" id="cT-ok-cnt">—</span>
-          </div>
-          <div class="cs-row">
-            <span class="cs-dot" style="background:var(--red)"></span>
-            <span class="cs-label">Total excedidos &gt;2%</span>
-            <span class="cs-pct" id="cT-exc-pct" style="color:var(--red)">—</span>
-            <span class="cs-cnt" id="cT-exc-cnt">—</span>
-          </div>
+      <div class="comply-stats" style="margin-bottom:12px">
+        <div class="cs-row">
+          <span class="cs-dot" style="background:var(--green)"></span>
+          <span class="cs-label">Total dentro del límite ≤2%</span>
+          <span class="cs-pct" id="cT-ok-pct" style="color:var(--green)">—</span>
+          <span class="cs-cnt" id="cT-ok-cnt">—</span>
+        </div>
+        <div class="cs-row">
+          <span class="cs-dot" style="background:var(--red)"></span>
+          <span class="cs-label">Total excedidos &gt;2%</span>
+          <span class="cs-pct" id="cT-exc-pct" style="color:var(--red)">—</span>
+          <span class="cs-cnt" id="cT-exc-cnt">—</span>
         </div>
       </div>
+      <canvas id="ch-cmp-total-pie" height="120"></canvas>
     </div>
 
     <!-- GRÁFICO COMBINADO LIBERTY vs ZOOM -->
@@ -354,23 +308,21 @@
     <!-- COMPLIANCE LIBERTY -->
     <div class="card" style="margin-bottom:16px">
       <div class="card-hd"><span class="hd-dot dg"></span>Cumplimiento Regla del 2% — LIBERTY 2026</div>
-      <div class="comply-wrap">
-        <canvas class="comply-canvas" id="ch-lib-pie"></canvas>
-        <div class="comply-stats">
-          <div class="cs-row">
-            <span class="cs-dot" style="background:var(--green)"></span>
-            <span class="cs-label">Envíos dentro del límite ≤2%</span>
-            <span class="cs-pct" id="lL-ok-pct" style="color:var(--green)">—</span>
-            <span class="cs-cnt" id="lL-ok-cnt">—</span>
-          </div>
-          <div class="cs-row">
-            <span class="cs-dot" style="background:var(--red)"></span>
-            <span class="cs-label">Envíos excedidos &gt;2%</span>
-            <span class="cs-pct" id="lL-exc-pct" style="color:var(--red)">—</span>
-            <span class="cs-cnt" id="lL-exc-cnt">—</span>
-          </div>
+      <div class="comply-stats" style="margin-bottom:12px">
+        <div class="cs-row">
+          <span class="cs-dot" style="background:var(--green)"></span>
+          <span class="cs-label">Envíos dentro del límite ≤2%</span>
+          <span class="cs-pct" id="lL-ok-pct" style="color:var(--green)">—</span>
+          <span class="cs-cnt" id="lL-ok-cnt">—</span>
+        </div>
+        <div class="cs-row">
+          <span class="cs-dot" style="background:var(--red)"></span>
+          <span class="cs-label">Envíos excedidos &gt;2%</span>
+          <span class="cs-pct" id="lL-exc-pct" style="color:var(--red)">—</span>
+          <span class="cs-cnt" id="lL-exc-cnt">—</span>
         </div>
       </div>
+      <canvas id="ch-lib-pie" height="120"></canvas>
     </div>
     <div class="card"><div class="card-hd"><span class="hd-dot dl"></span>Kilos por Mes — LIBERTY 2026</div><canvas id="ch-lib-mes" height="90"></canvas></div>
     <div class="alert-box">
@@ -408,23 +360,21 @@
     <!-- COMPLIANCE ZOOM -->
     <div class="card" style="margin-bottom:16px">
       <div class="card-hd"><span class="hd-dot dg"></span>Cumplimiento Regla del 2% — ZOOM 2026</div>
-      <div class="comply-wrap">
-        <canvas class="comply-canvas" id="ch-zoom-pie"></canvas>
-        <div class="comply-stats">
-          <div class="cs-row">
-            <span class="cs-dot" style="background:var(--green)"></span>
-            <span class="cs-label">Envíos dentro del límite ≤2%</span>
-            <span class="cs-pct" id="lZ-ok-pct" style="color:var(--green)">—</span>
-            <span class="cs-cnt" id="lZ-ok-cnt">—</span>
-          </div>
-          <div class="cs-row">
-            <span class="cs-dot" style="background:var(--red)"></span>
-            <span class="cs-label">Envíos excedidos &gt;2%</span>
-            <span class="cs-pct" id="lZ-exc-pct" style="color:var(--red)">—</span>
-            <span class="cs-cnt" id="lZ-exc-cnt">—</span>
-          </div>
+      <div class="comply-stats" style="margin-bottom:12px">
+        <div class="cs-row">
+          <span class="cs-dot" style="background:var(--green)"></span>
+          <span class="cs-label">Envíos dentro del límite ≤2%</span>
+          <span class="cs-pct" id="lZ-ok-pct" style="color:var(--green)">—</span>
+          <span class="cs-cnt" id="lZ-ok-cnt">—</span>
+        </div>
+        <div class="cs-row">
+          <span class="cs-dot" style="background:var(--red)"></span>
+          <span class="cs-label">Envíos excedidos &gt;2%</span>
+          <span class="cs-pct" id="lZ-exc-pct" style="color:var(--red)">—</span>
+          <span class="cs-cnt" id="lZ-exc-cnt">—</span>
         </div>
       </div>
+      <canvas id="ch-zoom-pie" height="120"></canvas>
     </div>
     <div class="note">⚠️ <strong>ZOOM 2026:</strong> <code>TOTAL $ GUIA</code> tiene <code>#REF!</code> en varios registros. Flete calculado como <strong>BS GUIA ÷ TASA DÍA</strong>.</div>
     <div class="card"><div class="card-hd"><span class="hd-dot dz"></span>Kilos por Mes — ZOOM 2026</div><canvas id="ch-zoom-mes" height="90"></canvas></div>
@@ -640,20 +590,22 @@ function lineChart(id,labels,datasets){
   });
 }
 
-function donutChart(id,okCount,excCount){
+function complianceBarChart(id,okCount,excCount){
   killC(id);
   const el=document.getElementById(id);if(!el)return;
   const total=okCount+excCount;if(!total)return;
   _ch[id]=new Chart(el,{
-    type:'doughnut',
+    type:'bar',
     data:{labels:['Dentro ≤2%','Excedidos >2%'],
       datasets:[{data:[okCount,excCount],backgroundColor:[GREEN+'cc',RED+'cc'],
-        borderColor:[GREEN,RED],borderWidth:2,hoverOffset:6}]},
-    options:{responsive:false,cutout:'68%',
+        borderColor:[GREEN,RED],borderWidth:1,borderRadius:4}]},
+    options:{responsive:true,
       plugins:{legend:{display:false},
         tooltip:{backgroundColor:'#1c2433',borderColor:'#30363d',borderWidth:1,
           titleColor:'#e6edf3',bodyColor:'#8b949e',
-          callbacks:{label:ctx=>`${ctx.label}: ${ctx.raw} (${fmt(ctx.raw/total*100,1)}%)`}}}}
+          callbacks:{label:ctx=>`${ctx.raw} guías (${fmt(ctx.raw/total*100,1)}%)`}}},
+      scales:{x:{grid:{display:false},ticks:TICK,border:{color:'transparent'}},
+        y:{grid:{color:GRID},ticks:{...TICK,stepSize:1},beginAtZero:true,border:{color:'transparent'}}}}
   });
 }
 
@@ -733,11 +685,9 @@ function render(L,Z){
   setEl('cZ-ok-pct',fmt(zOkP,1)+'%');setEl('cZ-ok-cnt',zOk+' gu\xedas');
   setEl('cZ-exc-pct',fmt(zExcP,1)+'%');setEl('cZ-exc-cnt',zExc+' gu\xedas');
 
-  // Donuts
-  donutChart('ch-cmp-lib-pie',lOk,lExc);
-  donutChart('ch-cmp-zoom-pie',zOk,zExc);
-  donutChart('ch-lib-pie',lOk,lExc);
-  donutChart('ch-zoom-pie',zOk,zExc);
+  // Compliance bar charts
+  complianceBarChart('ch-lib-pie',lOk,lExc);
+  complianceBarChart('ch-zoom-pie',zOk,zExc);
 
   // Combined total compliance
   const totOkAll=lOk+zOk, totExcAll=lExc+zExc;
@@ -746,7 +696,7 @@ function render(L,Z){
   setEl('cT-ok-cnt',totOkAll+' gu\xedas');
   setEl('cT-exc-pct',fmt(totGAll>0?totExcAll/totGAll*100:0,1)+'%');
   setEl('cT-exc-cnt',totExcAll+' gu\xedas excedidas');
-  donutChart('ch-cmp-total-pie',totOkAll,totExcAll);
+  complianceBarChart('ch-cmp-total-pie',totOkAll,totExcAll);
 
   // Combined chart
   lineChart('ch-combined',MN,
@@ -823,4 +773,4 @@ function render(L,Z){
 </script>
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
