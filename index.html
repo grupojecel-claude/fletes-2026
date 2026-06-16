@@ -325,19 +325,11 @@
       <canvas id="ch-lib-pie" height="120"></canvas>
     </div>
     <div class="card"><div class="card-hd"><span class="hd-dot dl"></span>Kilos por Mes â LIBERTY 2026</div><canvas id="ch-lib-mes" height="90"></canvas></div>
-    <div class="alert-box">
-      <div class="alert-title">ð¨ Control de Fletes LIBERTY â Excedidos del ParÃ¡metro (&gt;2%)</div>
-      <div class="alert-grid">
-        <div><div class="alert-sub">ð Zonas con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-z-exc"></tbody></table></div></div>
-      </div>
-    </div>
+    
     <div class="card" style="margin-bottom:16px"><div class="card-hd"><span class="hd-dot dl"></span>Zonas por Kilos <span style="font-size:10px;color:var(--text3);font-weight:400">(rojo = con excedidos)</span></div><canvas id="ch-lib-zonas" height="200"></canvas></div>
     <!-- SPLIT ZONAS -->
     <div class="g2" style="margin-bottom:16px">
-      <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dr"></span>ð´ Zonas con Excedidos &gt;2% <span id="lL-z-exc-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
-        <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>EnvÃ­os</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-lib-z-exc-split"></tbody></table></div>
-      </div>
+      
       <div class="card" style="margin-bottom:0">
         <div class="card-hd"><span class="hd-dot dg"></span>â Zonas Dentro del LÃ­mite â¤2% <span id="lL-z-ok-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
         <div class="tbl-wrap"><table><thead><tr><th>Zona</th><th>EnvÃ­os</th><th>Kilos</th><th>Estado</th></tr></thead><tbody id="tb-lib-z-ok-split"></tbody></table></div>
@@ -378,19 +370,11 @@
     </div>
     <div class="note">â ï¸ <strong>ZOOM 2026:</strong> <code>TOTAL $ GUIA</code> tiene <code>#REF!</code> en varios registros. Flete calculado como <strong>BS GUIA Ã· TASA DÃA</strong>.</div>
     <div class="card"><div class="card-hd"><span class="hd-dot dz"></span>Kilos por Mes â ZOOM 2026</div><canvas id="ch-zoom-mes" height="90"></canvas></div>
-    <div class="alert-box zoom">
-      <div class="alert-title">ð¨ Control de Fletes ZOOM â Excedidos del ParÃ¡metro (&gt;2%)</div>
-      <div class="alert-grid">
-        <div><div class="alert-sub">ð Destinos con Excedidos</div><div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>Total</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-z-exc"></tbody></table></div></div>
-      </div>
-    </div>
+    
     <div class="card" style="margin-bottom:16px"><div class="card-hd"><span class="hd-dot dz"></span>Destinos por Kilos <span style="font-size:10px;color:var(--text3);font-weight:400">(rojo = con excedidos)</span></div><canvas id="ch-zoom-dest" height="200"></canvas></div>
     <!-- SPLIT DESTINOS -->
     <div class="g2" style="margin-bottom:16px">
-      <div class="card" style="margin-bottom:0">
-        <div class="card-hd"><span class="hd-dot dr"></span>ð´ Destinos con Excedidos &gt;2% <span id="lZ-z-exc-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
-        <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>EnvÃ­os</th><th>Exc.</th><th>Nivel</th></tr></thead><tbody id="tb-zoom-z-exc-split"></tbody></table></div>
-      </div>
+      
       <div class="card" style="margin-bottom:0">
         <div class="card-hd"><span class="hd-dot dg"></span>â Destinos Dentro del LÃ­mite â¤2% <span id="lZ-z-ok-count" style="font-size:10px;color:var(--text3);font-weight:400"></span></div>
         <div class="tbl-wrap"><table><thead><tr><th>Destino</th><th>EnvÃ­os</th><th>Kilos</th><th>Estado</th></tr></thead><tbody id="tb-zoom-z-ok-split"></tbody></table></div>
@@ -638,7 +622,7 @@ function splitZonasTable(idExc,idOk,allZonas,cntExcEl,cntOkEl){
   const ce=document.getElementById(cntExcEl),co=document.getElementById(cntOkEl);
   if(ce)ce.textContent=`(${excZ.length})`;
   if(co)co.textContent=`(${okZ.length})`;
-  eE.innerHTML=!excZ.length
+  if(eE)eE.innerHTML=!excZ.length
     ?'<tr><td colspan="4" style="text-align:center;color:var(--text3);padding:12px">â Sin destinos excedidos</td></tr>'
     :excZ.map(z=>`<tr><td><strong>${z.zona}</strong></td><td class="num">${z.envios}</td><td class="num" style="color:var(--red);font-weight:700">${z.exc}</td><td>${riskPill(z.pctExc)}</td></tr>`).join('');
   eO.innerHTML=!okZ.length
@@ -731,7 +715,6 @@ function render(L,Z){
   setEl('lL-ok-ks',lOk+' gu\xedas OK');
   setEl('lL-exc-kp',fmt(lExcP,1)+'%');
   setEl('lL-exc-ks',lExc+' gu\xedas excedidas');
-  excZonasTable('tb-lib-z-exc',L.zonasExc);
   lineChart('ch-lib-mes',MN,[{label:'LIBERTY',data:L.meses.map(m=>m.kilos),borderColor:LIB,backgroundColor:LIB+'33'}]);
   barHChart('ch-lib-zonas',L.allZonas,z=>z.zona,z=>z.kilos,LIB);
   splitZonasTable('tb-lib-z-exc-split','tb-lib-z-ok-split',L.allZonas,'lL-z-exc-count','lL-z-ok-count');
@@ -749,7 +732,6 @@ function render(L,Z){
   setEl('lZ-ok-ks',zOk+' gu\xedas OK');
   setEl('lZ-exc-kp',fmt(zExcP,1)+'%');
   setEl('lZ-exc-ks',zExc+' gu\xedas excedidas');
-  excZonasTable('tb-zoom-z-exc',Z.zonasExc);
   lineChart('ch-zoom-mes',MN,[{label:'ZOOM',data:Z.meses.map(m=>m.kilos),borderColor:ZOOM,backgroundColor:ZOOM+'33'}]);
   barHChart('ch-zoom-dest',Z.allZonas,z=>z.zona,z=>z.kilos,ZOOM);
   splitZonasTable('tb-zoom-z-exc-split','tb-zoom-z-ok-split',Z.allZonas,'lZ-z-exc-count','lZ-z-ok-count');
